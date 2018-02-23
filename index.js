@@ -1,6 +1,3 @@
-require('dotenv').config();
-const geocode = require('./src/geocode');
+const opencage = require('./src');
 
-module.exports = {
-  geocode,
-};
+module.exports = opencage;

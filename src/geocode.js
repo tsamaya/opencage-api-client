@@ -4,6 +4,7 @@ const fetch = require('./fetch');
 
 const OPEN_CAGE_DATA_URL = 'https://api.opencagedata.com/geocode/v1/json';
 
+const buildParams = input => input;
 /**
  * geocode
  * @param  {Object} input query paraameters
@@ -11,7 +12,7 @@ const OPEN_CAGE_DATA_URL = 'https://api.opencagedata.com/geocode/v1/json';
  */
 const geocode = input =>
   new Promise((resolve, reject) => {
-    const params = input;
+    const params = buildParams(input);
     if (helpers.isUndefinedOrEmpty(params.key)) {
       params.key = process.env.OCD_API_KEY;
     }
@@ -22,3 +23,4 @@ const geocode = input =>
   });
 
 module.exports = geocode;
+module.exports.buildParams = buildParams;

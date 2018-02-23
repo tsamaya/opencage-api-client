@@ -28,3 +28,5 @@ const fetch = (url, resolve, reject) => {
 };
 
 module.exports = fetch;
+module.exports.parseJSON = parseJSON;
+module.exports.checkStatus = checkStatus;
