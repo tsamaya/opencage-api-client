@@ -12,9 +12,10 @@ const checkStatus = response => {
 
 const parseJSON = response => response.json();
 
+const fetchUrl = url => global.fetch(url);
+
 const fetch = (url, resolve, reject) => {
-  global
-    .fetch(url)
+  fetchUrl(url)
     .then(checkStatus)
     .then(parseJSON)
     .then(data => {
@@ -28,5 +29,6 @@ const fetch = (url, resolve, reject) => {
 };
 
 module.exports = fetch;
+module.exports.fetchUrl = fetchUrl;
 module.exports.parseJSON = parseJSON;
 module.exports.checkStatus = checkStatus;

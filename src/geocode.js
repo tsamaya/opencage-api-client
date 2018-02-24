@@ -16,6 +16,7 @@ const geocode = input =>
     if (helpers.isUndefinedOrEmpty(params.key)) {
       params.key = process.env.OCD_API_KEY;
     }
+    // test if key is null ? at least I can unit test it
     const qs = buildQueryString(params);
     const url = `${OPEN_CAGE_DATA_URL}?${qs}`;
     // console.log(url);
