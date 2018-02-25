@@ -1,6 +1,10 @@
 const opencage = require('../');
 
-xdescribe('integrqtion tests', () => {
+describe('integration tests', () => {
+  if (process.env.CI) {
+    test.skip('CI : skipping integration tests'); // eslint-disable-line
+    return;
+  }
   test('test environment variable ', () => {
     // In JavaScript, there are six falsy values:
     // false, 0, '', null, undefined, and NaN.
