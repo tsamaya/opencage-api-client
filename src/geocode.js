@@ -4,7 +4,15 @@ const fetch = require('./fetch');
 
 const OPEN_CAGE_DATA_URL = 'https://api.opencagedata.com/geocode/v1/json';
 
+/**
+ * build input paraameters with lat,lng,query and optional paraameters
+ * TODO
+ *
+ * @param  {Object} input [description]
+ * @return {Object}       the OpenCage API paraameters
+ */
 const buildParams = input => input;
+
 /**
  * geocode
  * @param  {Object} input query paraameters
@@ -16,7 +24,17 @@ const geocode = input =>
     if (helpers.isUndefinedOrEmpty(params.key)) {
       params.key = process.env.OCD_API_KEY;
     }
-    // test if key is null ? at least I can unit test it
+    if (helpers.isUndefinedOrEmpty(params.key)) {
+      const error = new Error('missing API key');
+      error.response = {
+        status: {
+          code: 403,
+          message: 'missing API key',
+        },
+      };
+      reject(error);
+      return;
+    }
     const qs = buildQueryString(params);
     const url = `${OPEN_CAGE_DATA_URL}?${qs}`;
     // console.log(url);
