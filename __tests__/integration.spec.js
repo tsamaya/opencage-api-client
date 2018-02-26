@@ -44,4 +44,49 @@ describe('integration tests', () => {
         expect(false).toBeTruthy();
       });
   });
+  test('reverse geocode Brandburg Gate with space', () => {
+    expect.assertions(1);
+    const input = {
+      q: '52.5162767 13.3777025',
+    };
+    return opencage
+      .geocode(input)
+      .then(data => {
+        expect(data).toBeTruthy();
+      })
+      .catch(() => {
+        // no used, in case it raises a test error
+        expect(false).toBeTruthy();
+      });
+  });
+  test('reverse geocode Brandburg Gate with comma', () => {
+    expect.assertions(1);
+    const input = {
+      q: '52.5162767,13.3777025',
+    };
+    return opencage
+      .geocode(input)
+      .then(data => {
+        expect(data).toBeTruthy();
+      })
+      .catch(() => {
+        // no used, in case it raises a test error
+        expect(false).toBeTruthy();
+      });
+  });
+  test('reverse geocode Brandburg Gate with space and comma', () => {
+    expect.assertions(1);
+    const input = {
+      q: '52.5162767, 13.3777025',
+    };
+    return opencage
+      .geocode(input)
+      .then(data => {
+        expect(data).toBeTruthy();
+      })
+      .catch(() => {
+        // no used, in case it raises a test error
+        expect(false).toBeTruthy();
+      });
+  });
 });
