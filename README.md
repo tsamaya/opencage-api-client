@@ -3,6 +3,7 @@
 This node package is an [OpenCage Data API](https://geocoder.opencagedata.com/api) client.
 
 [![CircleCI](https://circleci.com/gh/tsamaya/opencage-api-client/tree/master.svg?style=svg)](https://circleci.com/gh/tsamaya/opencage-api-client/tree/master)
+[![codecov](https://codecov.io/gh/tsamaya/opencage-api-client/branch/master/graph/badge.svg)](https://codecov.io/gh/tsamaya/opencage-api-client)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 :warning: working progress
