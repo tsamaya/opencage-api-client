@@ -5,11 +5,12 @@ const fetch = require('./fetch');
 const OPEN_CAGE_DATA_URL = 'https://api.opencagedata.com/geocode/v1/json';
 
 /**
+ * @private
  * build input paraameters with lat,lng,query and optional paraameters
  * TODO
  *
  * @param  {Object} input [description]
- * @return {Object}       the OpenCage API paraameters
+ * @return {Object}       the OpenCage API parameters
  */
 const buildParams = input => input;
 
