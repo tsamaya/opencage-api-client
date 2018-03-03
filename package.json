@@ -7,6 +7,7 @@
     "build": "webpack",
     "codecov": "codecov",
     "coverage": "npm run test && npm run codecov",
+    "docs": "npx documentation build src/** -f html -o docs",
     "lint": "eslint .",
     "prebuild": "npm run test",
     "pretest": "npm run lint",
