@@ -12,6 +12,7 @@ This node package is an [OpenCage Data API](https://geocoder.opencagedata.com/ap
 
 Signup for a [free API Key](https://geocoder.opencagedata.com/users/sign_up).
 
+### node
 The library uses [dotenv](https://www.npmjs.com/package/dotenv) on node runtime to configure OpenCage Data API key.
 
 First install the library with `npm` or `yarn`:
@@ -40,10 +41,17 @@ opencage.geocode({q: 'lyon'}).then(data => {
   console.log('error', error.message);
 });
 ```
+### browser
+
+> TODO
+
+In the meantime check [sample](samples/browser-sample.html) file
 
 ## API
 
 > TODO
+
+In the meantime check [sample](samples/node-sample.html) file
 
 ## Build and test
 
