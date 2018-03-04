@@ -16,7 +16,7 @@ const buildParams = input => input;
 
 /**
  * geocode
- * @param  {Object} input   query paraameters
+ * @param  {Object} input   query parameters
  * @return {Promise}        a promise resolved by the json format API payload
  */
 const geocode = input =>
