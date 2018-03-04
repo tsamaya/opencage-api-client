@@ -5,6 +5,7 @@ module.exports = {
   devtool: 'source-map',
   output: {
     library: 'opencage',
+    libraryTarget: 'umd',
     filename: 'opencage-api.min.js',
     path: path.resolve(__dirname, 'dist'),
   },

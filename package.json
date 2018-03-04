@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "An OpenCageData Geocoder API client library for node and browsers (UMD)",
   "main": "index.js",
+  "unpkg": "dist/opencage-api.min.js",
   "scripts": {
     "build": "webpack",
     "codecov": "codecov",
