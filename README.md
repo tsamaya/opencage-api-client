@@ -1,12 +1,10 @@
 # opencage-api-client
 
-This node package is an [OpenCage Data API](https://geocoder.opencagedata.com/api) client.
+This repository is an [OpenCage Data API](https://geocoder.opencagedata.com/api) client for JavaScript and node.
 
 [![CircleCI](https://circleci.com/gh/tsamaya/opencage-api-client/tree/master.svg?style=svg)](https://circleci.com/gh/tsamaya/opencage-api-client/tree/master)
 [![codecov](https://codecov.io/gh/tsamaya/opencage-api-client/branch/master/graph/badge.svg)](https://codecov.io/gh/tsamaya/opencage-api-client)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-
-:warning: working progress
 
 ## Getting started
 
@@ -61,6 +59,14 @@ In the meantime check [sample](samples/node-sample.html) file
 1. lint and test using `$ npm test`
 1. coverage `$ npm run coverage`
 1. Build : `$ npm run build`
+
+## Revision History
+
+| Version  | Date       | Description                        |
+| -------- | ---------- | ---------------------------------- |
+| `v0.1.0` | 04/03/2018 | first release |
+
+**Nb** Using European Date Format :smile: Sorry :us-flag:
 
 ## Contributing
 
