@@ -66,7 +66,7 @@ In the meantime check [sample](samples/node-sample.html) file
 | -------- | ---------- | ---------------------------------- |
 | `v0.1.0` | 04/03/2018 | first release |
 
-**Nb** Using European Date Format :smile: Sorry :us-flag:
+**Nb** Using European Date Format :smile: Sorry 🇺🇸 
 
 ## Contributing
 
