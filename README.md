@@ -1,6 +1,6 @@
 # opencage-api-client
 
-This repository is an [OpenCage Data API](https://geocoder.opencagedata.com/api) client for JavaScript and node.
+This repository is an [OpenCage Data API](https://opencagedata.com/api) client for JavaScript and node.
 
 [![CircleCI](https://circleci.com/gh/tsamaya/opencage-api-client/tree/master.svg?style=svg)](https://circleci.com/gh/tsamaya/opencage-api-client/tree/master)
 [![codecov](https://codecov.io/gh/tsamaya/opencage-api-client/branch/master/graph/badge.svg)](https://codecov.io/gh/tsamaya/opencage-api-client)
@@ -8,7 +8,7 @@ This repository is an [OpenCage Data API](https://geocoder.opencagedata.com/api)
 
 ## Getting started
 
-Signup for a [free API Key](https://geocoder.opencagedata.com/users/sign_up).
+Signup for a [free API Key](https://opencagedata.com/users/sign_up).
 
 ### node
 The library uses [dotenv](https://www.npmjs.com/package/dotenv) on node runtime to configure OpenCage Data API key.
