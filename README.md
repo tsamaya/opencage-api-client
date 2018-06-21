@@ -64,9 +64,10 @@ In the meantime check [sample](samples/node-sample.html) file
 
 | Version  | Date       | Description                        |
 | -------- | ---------- | ---------------------------------- |
+| `v0.1.1` | 21/06/2018 | Open Cage website URL has changed |
 | `v0.1.0` | 04/03/2018 | first release |
 
-**Nb** Using European Date Format :smile: Sorry 🇺🇸 
+**Nb** Using European Date Format :smile: Sorry 🇺🇸
 
 ## Contributing
 
