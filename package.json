@@ -1,7 +1,8 @@
 {
   "name": "opencage-api-client",
-  "version": "0.1.1",
-  "description": "An OpenCageData Geocoder API client library for node and browsers (UMD)",
+  "version": "0.2.0",
+  "description":
+    "An OpenCageData Geocoder API client library for node and browsers (UMD)",
   "main": "index.js",
   "unpkg": "dist/opencage-api.min.js",
   "scripts": {
@@ -15,12 +16,7 @@
     "test": "jest --coverage",
     "test:watch": "npm test -- --watch"
   },
-  "keywords": [
-    "geocoder",
-    "api",
-    "opencage",
-    "opencagedata"
-  ],
+  "keywords": ["geocoder", "api", "opencage", "opencagedata"],
   "author": "Arnaud Ferrand",
   "license": "MIT",
   "devDependencies": {
