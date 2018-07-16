@@ -55,51 +55,54 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="../dist/opencage-api.min.js"></script>
   <script>
-    function clear() {
-      $('.textarea').val('');
-    };
-    function raz() {
-      $('input[name="key"]').val('');
-      $('input[name="q"]').val('');
-    };
+  function clear() {
+  $('.textarea').val('');
+}
+function raz() {
+  $('input[name="key"]').val('');
+  $('input[name="q"]').val('');
+}
 
-    function check() {
-      if( $('input[name="key"]').val() === '' ) {
-        return false;
-      };
-      if( $('input[name="q"]').val() === '' ) {
-        return false;
-      }
-      return true;
-    }
+function check() {
+  if ($('input[name="key"]').val() === '') {
+    return false;
+  }
+  if ($('input[name="q"]').val() === '') {
+    return false;
+  }
+  return true;
+}
 
-    $('.button.is-text').click(function() {
-      console.log('submit button clicked');
-      clear();
-      raz();
+$('.button.is-text').click(function() {
+  console.log('submit button clicked');
+  clear();
+  raz();
+});
+
+$('.button.is-link').click(function() {
+  console.log('submit button clicked');
+  clear();
+  if (!check()) {
+    return;
+  }
+
+  var query = {
+    pretty: 1,
+  };
+  query.key = $('input[name="key"]').val();
+  console.log('Query with api key', query.key);
+  query.q = $('input[name="q"]').val();
+  console.log('Query is', query.q);
+  opencage
+    .geocode(query)
+    .then(data => {
+      $('.textarea').val(JSON.stringify(data, null, 2));
+    })
+    .catch(err => {
+      $('.textarea').val(err);
     });
-
-    $('.button.is-link').click(function() {
-      console.log('submit button clicked');
-      clear();
-      if( !check() ) {
-        return;
-      }
-
-      var query = {
-        pretty: 1
-      };
-      query.key = $('input[name="key"]').val();
-      console.log('Query with api key', query.key);
-      query.q = $('input[name="q"]').val();
-      console.log('Query is', query.q);
-      opencage.geocode(query).then((data)=>{
-        $('.textarea').val(JSON.stringify(data, null, 2));
-      }).catch((err) => {
-        $('.textarea').val(err);
-      });
-    });
-  </script>
+});
+</script>
 </body>
 
 </html>
