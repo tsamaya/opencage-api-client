@@ -2,17 +2,18 @@ const opencage = require('../');
 
 describe('integration tests', () => {
   if (process.env.CI) {
-    test.skip('CI : skipping integration tests'); // eslint-disable-line
+    // eslint-disable-next-line
+    test.skip('CI : skipping integration tests');
     return;
   }
-  test('test environment variable ', () => {
+  test('if environment variable is set', () => {
     // In JavaScript, there are six falsy values:
     // false, 0, '', null, undefined, and NaN.
     // Everything else is truthy.
     expect(process.env.OCD_API_KEY).toBeTruthy();
   });
 
-  test('invalid API key', () => {
+  test('an invalid API key', () => {
     expect.assertions(1);
     const input = {
       q: 'Brandenburg Gate',

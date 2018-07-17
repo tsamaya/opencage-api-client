@@ -33,22 +33,28 @@ const geocode = input =>
       return;
     }
     const params = buildParams(input);
-    if (helpers.isUndefinedOrEmpty(params.key)) {
-      params.key = process.env.OCD_API_KEY;
-    }
-    if (helpers.isUndefinedOrEmpty(params.key)) {
-      const error = new Error('missing API key');
-      error.response = {
-        status: {
-          code: 403,
-          message: 'missing API key',
-        },
-      };
-      reject(error);
-      return;
+    let endpoint = OPEN_CAGE_DATA_URL;
+    if (helpers.isUndefinedOrEmpty(params.proxyURL)) {
+      if (helpers.isUndefinedOrEmpty(params.key)) {
+        params.key = process.env.OCD_API_KEY;
+      }
+      if (helpers.isUndefinedOrEmpty(params.key)) {
+        const error = new Error('missing API key');
+        error.response = {
+          status: {
+            code: 403,
+            message: 'missing API key',
+          },
+        };
+        reject(error);
+        return;
+      }
+    } else {
+      endpoint = params.proxyURL;
+      delete params.proxyURL;
     }
     const qs = buildQueryString(params);
-    const url = `${OPEN_CAGE_DATA_URL}?${qs}`;
+    const url = `${endpoint}?${qs}`;
     // console.log(url);
     fetch(url, resolve, reject);
   });
