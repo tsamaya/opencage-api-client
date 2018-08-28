@@ -1,4 +1,4 @@
-const opencage = require('../');
+const opencage = require('..');
 
 describe('geocode tests', () => {
   describe('rainy tests', () => {

@@ -1,9 +1,11 @@
-const opencage = require('../');
+const opencage = require('..');
 
 describe('integration tests', () => {
   if (process.env.CI) {
     // eslint-disable-next-line
-    test.skip('CI : skipping integration tests');
+    test.skip('CI : skipping integration tests', () => {
+      expect(true).toBeTruthy();
+    });
     return;
   }
   test('if environment variable is set', () => {
