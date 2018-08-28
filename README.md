@@ -17,7 +17,7 @@ The library uses [dotenv](https://www.npmjs.com/package/dotenv) on node runtime 
 First install the library with `npm` or `yarn`:
 
 ```
-$ npm i opencage-api-client
+$ npm i --save opencage-api-client
 ```
 
 or
@@ -49,15 +49,38 @@ opencage
 
 ### browser
 
-> TODO
+The browser version is built over the node one, obviously without the dotenv feature.
 
-In the meantime check [sample](samples/browser-sample.html) file
+The library is available with `unkpg` _CDN_ : https://unpkg.com/opencage-api-client@0.3.0/dist/opencage-api.min.js
+
+1- include the library:
+
+```html
+<script src="https://unpkg.com/opencage-api-client@0.3.0/dist/opencage-api.min.js"></script>
+```
+
+2- use it
+
+```javascript
+opencage
+  .geocode({ q: 'lyon' })
+  .then(data => {
+    console.log(JSON.stringify(data));
+  })
+  .catch(error => {
+    console.log('error', error.message);
+  });
+```
 
 ## API
 
-> TODO
+### geocode
 
-In the meantime check [sample](samples/node-sample.html) file
+| Parameter | Type | Optional? | Description |
+| q | String | mandatory | the query string to be geocoded; a placename or lat+long.
+This must be URL encoded. |
+| key | String |optional | the `key` can be omitted when using a `proxyURL` and when using node with a dedicated environment variable |
+| proxyURL | String | optional | The proxy URL parameter (useful to hide your API key) |
 
 ## Build and test
 
@@ -72,6 +95,7 @@ In the meantime check [sample](samples/node-sample.html) file
 
 | Version  | Date       | Description                                               |
 | -------- | ---------- | --------------------------------------------------------- |
+| `v0.3.0` | 28/08/2018 | adding readme documentation and upgrade dependencies      |
 | `v0.2.0` | 17/07/2018 | Allow a proxy URL to use instead of official API endpoint |
 | `v0.1.1` | 21/06/2018 | Open Cage website URL has changed                         |
 | `v0.1.0` | 04/03/2018 | first release                                             |
