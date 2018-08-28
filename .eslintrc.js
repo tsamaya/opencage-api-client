@@ -1,7 +1,11 @@
 module.exports = {
-  extends: ['airbnb-base', 'plugin:jest/recommended', 'plugin:prettier/recommended']
+  extends: [
+    'airbnb-base',
+    'plugin:prettier/recommended',
+    'plugin:jest/recommended',
+  ],
   // plugins: ['prettier'],
   // rules: {
-  //   'prettier/prettier': 'error'
-  // }
+  //   'prettier/prettier': 'error',
+  // },
 };
