@@ -1,4 +1,4 @@
-/coverage
-/dist
-/temp
-/docs
+node_modules/
+dist/
+covergae/
+docs/
