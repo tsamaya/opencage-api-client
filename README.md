@@ -76,11 +76,11 @@ opencage
 
 ### geocode
 
-| Parameter | Type | Optional? | Description |
-| q | String | mandatory | the query string to be geocoded; a placename or lat+long.
-This must be URL encoded. |
-| key | String |optional | the `key` can be omitted when using a `proxyURL` and when using node with a dedicated environment variable |
-| proxyURL | String | optional | The proxy URL parameter (useful to hide your API key) |
+| Parameter  | Type   | Optional? | Description |
+| ---------- | ------ | --------  | ------------|
+| q          | String | mandatory | the query string to be geocoded; a placename or lat+long. This must be URL encoded. |
+| key        | String | optional  | the `key` can be omitted when using a `proxyURL` and when using node with a dedicated environment variable |
+| proxyURL   | String | optional  | The proxy URL parameter (useful to hide your API key) |
 
 ## Build and test
 
