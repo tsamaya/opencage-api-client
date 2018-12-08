@@ -108,27 +108,29 @@ describe('integration tests', () => {
         process.env.OCD_API_KEY = savedKey;
       }
     });
-    test('if environment variable PROXY_URL is set', () => {
-      // In JavaScript, there are six falsy values:
-      // false, 0, '', null, undefined, and NaN.
-      // Everything else is truthy.
-      expect(proxyURL).toBeTruthy();
-    });
-    test('geocode Brandburg Gate via proxy', () => {
-      expect.assertions(1);
-      const input = {
-        q: 'Brandenburg Gate',
-        proxyURL,
-      };
-      return opencage
-        .geocode(input)
-        .then(data => {
-          expect(data).toBeTruthy();
-        })
-        .catch(() => {
-          // no used, in case it raises a test error
-          expect(false).toBeTruthy();
-        });
-    });
+    if (proxyURL) {
+      test('environment variable PROXY_URL is set', () => {
+        // In JavaScript, there are six falsy values:
+        // false, 0, '', null, undefined, and NaN.
+        // Everything else is truthy.
+        expect(proxyURL).toBeTruthy();
+      });
+      test('geocode Brandburg Gate via proxy', () => {
+        expect.assertions(1);
+        const input = {
+          q: 'Brandenburg Gate',
+          proxyURL,
+        };
+        return opencage
+          .geocode(input)
+          .then(data => {
+            expect(data).toBeTruthy();
+          })
+          .catch(() => {
+            // no used, in case it raises a test error
+            expect(false).toBeTruthy();
+          });
+      });
+    }
   });
 });
