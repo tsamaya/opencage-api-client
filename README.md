@@ -2,7 +2,7 @@
 
 This repository is an [OpenCage Data API](https://opencagedata.com/api) client for JavaScript and node.
 
-[![CircleCI](https://circleci.com/gh/tsamaya/opencage-api-client/tree/master.svg?style=svg)](https://circleci.com/gh/tsamaya/opencage-api-client/tree/master)
+![CircleCI (all branches)](https://img.shields.io/circleci/project/github/tsamaya/opencage-api-client.svg)
 [![security status](https://www.meterian.io/badge/gh/tsamaya/opencage-api-client/security)](https://www.meterian.io/report/gh/tsamaya/opencage-api-client)
 [![stability status](https://www.meterian.io/badge/gh/tsamaya/opencage-api-client/stability)](https://www.meterian.io/report/gh/tsamaya/opencage-api-client)
 [![codecov](https://codecov.io/gh/tsamaya/opencage-api-client/branch/master/graph/badge.svg)](https://codecov.io/gh/tsamaya/opencage-api-client)
@@ -78,11 +78,11 @@ opencage
 
 ### geocode
 
-| Parameter  | Type   | Optional? | Description |
-| ---------- | ------ | --------  | ------------|
-| q          | String | mandatory | the query string to be geocoded; a placename or lat+long. This must be URL encoded. |
-| key        | String | optional  | the `key` can be omitted when using a `proxyURL` and when using node with a dedicated environment variable |
-| proxyURL   | String | optional  | The proxy URL parameter (useful to hide your API key) |
+| Parameter | Type   | Optional? | Description                                                                                                |
+| --------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------- |
+| q         | String | mandatory | the query string to be geocoded; a placename or lat+long. This must be URL encoded.                        |
+| key       | String | optional  | the `key` can be omitted when using a `proxyURL` and when using node with a dedicated environment variable |
+| proxyURL  | String | optional  | The proxy URL parameter (useful to hide your API key)                                                      |
 
 ## Build and test
 
