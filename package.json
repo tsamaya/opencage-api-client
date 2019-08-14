@@ -33,7 +33,9 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jest": "^22.15.1",
     "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^3.0.3",
     "jest": "^24.8.0",
+    "lint-staged": "^9.2.1",
     "prettier": "^1.18.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
@@ -50,5 +52,16 @@
   "bugs": {
     "url": "https://github.com/tsamaya/opencage-api-client/issues"
   },
-  "homepage": "https://github.com/tsamaya/opencage-api-client#readme"
+  "homepage": "https://github.com/tsamaya/opencage-api-client#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
 }
