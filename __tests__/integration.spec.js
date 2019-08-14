@@ -33,7 +33,7 @@ describe('integration tests', () => {
       })
       .catch(data => {
         // console.log(data.response);
-        expect(data.response.status).toEqual(403);
+        expect(data.response.status).toEqual(401);
       });
   });
   test('geocode Brandburg Gate', () => {
