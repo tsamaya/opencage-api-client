@@ -2,10 +2,11 @@
 
 This repository is an [OpenCage Data API](https://opencagedata.com/api) client for JavaScript and node.
 
-[![CircleCI](https://circleci.com/gh/tsamaya/opencage-api-client/tree/master.svg?style=svg)](https://circleci.com/gh/tsamaya/opencage-api-client/tree/master)
+[![CircleCI (all branches)](https://img.shields.io/circleci/project/github/tsamaya/opencage-api-client.svg)](https://circleci.com/gh/tsamaya/opencage-api-client)
 [![security status](https://www.meterian.io/badge/gh/tsamaya/opencage-api-client/security)](https://www.meterian.io/report/gh/tsamaya/opencage-api-client)
 [![stability status](https://www.meterian.io/badge/gh/tsamaya/opencage-api-client/stability)](https://www.meterian.io/report/gh/tsamaya/opencage-api-client)
 [![codecov](https://codecov.io/gh/tsamaya/opencage-api-client/branch/master/graph/badge.svg)](https://codecov.io/gh/tsamaya/opencage-api-client)
+[![Greenkeeper badge](https://badges.greenkeeper.io/tsamaya/opencage-api-client.svg)](https://greenkeeper.io/)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 ## Getting started
@@ -53,7 +54,7 @@ opencage
 
 The browser version is built over the node one, obviously without the dotenv feature.
 
-The library is available with `unkpg` _CDN_ : https://unpkg.com/opencage-api-client@0.3.0/dist/opencage-api.min.js
+The library is available with `unkpg` _CDN_ : https://unpkg.com/opencage-api-client@0.5.0/dist/opencage-api.min.js
 
 1- include the library:
 
@@ -65,7 +66,7 @@ The library is available with `unkpg` _CDN_ : https://unpkg.com/opencage-api-cli
 
 ```javascript
 opencage
-  .geocode({ q: 'lyon' })
+  .geocode({ q: 'lyon', key: 'YOUR-API-KEY' })
   .then(data => {
     console.log(JSON.stringify(data));
   })
@@ -78,11 +79,11 @@ opencage
 
 ### geocode
 
-| Parameter  | Type   | Optional? | Description |
-| ---------- | ------ | --------  | ------------|
-| q          | String | mandatory | the query string to be geocoded; a placename or lat+long. This must be URL encoded. |
-| key        | String | optional  | the `key` can be omitted when using a `proxyURL` and when using node with a dedicated environment variable |
-| proxyURL   | String | optional  | The proxy URL parameter (useful to hide your API key) |
+| Parameter | Type   | Optional? | Description                                                                                                |
+| --------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------- |
+| q         | String | mandatory | the query string to be geocoded; a placename or lat+long. This must be URL encoded.                        |
+| key       | String | optional  | the `key` can be omitted when using a `proxyURL` and when using node with a dedicated environment variable |
+| proxyURL  | String | optional  | The proxy URL parameter (useful to hide your API key)                                                      |
 
 ## Build and test
 
@@ -97,6 +98,8 @@ opencage
 
 | Version  | Date       | Description                                               |
 | -------- | ---------- | --------------------------------------------------------- |
+| `v0.5.0` | 10/03/2019 | upgrade dependencies                                      |
+| `v0.4.0` | 08/12/2018 | upgrade dependencies and update test with proxy           |
 | `v0.3.0` | 28/08/2018 | adding readme documentation and upgrade dependencies      |
 | `v0.2.0` | 17/07/2018 | Allow a proxy URL to use instead of official API endpoint |
 | `v0.1.1` | 21/06/2018 | Open Cage website URL has changed                         |
