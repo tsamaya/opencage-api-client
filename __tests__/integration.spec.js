@@ -9,7 +9,8 @@ describe('integration tests', () => {
     return;
   }
 
-  jasmine.DEFAULT_TIMEOUT_INTERVAL = 150000; // 15 seconds timeout
+  // jasmine.DEFAULT_TIMEOUT_INTERVAL = 150000; // 15 seconds timeout
+  jest.setTimeout(15000);
 
   test('if environment variable is set', () => {
     // In JavaScript, there are six falsy values:
