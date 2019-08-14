@@ -59,6 +59,10 @@
     }
   },
   "lint-staged": {
+    "*.{json,md,yml,yaml}": [
+      "prettier --write",
+      "git add"
+    ],
     "*.js": [
       "eslint --fix",
       "git add"
