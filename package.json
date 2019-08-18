@@ -38,7 +38,7 @@
     "lint-staged": "^9.2.1",
     "prettier": "^1.18.2",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.3.7"
   },
   "dependencies": {
     "dotenv": "^8.0.0",
