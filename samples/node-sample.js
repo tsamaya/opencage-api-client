@@ -20,3 +20,13 @@ opencage
   .catch(error => {
     console.log('error', error.message);
   });
+
+opencage
+  .geocode({ q: '45.188529 5.724524', language: 'fr' })
+  .then(data => {
+    console.log('reverse geocode fr -------------------------');
+    console.log(JSON.stringify(data));
+  })
+  .catch(error => {
+    console.log('error', error.message);
+  });
