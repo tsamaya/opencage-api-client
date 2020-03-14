@@ -98,6 +98,8 @@ opencage
 
 | Version  | Date       | Description                                               |
 | -------- | ---------- | --------------------------------------------------------- |
+| `v0.6.0` | 14/03/2020 | bump dependencies                                         |
+| `v0.5.1` | 09/12/2019 | upgrade dependencies                                      |
 | `v0.5.0` | 10/03/2019 | upgrade dependencies                                      |
 | `v0.4.0` | 08/12/2018 | upgrade dependencies and update test with proxy           |
 | `v0.3.0` | 28/08/2018 | adding readme documentation and upgrade dependencies      |
