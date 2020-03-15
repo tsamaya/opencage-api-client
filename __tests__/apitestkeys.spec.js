@@ -4,13 +4,17 @@ describe('API keys for testing', () => {
   // jasmine.DEFAULT_TIMEOUT_INTERVAL = 150000; // 15 seconds timeout
   jest.setTimeout(15000);
 
+  const query = {
+    q: '51.952659,7.632473',
+    pretty: 1,
+    no_annotations: 1,
+  };
+
   describe('Sunny test', () => {
     test('generate a 200 - OK response', () => {
       expect.assertions(4);
       const input = {
-        q: '51.952659,7.632473',
-        pretty: 1,
-        no_annotations: 1,
+        ...query,
         key: '6d0e711d72d74daeb2b0bfd2a5cdfdba',
       };
       return opencage
@@ -28,12 +32,6 @@ describe('API keys for testing', () => {
     });
   });
   describe('rainy tests', () => {
-    const query = {
-      q: '51.952659,7.632473',
-      pretty: 1,
-      no_annotations: 1,
-    };
-
     test('generate a 402 - quota exceeded response', () => {
       expect.assertions(4);
       const input = {
