@@ -98,6 +98,7 @@ opencage
 
 | Version  | Date       | Description                                               |
 | -------- | ---------- | --------------------------------------------------------- |
+| `v0.7.1` | 15/03/2020 | Updates documentation                                     |
 | `v0.7.0` | 15/03/2020 | Same JSON Error structure as the official API             |
 | `v0.6.0` | 14/03/2020 | bump dependencies                                         |
 | `v0.5.1` | 09/12/2019 | upgrade dependencies                                      |
