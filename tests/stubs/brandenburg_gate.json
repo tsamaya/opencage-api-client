@@ -1,0 +1,126 @@
+{
+  "documentation": "https://geocoder.opencagedata.com/api",
+  "licenses": [
+    {
+      "name": "CC-BY-SA",
+      "url": "http://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    {
+      "name": "ODbL",
+      "url": "http://opendatacommons.org/licenses/odbl/summary/"
+    }
+  ],
+  "rate": {
+    "limit": 2500,
+    "remaining": 2499,
+    "reset": 1519257600
+  },
+  "results": [
+    {
+      "annotations": {
+        "DMS": {
+          "lat": "52° 30' 58.59612'' N",
+          "lng": "13° 22' 39.72900'' E"
+        },
+        "MGRS": "33UUU8991719699",
+        "Maidenhead": "JO62qm53hv",
+        "Mercator": {
+          "x": 1489199.031,
+          "y": 6860089.217
+        },
+        "OSM": {
+          "edit_url": "https://www.openstreetmap.org/edit?way=518071791#map=17/52.51628/13.37770",
+          "url": "https://www.openstreetmap.org/?mlat=52.51628&mlon=13.37770#map=17/52.51628/13.37770"
+        },
+        "callingcode": 49,
+        "currency": {
+          "alternate_symbols": [],
+          "decimal_mark": ",",
+          "html_entity": "&#x20AC;",
+          "iso_code": "EUR",
+          "iso_numeric": 978,
+          "name": "Euro",
+          "smallest_denomination": 1,
+          "subunit": "Cent",
+          "subunit_to_unit": 100,
+          "symbol": "€",
+          "symbol_first": 1,
+          "thousands_separator": "."
+        },
+        "flag": "🇩🇪",
+        "geohash": "u33db2m37p9bznzem3pq",
+        "qibla": 136.64,
+        "sun": {
+          "rise": {
+            "apparent": 1519193400,
+            "astronomical": 1519186560,
+            "civil": 1519191300,
+            "nautical": 1519188900
+          },
+          "set": {
+            "apparent": 1519230660,
+            "astronomical": 1519237500,
+            "civil": 1519232760,
+            "nautical": 1519235160
+          }
+        },
+        "timezone": {
+          "name": "Europe/Berlin",
+          "now_in_dst": 0,
+          "offset_sec": 3600,
+          "offset_string": 100,
+          "short_name": "CET"
+        },
+        "what3words": {
+          "words": "glosses.hood.bags"
+        },
+        "wikidata": "Q82425"
+      },
+      "bounds": {
+        "northeast": {
+          "lat": 52.5164327,
+          "lng": 13.377825
+        },
+        "southwest": {
+          "lat": 52.5161167,
+          "lng": 13.37758
+        }
+      },
+      "components": {
+        "ISO_3166-1_alpha-2": "DE",
+        "_type": "attraction",
+        "attraction": "Brandenburg Gate",
+        "city": "Berlin",
+        "city_district": "Mitte",
+        "country": "Germany",
+        "country_code": "de",
+        "house_number": "1",
+        "political_union": "European Union",
+        "postcode": "10117",
+        "road": "Pariser Platz",
+        "state": "Berlin",
+        "suburb": "Mitte"
+      },
+      "confidence": 9,
+      "formatted": "Brandenburg Gate, Pariser Platz 1, 10117 Berlin, Germany",
+      "geometry": {
+        "lat": 52.5162767,
+        "lng": 13.3777025
+      }
+    }
+  ],
+  "status": {
+    "code": 200,
+    "message": "OK"
+  },
+  "stay_informed": {
+    "blog": "https://blog.opencagedata.com",
+    "twitter": "https://twitter.com/opencagedata"
+  },
+  "thanks": "For using an OpenCage Data API",
+  "timestamp": {
+    "created_http": "Wed, 21 Feb 2018 03:32:58 GMT",
+    "created_unix": 1519183978
+  },
+  "total_results": 1
+}
