@@ -6,6 +6,10 @@ const checkStatus = response => {
     return response;
   }
   const error = new Error(response.statusText);
+  error.status = {
+    code: response.status,
+    message: response.statusText,
+  };
   error.response = response;
   throw error;
 };
