@@ -6,7 +6,7 @@ This repository is an [OpenCage Data API](https://opencagedata.com/api) client f
 [![security status](https://www.meterian.io/badge/gh/tsamaya/opencage-api-client/security)](https://www.meterian.io/report/gh/tsamaya/opencage-api-client)
 [![stability status](https://www.meterian.io/badge/gh/tsamaya/opencage-api-client/stability)](https://www.meterian.io/report/gh/tsamaya/opencage-api-client)
 [![codecov](https://codecov.io/gh/tsamaya/opencage-api-client/branch/master/graph/badge.svg)](https://codecov.io/gh/tsamaya/opencage-api-client)
-[![Greenkeeper badge](https://badges.greenkeeper.io/tsamaya/opencage-api-client.svg)](https://greenkeeper.io/)
+[![Maintainability](https://api.codeclimate.com/v1/badges/8f0f9ba00ade907ef576/maintainability)](https://codeclimate.com/github/tsamaya/opencage-api-client/maintainability)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 ## Getting started
@@ -15,7 +15,7 @@ Signup for a [free API Key](https://opencagedata.com/users/sign_up).
 
 ### node
 
-The library uses [dotenv](https://www.npmjs.com/package/dotenv) on node runtime to configure OpenCage Data API key.
+The library uses [dotenv](https://www.npmjs.com/package/dotenv) on node runtime to configure OpenCage Data API key. But using `key` as an inpt parameter is always a possiblity.
 
 First install the library with `npm` or `yarn`:
 
@@ -98,6 +98,7 @@ opencage
 
 | Version  | Date       | Description                                               |
 | -------- | ---------- | --------------------------------------------------------- |
+| `v0.7.0` | 15/03/2020 | Same JSON Error structure as the official API             |
 | `v0.6.0` | 14/03/2020 | bump dependencies                                         |
 | `v0.5.1` | 09/12/2019 | upgrade dependencies                                      |
 | `v0.5.0` | 10/03/2019 | upgrade dependencies                                      |
