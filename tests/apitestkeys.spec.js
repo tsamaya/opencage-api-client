@@ -19,7 +19,7 @@ describe('API keys for testing', () => {
       };
       return opencage
         .geocode(input)
-        .then(data => {
+        .then((data) => {
           expect(data).toBeTruthy();
           expect(data.status).toBeTruthy();
           expect(data.status.code).toBeTruthy();
@@ -44,7 +44,7 @@ describe('API keys for testing', () => {
           // no used, in case it raises a test error
           expect(false).toBeTruthy();
         })
-        .catch(data => {
+        .catch((data) => {
           // console.log(data);
           expect(data).toBeTruthy();
           expect(data.status).toBeTruthy();
@@ -64,7 +64,7 @@ describe('API keys for testing', () => {
           // no used, in case it raises a test error
           expect(false).toBeTruthy();
         })
-        .catch(data => {
+        .catch((data) => {
           // console.log(data);
           expect(data).toBeTruthy();
           expect(data.status).toBeTruthy();
@@ -84,7 +84,7 @@ describe('API keys for testing', () => {
           // no used, in case it raises a test error
           expect(false).toBeTruthy();
         })
-        .catch(data => {
+        .catch((data) => {
           // console.log(data);
           expect(data).toBeTruthy();
           expect(data.status).toBeTruthy();
