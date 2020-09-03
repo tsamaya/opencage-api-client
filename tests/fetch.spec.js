@@ -23,7 +23,7 @@ describe('fetch', () => {
       return new Promise((resolve, reject) => {
         fetch(url, resolve, reject);
       })
-        .then(data => {
+        .then((data) => {
           expect(data).toBeTruthy();
         })
         .catch(() => {
@@ -42,7 +42,7 @@ describe('fetch', () => {
           // no used, in case it raises a test error
           expect(false).toBeTruthy();
         })
-        .catch(data => {
+        .catch((data) => {
           expect(data).toBeTruthy();
         });
     });

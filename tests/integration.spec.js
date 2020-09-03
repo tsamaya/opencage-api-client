@@ -31,7 +31,7 @@ describe('integration tests', () => {
         // no used, in case it raises a test error
         expect(false).toBeTruthy();
       })
-      .catch(data => {
+      .catch((data) => {
         // console.log(data.response);
         expect(data.response.status).toEqual(401);
       });
@@ -43,7 +43,7 @@ describe('integration tests', () => {
     };
     return opencage
       .geocode(input)
-      .then(data => {
+      .then((data) => {
         expect(data).toBeTruthy();
       })
       .catch(() => {
@@ -58,7 +58,7 @@ describe('integration tests', () => {
     };
     return opencage
       .geocode(input)
-      .then(data => {
+      .then((data) => {
         expect(data).toBeTruthy();
       })
       .catch(() => {
@@ -73,7 +73,7 @@ describe('integration tests', () => {
     };
     return opencage
       .geocode(input)
-      .then(data => {
+      .then((data) => {
         expect(data).toBeTruthy();
       })
       .catch(() => {
@@ -88,7 +88,7 @@ describe('integration tests', () => {
     };
     return opencage
       .geocode(input)
-      .then(data => {
+      .then((data) => {
         expect(data).toBeTruthy();
       })
       .catch(() => {
@@ -124,7 +124,7 @@ describe('integration tests', () => {
         };
         return opencage
           .geocode(input)
-          .then(data => {
+          .then((data) => {
             expect(data).toBeTruthy();
           })
           .catch(() => {

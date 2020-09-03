@@ -4,7 +4,7 @@
  * @param  {Object}  val input parameter
  * @return {Boolean}     [description]
  */
-const isNumber = val => typeof val === 'number' && !Number.isNaN(val);
+const isNumber = (val) => typeof val === 'number' && !Number.isNaN(val);
 
 /**
  * @private
@@ -12,7 +12,7 @@ const isNumber = val => typeof val === 'number' && !Number.isNaN(val);
  * @param  {Object}  val input parameter
  * @return {Boolean}     returns true if array
  */
-const isArray = val => !!val && Array.isArray(val);
+const isArray = (val) => !!val && Array.isArray(val);
 
 /**
  * @private
@@ -20,7 +20,7 @@ const isArray = val => !!val && Array.isArray(val);
  * @param  {String}  param object property as a string
  * @return {Boolean}       returns value
  */
-const isUndefinedOrEmpty = param =>
+const isUndefinedOrEmpty = (param) =>
   typeof param === 'undefined' || param === '';
 
 /**
@@ -29,7 +29,7 @@ const isUndefinedOrEmpty = param =>
  * @param  {String}  param object property as a string
  * @return {Boolean}       returns value
  */
-const isUndefinedOrNull = param =>
+const isUndefinedOrNull = (param) =>
   typeof param === 'undefined' || param === null;
 
 module.exports = {

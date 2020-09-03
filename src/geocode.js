@@ -12,7 +12,7 @@ const OPEN_CAGE_DATA_URL = 'https://api.opencagedata.com/geocode/v1/json';
  * @param  {Object} input [description]
  * @return {Object}       the OpenCage API parameters
  */
-const buildParams = input => input;
+const buildParams = (input) => input;
 
 /**
  * geocode address and reverse geocode coordinates using
@@ -28,7 +28,7 @@ const buildParams = input => input;
  *
  * @return {Promise}  a promise resolved by the json format API payload
  */
-const geocode = input =>
+const geocode = (input) =>
   new Promise((resolve, reject) => {
     if (helpers.isUndefinedOrNull(input)) {
       const error = new Error('missing input parameters');
