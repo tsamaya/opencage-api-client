@@ -1,6 +1,6 @@
 {
   "name": "opencage-api-client",
-  "version": "0.6.0",
+  "version": "0.7.1",
   "description": "An OpenCageData Geocoder API client library for node and browsers (UMD)",
   "main": "index.js",
   "browser": "dist/opencage-api.min.js",
@@ -12,6 +12,7 @@
     "docs": "npx documentation build src/** -f html -o docs",
     "lint": "eslint .",
     "prebuild": "npm run test",
+    "prepublish": "npm run docs && npm run build",
     "pretest": "npm run lint",
     "test": "jest --coverage",
     "test:watch": "npm test -- --watch"
@@ -34,8 +35,8 @@
     "eslint-plugin-jest": "^23.8.2",
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.2.3",
-    "jest": "^24.9.0",
-    "lint-staged": "^9.5.0",
+    "jest": "^25.1.0",
+    "lint-staged": "^10.0.8",
     "prettier": "^1.19.1",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"

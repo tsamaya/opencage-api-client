@@ -49,11 +49,14 @@ const geocode = input =>
       }
       if (helpers.isUndefinedOrEmpty(params.key)) {
         const error = new Error('missing API key');
+        const status = {
+          code: 403,
+          message: 'missing API key',
+        };
+        error.status = status;
+        // backward compatibility
         error.response = {
-          status: {
-            code: 403,
-            message: 'missing API key',
-          },
+          status,
         };
         reject(error);
         return;
