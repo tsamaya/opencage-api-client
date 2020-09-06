@@ -5,6 +5,7 @@
   "main": "index.js",
   "browser": "dist/opencage-api.min.js",
   "unpkg": "dist/opencage-api.min.js",
+  "types": "index.d.ts",
   "scripts": {
     "build": "webpack --mode production",
     "codecov": "codecov",
