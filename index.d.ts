@@ -1,26 +1,26 @@
 declare module 'opencage-api-client' {
-  enum Option {
-    On = 1,
+  enum GeocodeOption {
     Off = 0,
+    On = 1,
   }
 
   interface GeocodeRequest {
     key?: string;
     q: string;
-    abbrv?: Option;
-    add_request?: Option;
+    abbrv?: GeocodeOption;
+    add_request?: GeocodeOption;
     bounds?: string;
     countrycode?: string;
     jsonp?: string;
     language?: string;
     limit?: number;
     min_confidence?: number;
-    no_annotations?: Option;
-    no_dedupe?: Option;
-    no_record?: Option;
-    pretty?: Option;
+    no_annotations?: GeocodeOption;
+    no_dedupe?: GeocodeOption;
+    no_record?: GeocodeOption;
+    pretty?: GeocodeOption;
     proximity?: string;
-    roadinfo?: Option;
+    roadinfo?: GeocodeOption;
   }
 
   export function geocode(input: GeocodeRequest): Promise<any>;
