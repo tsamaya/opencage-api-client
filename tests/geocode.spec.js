@@ -24,7 +24,7 @@ describe('geocode tests', () => {
           // no used, in case it raises a test error
           expect(false).toBeTruthy();
         })
-        .catch(error => {
+        .catch((error) => {
           // console.log(data);
           expect(error.response.status.code).toEqual(400);
         });
@@ -39,7 +39,7 @@ describe('geocode tests', () => {
           // no used, in case it raises a test error
           expect(false).toBeTruthy();
         })
-        .catch(error => {
+        .catch((error) => {
           // console.log(data);
           expect(error.response.status.code).toEqual(400);
         });
@@ -54,7 +54,7 @@ describe('geocode tests', () => {
           // no used, in case it raises a test error
           expect(false).toBeTruthy();
         })
-        .catch(error => {
+        .catch((error) => {
           // console.log(data);
           expect(error.response.status.code).toEqual(403);
         });
