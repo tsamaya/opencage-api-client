@@ -54,12 +54,18 @@ opencage
 
 The browser version is built over the node one, obviously without the dotenv feature.
 
-The library is available with `unkpg` _CDN_ : https://unpkg.com/opencage-api-client@0.5.0/dist/opencage-api.min.js
+The library is available with `unkpg` _CDN_ : https://unpkg.com/opencage-api-client
 
 1- include the library:
 
 ```html
-<script src="https://unpkg.com/opencage-api-client@0.3.0/dist/opencage-api.min.js"></script>
+<!-- latest version -->
+<script src="https://unpkg.com/opencage-api-client"></script>
+```
+
+```html
+<!-- specific version -->
+<script src="https://unpkg.com/opencage-api-client@0.8.0/dist/opencage-api.min.js"></script>
 ```
 
 2- use it
@@ -79,11 +85,11 @@ opencage
 
 ### geocode
 
-| Parameter | Type   | Optional? | Description                                                                                                |
-| --------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------- |
-| q         | String | mandatory | the query string to be geocoded; a placename or lat+long. This must be URL encoded.                        |
-| key       | String | optional  | the `key` can be omitted when using a `proxyURL` and when using node with a dedicated environment variable |
-| proxyURL  | String | optional  | The proxy URL parameter (useful to hide your API key)                                                      |
+| Parameter | Type   | Optional? | Description                                                                                               |
+| --------- | ------ | --------- | --------------------------------------------------------------------------------------------------------- |
+| q         | String | mandatory | the query string to be geocoded; a placename or lat+long. This must be URL encoded.                       |
+| key       | String | optional  | the `key` can be omitted when using a `proxyURL` or when using node with a dedicated environment variable |
+| proxyURL  | String | optional  | The proxy URL parameter (useful to hide your API key)                                                     |
 
 ## Build and test
 
