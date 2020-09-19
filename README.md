@@ -42,10 +42,10 @@ const opencage = require('opencage-api-client');
 
 opencage
   .geocode({ q: 'lyon' })
-  .then(data => {
+  .then((data) => {
     console.log(JSON.stringify(data));
   })
-  .catch(error => {
+  .catch((error) => {
     console.log('error', error.message);
   });
 ```
@@ -67,10 +67,10 @@ The library is available with `unkpg` _CDN_ : https://unpkg.com/opencage-api-cli
 ```javascript
 opencage
   .geocode({ q: 'lyon', key: 'YOUR-API-KEY' })
-  .then(data => {
+  .then((data) => {
     console.log(JSON.stringify(data));
   })
-  .catch(error => {
+  .catch((error) => {
     console.log('error', error.message);
   });
 ```
@@ -98,6 +98,7 @@ opencage
 
 | Version  | Date       | Description                                               |
 | -------- | ---------- | --------------------------------------------------------- |
+| `v0.8.0` | 19/09/2020 | TypeScript support                                        |
 | `v0.7.1` | 15/03/2020 | Updates documentation                                     |
 | `v0.7.0` | 15/03/2020 | Same JSON Error structure as the official API             |
 | `v0.6.0` | 14/03/2020 | bump dependencies                                         |
