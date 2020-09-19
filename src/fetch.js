@@ -1,5 +1,5 @@
 require('es6-promise').polyfill();
-require('fetch-everywhere');
+const crossFetch = require('cross-fetch');
 
 const checkStatus = (response) => {
   if (response.status >= 200 && response.status < 300) {
@@ -16,7 +16,7 @@ const checkStatus = (response) => {
 
 const parseJSON = (response) => response.json();
 
-const fetchUrl = (url) => global.fetch(url);
+const fetchUrl = (url) => crossFetch(url);
 
 const fetch = (url, resolve, reject) => {
   fetchUrl(url)
@@ -33,6 +33,7 @@ const fetch = (url, resolve, reject) => {
 };
 
 module.exports = fetch;
+// exports below for unit test purposes
 module.exports.fetchUrl = fetchUrl;
 module.exports.parseJSON = parseJSON;
 module.exports.checkStatus = checkStatus;
