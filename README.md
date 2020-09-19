@@ -15,7 +15,7 @@ Signup for a [free API Key](https://opencagedata.com/users/sign_up).
 
 ### node
 
-The library uses [dotenv](https://www.npmjs.com/package/dotenv) on node runtime to configure OpenCage Data API key. But using `key` as an inpt parameter is always a possiblity.
+The library uses [dotenv](https://www.npmjs.com/package/dotenv) on node runtime to configure OpenCage Data API key. But using `key` as an input parameter is always a possiblity.
 
 First install the library with `npm` or `yarn`:
 
@@ -79,11 +79,11 @@ opencage
 
 ### geocode
 
-| Parameter | Type   | Optional? | Description                                                                                                |
-| --------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------- |
-| q         | String | mandatory | the query string to be geocoded; a placename or lat+long. This must be URL encoded.                        |
-| key       | String | optional  | the `key` can be omitted when using a `proxyURL` and when using node with a dedicated environment variable |
-| proxyURL  | String | optional  | The proxy URL parameter (useful to hide your API key)                                                      |
+| Parameter | Type   | Optional? | Description                                                                                               |
+| --------- | ------ | --------- | --------------------------------------------------------------------------------------------------------- |
+| q         | String | mandatory | the query string to be geocoded: a placename, address or coordinates as lat,long                          |
+| key       | String | optional  | the `key` can be omitted when using a `proxyURL` or when using node with a dedicated environment variable |
+| proxyURL  | String | optional  | The proxy URL parameter (useful to hide your API key)                                                     |
 
 ## Build and test
 
@@ -98,6 +98,7 @@ opencage
 
 | Version  | Date       | Description                                               |
 | -------- | ---------- | --------------------------------------------------------- |
+| `v0.8.1` | 19/09/2020 | TypeScript support without enum                           |
 | `v0.8.0` | 19/09/2020 | TypeScript support                                        |
 | `v0.7.1` | 15/03/2020 | Updates documentation                                     |
 | `v0.7.0` | 15/03/2020 | Same JSON Error structure as the official API             |
