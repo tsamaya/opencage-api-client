@@ -1,10 +1,10 @@
 declare module 'opencage-api-client' {
-  enum GeocodeOption {
+  export enum GeocodeOption {
     Off = 0,
     On = 1,
   }
 
-  interface GeocodeRequest {
+  export interface GeocodeRequest {
     key?: string;
     q: string;
     abbrv?: GeocodeOption;
