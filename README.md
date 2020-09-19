@@ -90,7 +90,6 @@ opencage
 | q         | String | mandatory | the query string to be geocoded: a placename, address or coordinates as lat,long                          |
 | key       | String | optional  | the `key` can be omitted when using a `proxyURL` or when using node with a dedicated environment variable |
 | proxyURL  | String | optional  | The proxy URL parameter (useful to hide your API key)                                                     |
-| Parameter | Type   | Optional? | Description                                                                                               |
 
 ## Build and test
 
@@ -105,6 +104,7 @@ opencage
 
 | Version  | Date       | Description                                               |
 | -------- | ---------- | --------------------------------------------------------- |
+| `v0.8.1` | 19/09/2020 | TypeScript support without enum                           |
 | `v0.8.0` | 19/09/2020 | TypeScript support                                        |
 | `v0.7.1` | 15/03/2020 | Updates documentation                                     |
 | `v0.7.0` | 15/03/2020 | Same JSON Error structure as the official API             |
