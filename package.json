@@ -1,6 +1,6 @@
 {
   "name": "opencage-api-client",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "description": "An OpenCageData Geocoder API client library for node and browsers (UMD)",
   "main": "index.js",
   "browser": "dist/opencage-api.min.js",
@@ -30,23 +30,22 @@
   "devDependencies": {
     "codecov": "^3.7.2",
     "documentation": "^13.0.2",
-    "eslint": "^7.8.1",
+    "eslint": "^7.9.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-jest": "^24.0.1",
     "eslint-plugin-prettier": "^3.1.4",
-    "husky": "^4.2.5",
+    "husky": "^4.3.0",
     "jest": "^26.4.2",
-    "lint-staged": "^10.3.0",
-    "prettier": "^2.1.1",
-    "webpack": "^4.44.1",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "es6-promise": "^4.2.6",
-    "fetch-everywhere": "^1.0.5"
+    "cross-fetch": "^3.0.6",
+    "dotenv": "^8.2.0"
   },
   "repository": {
     "type": "git",
