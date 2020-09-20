@@ -104,6 +104,7 @@ opencage
 
 | Version  | Date       | Description                                               |
 | -------- | ---------- | --------------------------------------------------------- |
+| `v0.9.0` | 20/09/2020 | Move to cross-fetch                                       |
 | `v0.8.1` | 19/09/2020 | TypeScript support without enum                           |
 | `v0.8.0` | 19/09/2020 | TypeScript support                                        |
 | `v0.7.1` | 15/03/2020 | Updates documentation                                     |

@@ -1,4 +1,4 @@
-require('es6-promise').polyfill();
+// require('es6-promise').polyfill();
 const crossFetch = require('cross-fetch');
 
 const checkStatus = (response) => {
