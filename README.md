@@ -54,12 +54,18 @@ opencage
 
 The browser version is built over the node one, obviously without the dotenv feature.
 
-The library is available with `unkpg` _CDN_ : https://unpkg.com/opencage-api-client@0.5.0/dist/opencage-api.min.js
+The library is available with `unkpg` _CDN_ : https://unpkg.com/opencage-api-client
 
 1- include the library:
 
 ```html
-<script src="https://unpkg.com/opencage-api-client@0.3.0/dist/opencage-api.min.js"></script>
+<!-- latest version -->
+<script src="https://unpkg.com/opencage-api-client"></script>
+```
+
+```html
+<!-- specific version -->
+<script src="https://unpkg.com/opencage-api-client@0.8.0/dist/opencage-api.min.js"></script>
 ```
 
 2- use it
@@ -98,6 +104,7 @@ opencage
 
 | Version  | Date       | Description                                               |
 | -------- | ---------- | --------------------------------------------------------- |
+| `v0.9.0` | 20/09/2020 | Move to cross-fetch                                       |
 | `v0.8.1` | 19/09/2020 | TypeScript support without enum                           |
 | `v0.8.0` | 19/09/2020 | TypeScript support                                        |
 | `v0.7.1` | 15/03/2020 | Updates documentation                                     |

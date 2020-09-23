@@ -72,4 +72,5 @@ const geocode = (input) =>
   });
 
 module.exports = geocode;
+// exports below for unit test purposes
 module.exports.buildParams = buildParams;
