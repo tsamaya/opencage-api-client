@@ -134,6 +134,3 @@ Find a bug or want to request a new feature? Please let me know by submitting an
 Licensed under the MIT License
 
 A copy of the license is available in the repository's [LICENSE](LICENSE.md) file.
-
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client?ref=badge_large)
