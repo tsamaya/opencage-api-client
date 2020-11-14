@@ -8,6 +8,7 @@ This repository is an [OpenCage Data API](https://opencagedata.com/api) client f
 [![codecov](https://codecov.io/gh/tsamaya/opencage-api-client/branch/master/graph/badge.svg)](https://codecov.io/gh/tsamaya/opencage-api-client)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8f0f9ba00ade907ef576/maintainability)](https://codeclimate.com/github/tsamaya/opencage-api-client/maintainability)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client?ref=badge_shield)
 
 ## Getting started
 
@@ -81,6 +82,10 @@ opencage
   });
 ```
 
+3- others samples
+
+Found some examples in the [samples](./samples/) folder.
+
 ## API
 
 ### geocode
@@ -102,23 +107,7 @@ opencage
 
 ## Revision History
 
-| Version  | Date       | Description                                               |
-| -------- | ---------- | --------------------------------------------------------- |
-| `v0.9.0` | 20/09/2020 | Move to cross-fetch                                       |
-| `v0.8.1` | 19/09/2020 | TypeScript support without enum                           |
-| `v0.8.0` | 19/09/2020 | TypeScript support                                        |
-| `v0.7.1` | 15/03/2020 | Updates documentation                                     |
-| `v0.7.0` | 15/03/2020 | Same JSON Error structure as the official API             |
-| `v0.6.0` | 14/03/2020 | bump dependencies                                         |
-| `v0.5.1` | 09/12/2019 | upgrade dependencies                                      |
-| `v0.5.0` | 10/03/2019 | upgrade dependencies                                      |
-| `v0.4.0` | 08/12/2018 | upgrade dependencies and update test with proxy           |
-| `v0.3.0` | 28/08/2018 | adding readme documentation and upgrade dependencies      |
-| `v0.2.0` | 17/07/2018 | Allow a proxy URL to use instead of official API endpoint |
-| `v0.1.1` | 21/06/2018 | Open Cage website URL has changed                         |
-| `v0.1.0` | 04/03/2018 | first release                                             |
-
-**Nb** Using European Date Format :smile: Sorry 🇺🇸
+Check the [CHANGELOG](CHANGELOG.md) file.
 
 ## Contributing
 
