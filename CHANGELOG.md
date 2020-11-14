@@ -6,6 +6,19 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [0.10.0] - 2020-11-14
+
+### Added
+
+- Now using [webapck](https://webpack.js.org/) version 5
+- Starts using a Changelog file based on [Keep a Changelog](https://github.com/olivierlacan/keep-a-changelog)
+- Added [FOSSA](https://fossa.com) Licence compliance status
+
+### Changed
+
+- updated README
+- fix typos thanks to [0xflotus](https://github.com/0xflotus)
+
 ## [0.9.0] - 2020-09-20
 
 fetch uses `cross-fetch`
@@ -57,3 +70,19 @@ Open Cage website URL has changed
 ## [0.1.0] - 2018-03-04
 
 First release
+
+[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v0.10.0...HEAD
+[0.10.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.9.0...v0.10.0
+[0.9.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.8.1...v0.9.0
+[0.8.1]: https://github.com/tsamaya/opencage-api-client/compare/v0.8.0...v0.8.1
+[0.8.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.7.1...v0.8.0
+[0.7.1]: https://github.com/tsamaya/opencage-api-client/compare/v0.7.0...v0.7.1
+[0.7.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.6.0...v0.7.0
+[0.6.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.5.1...v0.6.0
+[0.5.1]: https://github.com/tsamaya/opencage-api-client/compare/v0.5.0...v0.5.1
+[0.5.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.4.0...v0.5.0
+[0.4.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.3.0...v0.4.0
+[0.3.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.2.0...v0.3.0
+[0.2.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.1.1...v0.2.0
+[0.1.1]: https://github.com/tsamaya/opencage-api-client/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/tsamaya/opencage-api-client/releases/tag/v0.1.0
