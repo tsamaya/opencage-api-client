@@ -1,4 +1,3 @@
-
 # Created by https://www.gitignore.io/api/node
 
 ### Node ###
@@ -61,7 +60,6 @@ typings/
 # dotenv environment variables file
 .env
 
-/temp
+temp/
 
-
-# End of https://www.gitignore.io/api/node
+.vscode/
