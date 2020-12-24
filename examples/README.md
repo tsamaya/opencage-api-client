@@ -25,3 +25,9 @@ _TODO link to GCloud Function and AWS lambda example_
 Following a github issue (question) here are some more examples of reverse geocoding operations.
 
 [more-reverse-geocoding.js](./more-reverse-geocoding.js)
+
+### Typescript
+
+_TBD_
+
+[typescript.ts](./typescript.ts)
