@@ -11,24 +11,17 @@ describe('API keys for testing', () => {
   };
 
   describe('Sunny test', () => {
-    test('generate a 200 - OK response', () => {
+    test('generate a 200 - OK response', async () => {
       expect.assertions(4);
       const input = {
         ...query,
         key: '6d0e711d72d74daeb2b0bfd2a5cdfdba',
       };
-      return opencage
-        .geocode(input)
-        .then((data) => {
-          expect(data).toBeTruthy();
-          expect(data.status).toBeTruthy();
-          expect(data.status.code).toBeTruthy();
-          expect(data.status.code).toEqual(200);
-        })
-        .catch(() => {
-          // no used, in case it raises a test error
-          expect(false).toBeTruthy();
-        });
+      const data = await opencage.geocode(input);
+      expect(data).toBeTruthy();
+      expect(data.status).toBeTruthy();
+      expect(data.status.code).toBeTruthy();
+      expect(data.status.code).toEqual(200);
     });
   });
   describe('rainy tests', () => {
