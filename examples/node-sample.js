@@ -1,5 +1,5 @@
 /* eslint-disable */
-const opencage = require('../');
+const opencage = require('..');
 
 opencage
   .geocode({ q: 'rue de la république lyon', limit: 3 })

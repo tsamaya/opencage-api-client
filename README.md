@@ -82,9 +82,9 @@ opencage
   });
 ```
 
-3- others samples
+3- others Examples
 
-Found some examples in the [samples](./samples/) folder.
+Found some examples in the [examples](./examples/) folder.
 
 ## API
 
