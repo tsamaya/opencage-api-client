@@ -2,15 +2,15 @@ const opencage = require('..');
 
 describe('geocode tests', () => {
   describe('rainy tests', () => {
-    const savedKey = process.env.OCD_API_KEY;
+    const savedKey = process.env.OPENCAGE_API_KEY;
     beforeAll(() => {
       if (typeof savedKey !== 'undefined') {
-        delete process.env.OCD_API_KEY;
+        delete process.env.OPENCAGE_API_KEY;
       }
     });
     afterAll(() => {
       if (typeof savedKey !== 'undefined') {
-        process.env.OCD_API_KEY = savedKey;
+        process.env.OPENCAGE_API_KEY = savedKey;
       }
     });
 

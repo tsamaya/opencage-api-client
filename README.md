@@ -33,7 +33,7 @@ $ yarn add opencage-api-client
 Create a `.env` file with:
 
 ```
-OCD_API_KEY=YOUR-OPENCAGE_DATA_API_KEY
+OPENCAGE_API_KEY=YOUR-OPENCAGE_DATA_API_KEY
 ```
 
 Here is an example:

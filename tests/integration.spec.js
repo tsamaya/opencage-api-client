@@ -16,7 +16,7 @@ describe('integration tests', () => {
     // In JavaScript, there are six falsy values:
     // false, 0, '', null, undefined, and NaN.
     // Everything else is truthy.
-    expect(process.env.OCD_API_KEY).toBeTruthy();
+    expect(process.env.OPENCAGE_API_KEY).toBeTruthy();
   });
 
   test('an invalid API key', () => {
@@ -98,15 +98,15 @@ describe('integration tests', () => {
   });
   describe('proxy tests', () => {
     const proxyURL = process.env.PROXY_URL;
-    const savedKey = process.env.OCD_API_KEY;
+    const savedKey = process.env.OPENCAGE_API_KEY;
     beforeAll(() => {
       if (typeof savedKey !== 'undefined') {
-        delete process.env.OCD_API_KEY;
+        delete process.env.OPENCAGE_API_KEY;
       }
     });
     afterAll(() => {
       if (typeof savedKey !== 'undefined') {
-        process.env.OCD_API_KEY = savedKey;
+        process.env.OPENCAGE_API_KEY = savedKey;
       }
     });
     if (proxyURL) {

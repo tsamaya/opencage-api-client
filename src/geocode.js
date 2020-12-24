@@ -2,7 +2,7 @@ const helpers = require('./helpers');
 const buildQueryString = require('./qs');
 const fetch = require('./fetch');
 
-const OPEN_CAGE_DATA_URL = 'https://api.opencagedata.com/geocode/v1/json';
+const OPENCAGEDATA_JSON_URL = 'https://api.opencagedata.com/geocode/v1/json';
 
 /**
  * @private
@@ -42,10 +42,10 @@ const geocode = (input) =>
       return;
     }
     const params = buildParams(input);
-    let endpoint = OPEN_CAGE_DATA_URL;
+    let endpoint = OPENCAGEDATA_JSON_URL;
     if (helpers.isUndefinedOrEmpty(params.proxyURL)) {
       if (helpers.isUndefinedOrEmpty(params.key)) {
-        params.key = process.env.OCD_API_KEY;
+        params.key = process.env.OPENCAGE_API_KEY || process.env.OCD_API_KEY;
       }
       if (helpers.isUndefinedOrEmpty(params.key)) {
         const error = new Error('missing API key');
