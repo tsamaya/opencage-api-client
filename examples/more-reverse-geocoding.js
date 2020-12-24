@@ -1,5 +1,5 @@
 /* eslint-disable */
-const opencage = require('../');
+const opencage = require('..');
 
 opencage
   .geocode({ q: '45.188529,5.724524', no_annotations: 1 })

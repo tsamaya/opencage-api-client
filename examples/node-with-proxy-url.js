@@ -1,5 +1,5 @@
 /* eslint-disable */
-const opencage = require('../');
+const opencage = require('..');
 // const proxyURL =
 //   'https://us-central1-ocd-315303.cloudfunctions.net/geocode';
 const proxyURL =
