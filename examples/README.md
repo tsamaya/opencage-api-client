@@ -29,6 +29,8 @@ Following a github issue (question) here are some more examples of reverse geoco
 
 ### Typescript
 
-_TBD_
+This example shos how to use the library with TypeScript
 
 [typescript.ts](./typescript.ts)
+
+The complete example can be found here : https://github.com/tsamaya/opencage-api-client-typescript-test
