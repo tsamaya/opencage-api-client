@@ -6,6 +6,13 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+### Changed
+
+- Uses environment variable OPENCAGE_API_KEY (backward compatible with OCD_API_KEY)
+- returns 401 and not 403 when the API Key is missing
+- maps error messages on Opencage Data API messages
+- adds TypeScript Example
+
 ## [0.10.0] - 2020-11-14
 
 ### Added
