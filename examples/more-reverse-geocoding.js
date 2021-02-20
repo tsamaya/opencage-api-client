@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable no-console */
 const opencage = require('..');
 
 opencage

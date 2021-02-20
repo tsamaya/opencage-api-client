@@ -18,7 +18,8 @@ This example shows how to use the library with NodeJS using a proxy URL to hide 
 
 [node-with-proxy-url.js](./node-with-proxy-url.js)
 
-_TODO link to GCloud Function and AWS lambda example_
+- AWS Lambda proxy example: https://github.com/tsamaya/opencage-lambda-proxy
+- Google Cloud Function example: https://github.com/tsamaya/gcloud-functions-opencage-geocoder
 
 ### More reverse geocoding examples
 
