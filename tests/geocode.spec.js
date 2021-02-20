@@ -56,7 +56,7 @@ describe('geocode tests', () => {
         })
         .catch((error) => {
           // console.log(data);
-          expect(error.response.status.code).toEqual(403);
+          expect(error.response.status.code).toEqual(401);
         });
     });
   });

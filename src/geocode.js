@@ -20,22 +20,22 @@ const buildParams = (input) => input;
  *
  *
  * @param  {Object} input the input query parameter as JSON object,
- *  the attribute `q` is required,
- *  the `key` can be omitted when using a `proxyURL`, and when using node with
- * a dedicated environment variable.
- * Others optional paameters can be found at Opencage Data API
- * [documentation](https://opencagedata.com/api#forward-opt)
+ *  the attribute `q` is required, the `key` can be omitted when using
+ *  a `proxyURL`, and when using node with a dedicated environment variable
+ *  (OPENCAGE_API_KEY).
+ *  Others optional paameters can be found at Opencage Data API
+ *  [documentation](https://opencagedata.com/api#forward-opt)
  *
  * @return {Promise}  a promise resolved by the json format API payload
  */
 const geocode = (input) =>
   new Promise((resolve, reject) => {
     if (helpers.isUndefinedOrNull(input)) {
-      const error = new Error('missing input parameters');
+      const error = new Error('missing or bad query');
       error.response = {
         status: {
           code: 400,
-          message: 'missing input parameters',
+          message: 'missing or bad query',
         },
       };
       reject(error);
@@ -49,14 +49,11 @@ const geocode = (input) =>
       }
       if (helpers.isUndefinedOrEmpty(params.key)) {
         const error = new Error('missing API key');
-        const status = {
-          code: 403,
-          message: 'missing API key',
-        };
-        error.status = status;
-        // backward compatibility
         error.response = {
-          status,
+          status: {
+            code: 401,
+            message: 'missing API key',
+          },
         };
         reject(error);
         return;
