@@ -20,7 +20,7 @@ describe('integration tests', () => {
   });
 
   test('an invalid API key', () => {
-    expect.assertions(1);
+    expect.assertions(3);
     const input = {
       q: 'Brandenburg Gate',
       key: 'not.a.key',
@@ -33,7 +33,9 @@ describe('integration tests', () => {
       })
       .catch((data) => {
         // console.log(data.response);
-        expect(data.response.status).toEqual(401);
+        expect(data.status).toBeTruthy();
+        expect(data.status.code).toBeTruthy();
+        expect(data.status.code).toEqual(401);
       });
   });
   test('geocode Brandburg Gate', () => {

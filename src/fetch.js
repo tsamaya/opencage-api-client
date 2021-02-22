@@ -5,12 +5,13 @@ const checkStatus = (response) => {
   if (response.status >= 200 && response.status < 300) {
     return response;
   }
+  // console.log('Will throw an error');
   const error = new Error(response.statusText);
   error.status = {
     code: response.status,
     message: response.statusText,
   };
-  error.response = response;
+  // error.response = response;
   throw error;
 };
 
@@ -27,7 +28,7 @@ const fetch = (url, resolve, reject) => {
       resolve(data);
     })
     .catch((error) => {
-      // console.log('request failed', error);
+      // console.log('request failed', { error });
       reject(error);
     });
 };
