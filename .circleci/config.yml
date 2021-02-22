@@ -35,7 +35,6 @@ jobs:
       - run:
           name: Run tests
           command: |
-            sudo docker-php-ext-enable xdebug
             ./cc-test-reporter before-build
             npm run coverage
             ./cc-test-reporter after-build --coverage-input-type lcov --exit-code $?
