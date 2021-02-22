@@ -35,7 +35,7 @@ describe('integration tests', () => {
         expect(data.status.code).toEqual(401);
       });
   });
-  test('geocode Brandburg Gate', () => {
+  test('geocode Brandenburg Gate', () => {
     expect.assertions(1);
     const input = {
       q: 'Brandenburg Gate',
@@ -50,7 +50,7 @@ describe('integration tests', () => {
         expect(false).toBeTruthy();
       });
   });
-  test('reverse geocode Brandburg Gate with space', () => {
+  test('reverse geocode Brandenburg Gate with space', () => {
     expect.assertions(1);
     const input = {
       q: '52.5162767 13.3777025',
@@ -65,7 +65,7 @@ describe('integration tests', () => {
         expect(false).toBeTruthy();
       });
   });
-  test('reverse geocode Brandburg Gate with comma', () => {
+  test('reverse geocode Brandenburg Gate with comma', () => {
     expect.assertions(1);
     const input = {
       q: '52.5162767,13.3777025',
@@ -80,7 +80,7 @@ describe('integration tests', () => {
         expect(false).toBeTruthy();
       });
   });
-  test('reverse geocode Brandburg Gate with space and comma', () => {
+  test('reverse geocode Brandenburg Gate with space and comma', () => {
     expect.assertions(1);
     const input = {
       q: '52.5162767, 13.3777025',
@@ -115,7 +115,7 @@ describe('integration tests', () => {
         // Everything else is truthy.
         expect(proxyURL).toBeTruthy();
       });
-      test('geocode Brandburg Gate via proxy', () => {
+      test('geocode Brandenburg Gate via proxy', () => {
         expect.assertions(1);
         const input = {
           q: 'Brandenburg Gate',
