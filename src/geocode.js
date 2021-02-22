@@ -14,7 +14,7 @@ const MISSING_API_KEY = 'missing API key';
  * @param {*} input
  */
 const buildQuery = (input) => {
-  const query = input;
+  const query = { ...input };
 
   let endpoint = OPENCAGEDATA_JSON_URL;
   let missingKey = false;
