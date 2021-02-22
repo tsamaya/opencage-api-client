@@ -1,24 +1,24 @@
 swagger: '2.0'
-schemes: 
+schemes:
   - https
 basePath: /geocode
 info:
-  contact: 
-    name: "OpenCage Data Ltd"
-    url: https://geocoder.opencagedata.com/contact
-  version: "1"
-  termsOfService: https://geocoder.opencagedata.com/terms
-  title: "OpenCage Geocoder"
-  description: "Worldwide forward and reverse geocoding"
+  contact:
+    name: 'OpenCage GmbH'
+    url: https://opencagedata.com/contact
+  version: '1'
+  termsOfService: https://opencagedata.com/terms
+  title: 'OpenCage Geocoder'
+  description: 'Worldwide forward and reverse geocoding'
   x-origin:
     format: swagger
-    url: 'https://geocoder.opencagedata.com/swagger.yaml'
+    url: 'https://opencagedata.com/swagger.yaml'
     version: '2.0'
   x-logo:
-    url: 'http://www.opencagedata.com/img/opencage_logo_200_200.png'
+    url: 'https://opencagedata.com/opencagelogo-green.png'
 externalDocs:
-  description: "OpenCage Geocoder Website"
-  url: https://geocoder.opencagedata.com/api
+  description: 'OpenCage Geocoder Website'
+  url: https://opencagedata.com/api
 host: api.opencagedata.com
 consumes:
   - text/plain
@@ -29,12 +29,12 @@ produces:
 paths:
   /v{version}/{format}:
     get:
-      description: "geocode a query"
+      description: 'geocode a query'
       parameters:
         - name: version
           in: path
           required: true
-          description: "API version."
+          description: 'API version.'
           type: integer
         - name: format
           in: path
@@ -43,105 +43,133 @@ paths:
           type: string
         - name: q
           in: query
-          description: "string or lat,lng to be geocoded."
+          description: 'string or lat,lng to be geocoded.'
           required: true
           type: string
         - name: key
           in: query
-          description: "an application key."
+          description: 'an application key.'
           required: true
           type: string
         - name: abbrv
           in: query
-          description: "when true we attempt to abbreviate the formatted field in the response."
+          description: 'when true we attempt to abbreviate the formatted field in the response.'
           type: boolean
         - name: add_request
           in: query
-          description: "if true the request is included in the response." 
+          description: 'if true the request is included in the response.'
           type: boolean
         - name: bounds
           in: query
-          description: "four coordinate points forming the south-west and north-east corners of a bounding box (min long, min lat, max long, max lat)." 
+          description: 'four coordinate points forming the south-west and north-east corners of a bounding box (min long, min lat, max long, max lat).'
           type: string
         - name: countrycode
           in: query
-          description: "two letter code ISO 3166-1 Alpha 2 code to limit results to that country." 
+          description: 'two letter code ISO 3166-1 Alpha 2 code to limit results to that country.'
           type: string
         - name: jsonp
           in: query
-          description: "wraps the returned JSON with a function name." 
+          description: 'wraps the returned JSON with a function name.'
           type: string
         - name: language
           in: query
-          description: "an IETF format language code (ex: 'es' or 'pt-BR')." 
+          description: "an IETF format language code (ex: 'es' or 'pt-BR')."
           type: string
         - name: limit
           in: query
-          description: "maximum number of results to return. Default is 10. Maximum is 100." 
+          description: 'maximum number of results to return. Default is 10. Maximum is 100.'
           type: integer
         - name: min_confidence
           in: query
-          description: "integer from 1-10. Only results with at least this confidence are returned."
+          description: 'integer from 1-10. Only results with at least this confidence are returned.'
           type: integer
         - name: no_annotations
           in: query
-          description: "when true annotations are not added to results."
+          description: 'when true annotations are not added to results.'
           type: boolean
         - name: no_dedupe
           in: query
-          description: "when true results are not deduplicated."
+          description: 'when true results are not deduplicated.'
           type: boolean
         - name: no_record
           in: query
-          description: "when true query content is not logged."
+          description: 'when true query content is not logged.'
           type: boolean
         - name: pretty
           in: query
-          description: "when true results are pretty printed. Useful for debugging."
+          description: 'when true results are pretty printed. Useful for debugging.'
           type: boolean
-          
+        - name: proximity
+          in: query
+          description: 'lat,lng to bias results.'
+          type: string
+        - name: roadinfo
+          in: query
+          description: 'match nearest road, include roadinfo annotation'
+          type: boolean
+
       responses:
         200:
-          description: "Successful response"
+          description: 'Successful response'
           schema:
-            $ref: "#/definitions/Response"
+            $ref: '#/definitions/Response'
         400:
-          description: "Invalid request"
+          description: 'Invalid request'
           schema:
-            $ref: "#/definitions/Response"
-        402: 
-          description: "Valid request but quota exceeded"
+            $ref: '#/definitions/Response'
+        401:
+          description: 'Unable to authenticate'
           schema:
-            $ref: "#/definitions/Response"
-        403: 
-          description: "Invalid or missing API key"
+            $ref: '#/definitions/Response'
+        402:
+          description: 'Valid request but quota exceeded'
           schema:
-            $ref: "#/definitions/Response"
+            $ref: '#/definitions/Response'
+        403:
+          description: 'Forbidden'
+          schema:
+            $ref: '#/definitions/Response'
         404:
-          description: "Invalid API endpoint"
+          description: 'Invalid API endpoint'
           schema:
-            $ref: "#/definitions/Response"
-        410: 
-          description: "Request too long"
+            $ref: '#/definitions/Response'
+        405:
+          description: 'Method not allowed'
           schema:
-            $ref: "#/definitions/Response"
+            $ref: '#/definitions/Response'
+        408:
+          description: 'Timeout; you can try again'
+          schema:
+            $ref: '#/definitions/Response'
+        410:
+          description: 'Request too long'
+          schema:
+            $ref: '#/definitions/Response'
+        426:
+          description: 'Upgrade required'
+          schema:
+            $ref: '#/definitions/Response'
+        429:
+          description: 'Too many requests'
+          schema:
+            $ref: '#/definitions/Response'
         503:
-          description: "Internal server error"
+          description: 'Internal server error'
           schema:
-            $ref: "#/definitions/Response"
+            $ref: '#/definitions/Response'
 definitions:
   Response:
     properties:
-      documentation: 
+      documentation:
         type: string
       rate:
         type: object
         properties:
-          limit: 
+          limit:
             type: integer
           remaining:
             type: integer
-          reset: 
+          reset:
             type: integer
       licenses:
         type: array
@@ -152,31 +180,6 @@ definitions:
               type: string
             url:
               type: string
-      status:
-        type: object
-        properties:
-          message: 
-            type: string
-          code: 
-            type: integer
-      total_results: 
-        type: integer
-      timestamp: 
-        type: object
-        properties:
-          created_http: 
-            type: string
-          created_unix: 
-            type: integer
-      stay_informed: 
-        type: object
-        properties:
-          blog:
-            type: string
-          twitter:
-            type: string
-      thanks: 
-        type: string
       results:
         type: array
         items:
@@ -188,9 +191,9 @@ definitions:
               type: object
               properties:
                 northeast:
-                  $ref: "#/definitions/LatLng"
+                  $ref: '#/definitions/LatLng'
                 southwest:
-                  $ref: "#/definitions/LatLng"
+                  $ref: '#/definitions/LatLng'
             components:
               type: object
             confidence:
@@ -198,14 +201,38 @@ definitions:
             formatted:
               type: string
             geometry:
-              $ref: "#/definitions/LatLng"
+              $ref: '#/definitions/LatLng'
+      status:
+        type: object
+        properties:
+          message:
+            type: string
+          code:
+            type: integer
+      stay_informed:
+        type: object
+        properties:
+          blog:
+            type: string
+          twitter:
+            type: string
+      thanks:
+        type: string
+      timestamp:
+        type: object
+        properties:
+          created_http:
+            type: string
+          created_unix:
+            type: integer
+      total_results:
+        type: integer
   LatLng:
     type: object
     properties:
-      lat: 
+      lat:
         type: number
         format: float
-      lng: 
+      lng:
         type: number
         format: float
-        

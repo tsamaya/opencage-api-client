@@ -9,18 +9,15 @@ describe('integration tests', () => {
     return;
   }
 
-  // jasmine.DEFAULT_TIMEOUT_INTERVAL = 150000; // 15 seconds timeout
-  jest.setTimeout(15000);
-
   test('if environment variable is set', () => {
     // In JavaScript, there are six falsy values:
     // false, 0, '', null, undefined, and NaN.
     // Everything else is truthy.
-    expect(process.env.OCD_API_KEY).toBeTruthy();
+    expect(process.env.OPENCAGE_API_KEY).toBeTruthy();
   });
 
   test('an invalid API key', () => {
-    expect.assertions(1);
+    expect.assertions(3);
     const input = {
       q: 'Brandenburg Gate',
       key: 'not.a.key',
@@ -33,10 +30,12 @@ describe('integration tests', () => {
       })
       .catch((data) => {
         // console.log(data.response);
-        expect(data.response.status).toEqual(401);
+        expect(data.status).toBeTruthy();
+        expect(data.status.code).toBeTruthy();
+        expect(data.status.code).toEqual(401);
       });
   });
-  test('geocode Brandburg Gate', () => {
+  test('geocode Brandenburg Gate', () => {
     expect.assertions(1);
     const input = {
       q: 'Brandenburg Gate',
@@ -51,7 +50,7 @@ describe('integration tests', () => {
         expect(false).toBeTruthy();
       });
   });
-  test('reverse geocode Brandburg Gate with space', () => {
+  test('reverse geocode Brandenburg Gate with space', () => {
     expect.assertions(1);
     const input = {
       q: '52.5162767 13.3777025',
@@ -66,7 +65,7 @@ describe('integration tests', () => {
         expect(false).toBeTruthy();
       });
   });
-  test('reverse geocode Brandburg Gate with comma', () => {
+  test('reverse geocode Brandenburg Gate with comma', () => {
     expect.assertions(1);
     const input = {
       q: '52.5162767,13.3777025',
@@ -81,7 +80,7 @@ describe('integration tests', () => {
         expect(false).toBeTruthy();
       });
   });
-  test('reverse geocode Brandburg Gate with space and comma', () => {
+  test('reverse geocode Brandenburg Gate with space and comma', () => {
     expect.assertions(1);
     const input = {
       q: '52.5162767, 13.3777025',
@@ -98,15 +97,15 @@ describe('integration tests', () => {
   });
   describe('proxy tests', () => {
     const proxyURL = process.env.PROXY_URL;
-    const savedKey = process.env.OCD_API_KEY;
+    const savedKey = process.env.OPENCAGE_API_KEY;
     beforeAll(() => {
       if (typeof savedKey !== 'undefined') {
-        delete process.env.OCD_API_KEY;
+        delete process.env.OPENCAGE_API_KEY;
       }
     });
     afterAll(() => {
       if (typeof savedKey !== 'undefined') {
-        process.env.OCD_API_KEY = savedKey;
+        process.env.OPENCAGE_API_KEY = savedKey;
       }
     });
     if (proxyURL) {
@@ -116,7 +115,7 @@ describe('integration tests', () => {
         // Everything else is truthy.
         expect(proxyURL).toBeTruthy();
       });
-      test('geocode Brandburg Gate via proxy', () => {
+      test('geocode Brandenburg Gate via proxy', () => {
         expect.assertions(1);
         const input = {
           q: 'Brandenburg Gate',
