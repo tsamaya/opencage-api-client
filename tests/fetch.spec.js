@@ -1,8 +1,6 @@
 const fetch = require('../src/fetch');
 
 describe('fetch', () => {
-  jest.setTimeout(15000);
-
   test('Library exists', () => {
     expect(fetch).toBeTruthy();
   });

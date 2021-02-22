@@ -1,9 +1,6 @@
 const opencage = require('..');
 
 describe('API keys for testing', () => {
-  // jasmine.DEFAULT_TIMEOUT_INTERVAL = 150000; // 15 seconds timeout
-  jest.setTimeout(15000);
-
   const query = {
     q: '51.952659,7.632473',
     pretty: 1,
