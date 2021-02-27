@@ -6,12 +6,15 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [1.0.0] - 2021-02-27
+
 ### Changed
 
 - Uses environment variable OPENCAGE_API_KEY (backward compatible with OCD_API_KEY)
-- returns 401 and not 403 when the API Key is missing
-- maps error messages on Opencage Data API messages
-- adds TypeScript Example
+- Returns 401 and not 403 when the API Key is missing
+- Maps error messages on Opencage Data API messages
+- Information and example on error handling
+- Adds a TypeScript Example
 
 ## [0.10.0] - 2020-11-14
 
@@ -78,7 +81,8 @@ Open Cage website URL has changed
 
 First release
 
-[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v0.10.0...HEAD
+[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.10.0...v1.0.0
 [0.10.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.9.0...v0.10.0
 [0.9.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.8.1...v0.9.0
 [0.8.1]: https://github.com/tsamaya/opencage-api-client/compare/v0.8.0...v0.8.1
