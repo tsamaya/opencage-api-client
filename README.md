@@ -3,11 +3,11 @@
 This repository is an [OpenCage Data API](https://opencagedata.com/api) client for JavaScript and node.
 
 [![CircleCI (all branches)](https://img.shields.io/circleci/project/github/tsamaya/opencage-api-client.svg)](https://circleci.com/gh/tsamaya/opencage-api-client)
-[![security status](https://www.meterian.io/badge/gh/tsamaya/opencage-api-client/security)](https://www.meterian.io/report/gh/tsamaya/opencage-api-client)
-[![stability status](https://www.meterian.io/badge/gh/tsamaya/opencage-api-client/stability)](https://www.meterian.io/report/gh/tsamaya/opencage-api-client)
+![npm](https://img.shields.io/npm/dw/opencage-api-client)
 [![codecov](https://codecov.io/gh/tsamaya/opencage-api-client/branch/master/graph/badge.svg)](https://codecov.io/gh/tsamaya/opencage-api-client)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8f0f9ba00ade907ef576/maintainability)](https://codeclimate.com/github/tsamaya/opencage-api-client/maintainability)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![stability status](https://www.meterian.io/badge/gh/tsamaya/opencage-api-client/stability)](https://www.meterian.io/report/gh/tsamaya/opencage-api-client)
+[![security status](https://www.meterian.io/badge/gh/tsamaya/opencage-api-client/security)](https://www.meterian.io/report/gh/tsamaya/opencage-api-client)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client?ref=badge_shield)
 
 ## Getting started
@@ -33,7 +33,7 @@ $ yarn add opencage-api-client
 Create a `.env` file with:
 
 ```
-OCD_API_KEY=YOUR-OPENCAGE_DATA_API_KEY
+OPENCAGE_API_KEY=YOUR-OPENCAGE_DATA_API_KEY
 ```
 
 Here is an example:
@@ -66,7 +66,7 @@ The library is available with `unkpg` _CDN_ : https://unpkg.com/opencage-api-cli
 
 ```html
 <!-- specific version -->
-<script src="https://unpkg.com/opencage-api-client@0.8.0/dist/opencage-api.min.js"></script>
+<script src="https://unpkg.com/opencage-api-client@0.10.0/dist/opencage-api.min.js"></script>
 ```
 
 2- use it
@@ -78,13 +78,13 @@ opencage
     console.log(JSON.stringify(data));
   })
   .catch((error) => {
-    console.log('error', error.message);
+    console.log('Error caught:', error.message);
   });
 ```
 
-3- others samples
+3- others Examples
 
-Found some examples in the [samples](./samples/) folder.
+Found some examples in the [examples](./examples/) folder.
 
 ## API
 
@@ -95,6 +95,41 @@ Found some examples in the [samples](./samples/) folder.
 | q         | String | mandatory | the query string to be geocoded: a placename, address or coordinates as lat,long                          |
 | key       | String | optional  | the `key` can be omitted when using a `proxyURL` or when using node with a dedicated environment variable |
 | proxyURL  | String | optional  | The proxy URL parameter (useful to hide your API key)                                                     |
+
+### Error handling
+
+API can return errors like invalid key, to many requests, daily quota exceeded, etc. Thoses errors are thrown as Javascript [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) by the `geocode` function. The error object contains the same status object as the [OpenCage API](https://opencagedata.com/api#response).
+
+Assuming the catch statment uses `error` as variable name:
+
+```js
+console.log('Error caught:', error.message);
+```
+
+will output for a 429:
+
+```bash
+Error caught: Too Many Requests
+```
+
+and
+
+```js
+console.log(JSON.stringify(error, null, 2));
+```
+
+will output for a 429:
+
+```json
+{
+  "status": {
+    "code": 429,
+    "message": "Too Many Requests"
+  }
+}
+```
+
+Check the examples using the Test API key from Opencage [error handling examples](./examples/apitestkeys.js)
 
 ## Build and test
 

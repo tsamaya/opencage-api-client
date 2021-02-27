@@ -29,6 +29,26 @@
               
                 
                 <li><a
+                  href='#builderror'
+                  class="">
+                  buildError
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#buildquery'
+                  class="">
+                  buildQuery
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#geocode'
                   class="">
                   geocode
@@ -45,6 +65,140 @@
         </div>
       </div>
       <div id='split-right' class='relative overflow-auto height-viewport-100'>
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='builderror'>
+      buildError
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Returns an {Error} object with response and status</p>
+
+    <div class='pre p1 fill-light mt0'>buildError</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>code</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>message</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='buildquery'>
+      buildQuery
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Builds the query params including key and proxy URL</p>
+
+    <div class='pre p1 fill-light mt0'>buildQuery</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>input</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
         
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -84,13 +238,13 @@
 	    the input query parameter as JSON object,
 the attribute 
 <code>q</code>
- is required,
-the 
+ is required, the 
 <code>key</code>
- can be omitted when using a 
+ can be omitted when using
+a 
 <code>proxyURL</code>
-, and when using node with
-a dedicated environment variable.
+, and when using node with a dedicated environment variable
+(OPENCAGE_API_KEY).
 Others optional paameters can be found at Opencage Data API
 
 <a href="https://opencagedata.com/api#forward-opt">documentation</a>
