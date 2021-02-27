@@ -8,7 +8,7 @@ opencage
     console.log(JSON.stringify(data));
   })
   .catch((error) => {
-    console.log('error', error.message);
+    console.log('Error caught:', error.message);
   });
 
 opencage
@@ -18,7 +18,7 @@ opencage
     console.log(JSON.stringify(data));
   })
   .catch((error) => {
-    console.log('error', error.message);
+    console.log('Error caught:', error.message);
   });
 
 opencage
@@ -28,7 +28,7 @@ opencage
     console.log(JSON.stringify(data));
   })
   .catch((error) => {
-    console.log('error', error.message);
+    console.log('Error caught:', error.message);
   });
 
 opencage
@@ -43,5 +43,5 @@ opencage
     console.log(JSON.stringify(data));
   })
   .catch((error) => {
-    console.log('error', error.message);
+    console.log('Error caught:', error.message);
   });

@@ -78,7 +78,7 @@ opencage
     console.log(JSON.stringify(data));
   })
   .catch((error) => {
-    console.log('error', error.message);
+    console.log('Error caught:', error.message);
   });
 ```
 
@@ -95,6 +95,41 @@ Found some examples in the [examples](./examples/) folder.
 | q         | String | mandatory | the query string to be geocoded: a placename, address or coordinates as lat,long                          |
 | key       | String | optional  | the `key` can be omitted when using a `proxyURL` or when using node with a dedicated environment variable |
 | proxyURL  | String | optional  | The proxy URL parameter (useful to hide your API key)                                                     |
+
+### Error handling
+
+API can return errors like invalid key, to many requests, daily quota exceeded, etc. Thoses errors are thrown as Javascript [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) by the `geocode` function. The error object contains the same status object as the [OpenCage API](https://opencagedata.com/api#response).
+
+Assuming the catch statment uses `error` as variable name:
+
+```js
+console.log('Error caught:', error.message);
+```
+
+will output for a 429:
+
+```bash
+Error caught: Too Many Requests
+```
+
+and
+
+```js
+console.log(JSON.stringify(error, null, 2));
+```
+
+will output for a 429:
+
+```json
+{
+  "status": {
+    "code": 429,
+    "message": "Too Many Requests"
+  }
+}
+```
+
+Check the examples using the Test API key from Opencage [error handling examples](./examples/apitestkeys.js)
 
 ## Build and test
 
