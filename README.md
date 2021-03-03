@@ -10,7 +10,7 @@ This repository is an [OpenCage Data API](https://opencagedata.com/api) client f
 [![security status](https://www.meterian.io/badge/gh/tsamaya/opencage-api-client/security)](https://www.meterian.io/report/gh/tsamaya/opencage-api-client)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client?ref=badge_shield)
 
-## Getting started
+## 🔧 Getting started
 
 Signup for a [free API Key](https://opencagedata.com/users/sign_up).
 
@@ -86,7 +86,7 @@ opencage
 
 Found some examples in the [examples](./examples/) folder.
 
-## API
+## ✨ API
 
 ### geocode
 
@@ -131,7 +131,7 @@ will output for a 429:
 
 Check the examples using the Test API key from Opencage [error handling examples](./examples/apitestkeys.js)
 
-## Build and test
+## 🔨 Build and test
 
 1.  Fork or clone this repository
 1.  `$ cd` into the `repository` folder
@@ -140,19 +140,19 @@ Check the examples using the Test API key from Opencage [error handling examples
 1.  coverage `$ npm run coverage`
 1.  Build : `$ npm run build`
 
-## Revision History
+## 🛣 Revision History
 
 Check the [CHANGELOG](CHANGELOG.md) file.
 
-## Contributing
+## 🥂 Contributing
 
 Anyone and everyone is welcome to contribute.
 
-## Issues
+## 🐞 Issues
 
 Find a bug or want to request a new feature? Please let me know by submitting an issue.
 
-## Licensing
+## 🗝 Licensing
 
 Licensed under the MIT License
 
