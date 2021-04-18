@@ -1,28 +1,17 @@
 version: 2.1
 
+orbs:
+  node: circleci/node@4.1
+
 jobs:
   build:
     docker:
-      - image: cimg/node:15.9.0
-
-    working_directory: ~/repo
+      - image: cimg/node:15.14.0
 
     steps:
       - checkout
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
-      - run: npm install
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+      - node/install-packages
 
       - run:
           name: Setup Code Climate test-reporter
