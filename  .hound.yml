@@ -1,2 +1,2 @@
 eslint:
-  enabled: true
+  version: 7.7.0
