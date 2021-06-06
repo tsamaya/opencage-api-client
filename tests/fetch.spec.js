@@ -1,3 +1,5 @@
+/* eslint-disable jest/no-conditional-expect */
+
 const fetch = require('../src/fetch');
 
 describe('fetch', () => {
