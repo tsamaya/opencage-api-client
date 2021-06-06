@@ -1,3 +1,5 @@
+/* eslint-disable jest/no-try-expect */
+/* eslint-disable jest/no-conditional-expect */
 const opencage = require('..');
 
 describe('integration tests', () => {
@@ -16,84 +18,68 @@ describe('integration tests', () => {
     expect(process.env.OPENCAGE_API_KEY).toBeTruthy();
   });
 
-  test('an invalid API key', () => {
-    expect.assertions(3);
+  test('an invalid API key', async () => {
+    // expect.assertions(3);
     const input = {
       q: 'Brandenburg Gate',
       key: 'not.a.key',
     };
-    return opencage
-      .geocode(input)
-      .then(() => {
-        // no used, in case it raises a test error
-        expect(false).toBeTruthy();
-      })
-      .catch((data) => {
-        // console.log(data.response);
-        expect(data.status).toBeTruthy();
-        expect(data.status.code).toBeTruthy();
-        expect(data.status.code).toEqual(401);
-      });
+    try {
+      await opencage.geocode(input);
+    } catch (error) {
+      // console.log(error);
+      expect(error.status).toBeTruthy();
+      expect(error.status.code).toBeTruthy();
+      expect(error.status.code).toEqual(401);
+    }
   });
-  test('geocode Brandenburg Gate', () => {
-    expect.assertions(1);
+  test('geocode Brandenburg Gate', async () => {
+    // expect.assertions(1);
     const input = {
       q: 'Brandenburg Gate',
     };
-    return opencage
-      .geocode(input)
-      .then((data) => {
-        expect(data).toBeTruthy();
-      })
-      .catch(() => {
-        // no used, in case it raises a test error
-        expect(false).toBeTruthy();
-      });
+    // try {
+    const data = await opencage.geocode(input);
+    expect(data).toBeTruthy();
+    // } catch (error) {
+    //   console.log(error);
+    // }
   });
-  test('reverse geocode Brandenburg Gate with space', () => {
-    expect.assertions(1);
+  test('reverse geocode Brandenburg Gate with space', async () => {
+    // expect.assertions(1);
     const input = {
       q: '52.5162767 13.3777025',
     };
-    return opencage
-      .geocode(input)
-      .then((data) => {
-        expect(data).toBeTruthy();
-      })
-      .catch(() => {
-        // no used, in case it raises a test error
-        expect(false).toBeTruthy();
-      });
+    // try {
+    const data = await opencage.geocode(input);
+    expect(data).toBeTruthy();
+    // } catch (error) {
+    //   console.log(error);
+    // }
   });
-  test('reverse geocode Brandenburg Gate with comma', () => {
-    expect.assertions(1);
+  test('reverse geocode Brandenburg Gate with comma', async () => {
+    // expect.assertions(1);
     const input = {
       q: '52.5162767,13.3777025',
     };
-    return opencage
-      .geocode(input)
-      .then((data) => {
-        expect(data).toBeTruthy();
-      })
-      .catch(() => {
-        // no used, in case it raises a test error
-        expect(false).toBeTruthy();
-      });
+    // try {
+    const data = await opencage.geocode(input);
+    expect(data).toBeTruthy();
+    // } catch (error) {
+    //   console.log(error);
+    // }
   });
-  test('reverse geocode Brandenburg Gate with space and comma', () => {
-    expect.assertions(1);
+  test('reverse geocode Brandenburg Gate with space and comma', async () => {
+    // expect.assertions(1);
     const input = {
       q: '52.5162767, 13.3777025',
     };
-    return opencage
-      .geocode(input)
-      .then((data) => {
-        expect(data).toBeTruthy();
-      })
-      .catch(() => {
-        // no used, in case it raises a test error
-        expect(false).toBeTruthy();
-      });
+    // try {
+    const data = await opencage.geocode(input);
+    expect(data).toBeTruthy();
+    // } catch (error) {
+    //   console.log(error);
+    // }
   });
   describe('proxy tests', () => {
     const proxyURL = process.env.PROXY_URL;
@@ -115,21 +101,18 @@ describe('integration tests', () => {
         // Everything else is truthy.
         expect(proxyURL).toBeTruthy();
       });
-      test('geocode Brandenburg Gate via proxy', () => {
-        expect.assertions(1);
+      test('geocode Brandenburg Gate via proxy', async () => {
+        // expect.assertions(1);
         const input = {
           q: 'Brandenburg Gate',
           proxyURL,
         };
-        return opencage
-          .geocode(input)
-          .then((data) => {
-            expect(data).toBeTruthy();
-          })
-          .catch(() => {
-            // no used, in case it raises a test error
-            expect(false).toBeTruthy();
-          });
+        // try {
+        const data = await opencage.geocode(input);
+        expect(data).toBeTruthy();
+        // } catch (error) {
+        //   console.log(error);
+        // }
       });
     }
   });
