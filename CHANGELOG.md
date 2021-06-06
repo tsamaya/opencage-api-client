@@ -6,6 +6,13 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+### Changed
+
+- Adds opencage documentation tutorial as examples
+- upgrade dependency
+- unit test using async/await
+- uses HoundCI
+
 ## [1.0.0] - 2021-02-27
 
 ### Changed
