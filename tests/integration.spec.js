@@ -4,8 +4,7 @@ const opencage = require('..');
 
 describe('integration tests', () => {
   if (process.env.CI) {
-    // eslint-disable-next-line
-    test.skip('CI : skipping integration tests', () => {
+    test('CI : skipping integration tests', () => {
       expect(true).toBeTruthy();
     });
     return;
@@ -82,6 +81,12 @@ describe('integration tests', () => {
     // }
   });
   describe('proxy tests', () => {
+    if (!process.env.PROXY_URL) {
+      test('No Proxy set', () => {
+        expect(true).toBeTruthy();
+      });
+      return;
+    }
     const proxyURL = process.env.PROXY_URL;
     const savedKey = process.env.OPENCAGE_API_KEY;
     beforeAll(() => {
