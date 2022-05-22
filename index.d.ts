@@ -99,5 +99,179 @@ declare module 'opencage-api-client' {
     roadinfo?: number;
   }
 
-  export function geocode(input: GeocodeRequest): Promise<any>;
+  interface GeocodeResponse {
+    documentation: string;
+    licenses: License[];
+    rate: Rate;
+    results: Result[];
+    status: Status;
+    stayInformed: StayInformed;
+    thanks: string;
+    timestamp: Timestamp;
+    totalResults: number;
+  }
+
+  interface License {
+    name: string;
+    url: string;
+  }
+
+  interface Rate {
+    limit: number;
+    remaining: number;
+    reset: number;
+  }
+
+  interface Result {
+    annotations: Annotations;
+    bounds: Bounds;
+    components: Components;
+    confidence: number;
+    formatted: string;
+    geometry: Geometry;
+  }
+
+  interface Annotations {
+    dms: Dms;
+    fips: FIPS;
+    mgrs: string;
+    maidenhead: string;
+    mercator: Mercator;
+    osm: Osm;
+    unM49: UnM49;
+    callingcode: number;
+    currency: Currency;
+    flag: string;
+    geohash: string;
+    qibla: number;
+    roadinfo: Roadinfo;
+    sun: Sun;
+    timezone: Timezone;
+    what3Words: What3Words;
+  }
+
+  interface Currency {
+    alternateSymbols: string[];
+    decimalMark: string;
+    disambiguateSymbol: string;
+    htmlEntity: string;
+    isoCode: string;
+    isoNumeric: string;
+    name: string;
+    smallestDenomination: number;
+    subunit: string;
+    subunitToUnit: number;
+    symbol: string;
+    symbolFirst: number;
+    thousandsSeparator: string;
+  }
+
+  interface Dms {
+    lat: string;
+    lng: string;
+  }
+
+  interface FIPS {
+    county: string;
+    state: string;
+  }
+
+  interface Mercator {
+    x: number;
+    y: number;
+  }
+
+  interface Osm {
+    editURL: string;
+    noteURL: string;
+    url: string;
+  }
+
+  interface Roadinfo {
+    driveOn: string;
+    road: string;
+    speedIn: string;
+  }
+
+  interface Sun {
+    rise: Rise;
+    set: Rise;
+  }
+
+  interface Rise {
+    apparent: number;
+    astronomical: number;
+    civil: number;
+    nautical: number;
+  }
+
+  interface Timezone {
+    name: string;
+    nowInDst: number;
+    offsetSEC: number;
+    offsetString: string;
+    shortName: string;
+  }
+
+  interface UnM49 {
+    regions: Regions;
+    statisticalGroupings: string[];
+  }
+
+  interface Regions {
+    americas: string;
+    northernAmerica: string;
+    us: string;
+    world: string;
+  }
+
+  interface What3Words {
+    words: string;
+  }
+
+  interface Bounds {
+    northeast: Geometry;
+    southwest: Geometry;
+  }
+
+  interface Geometry {
+    lat: number;
+    lng: number;
+  }
+
+  interface Components {
+    iso31661_Alpha2: string;
+    iso31661_Alpha3: string;
+    iso31662: string[];
+    category: string;
+    type: string;
+    city: string;
+    continent: string;
+    country: string;
+    countryCode: string;
+    county: string;
+    houseNumber: string;
+    postcode: string;
+    road: string;
+    state: string;
+    stateCode: string;
+    suburb: string;
+  }
+
+  interface Status {
+    code: number;
+    message: string;
+  }
+
+  interface StayInformed {
+    blog: string;
+    twitter: string;
+  }
+
+  interface Timestamp {
+    createdHTTP: string;
+    createdUnix: number;
+  }
+
+  export function geocode(input: GeocodeRequest): Promise<GeocodeResponse>;
 }
