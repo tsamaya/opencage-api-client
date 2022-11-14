@@ -29,7 +29,7 @@
   "license": "MIT",
   "devDependencies": {
     "codecov": "^3.8.2",
-    "documentation": "^13.2.5",
+    "documentation": "^14.0.0",
     "eslint": "^7.28.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
