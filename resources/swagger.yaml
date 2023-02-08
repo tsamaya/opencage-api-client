@@ -53,7 +53,11 @@ paths:
           type: string
         - name: abbrv
           in: query
-          description: 'when true we attempt to abbreviate the formatted field in the response.'
+          description: 'when true we attempt to abbreviate the formatted field of results.'
+          type: boolean
+        - name: address_only
+          in: query
+          description: 'when true we include only address details in the formatted field of results.'
           type: boolean
         - name: add_request
           in: query
