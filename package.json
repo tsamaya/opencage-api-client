@@ -17,7 +17,8 @@
     "prepublish": "npm run docs && npm run build",
     "pretest": "npm run lint",
     "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "prepare": "husky install"
   },
   "keywords": [
     "geocoder",
@@ -55,11 +56,6 @@
     "url": "https://github.com/tsamaya/opencage-api-client/issues"
   },
   "homepage": "https://github.com/tsamaya/opencage-api-client#readme",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{json,md,yml,yaml}": [
       "prettier --write"
