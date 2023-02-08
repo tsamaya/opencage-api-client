@@ -1,4 +1,3 @@
-/* eslint-disable jest/no-try-expect */
 /* eslint-disable jest/no-conditional-expect */
 const opencage = require('..');
 
