@@ -54,18 +54,20 @@ const geocode = (input) =>
   new Promise((resolve, reject) => {
     if (helpers.isUndefinedOrNull(input)) {
       const error = buildError(400, MISSING_OR_BAD_QUERY);
-      return reject(error);
+      reject(error);
+      return;
     }
     const params = buildQuery(input);
     if (params.missingKey) {
       const error = buildError(401, MISSING_API_KEY);
-      return reject(error);
+      reject(error);
+      return;
     }
     const { query, endpoint } = params;
     const qs = buildQueryString(query);
     const url = `${endpoint}?${qs}`;
     // console.log(url);
-    return fetch(url, resolve, reject);
+    fetch(url, resolve, reject);
   });
 
 module.exports = geocode;
