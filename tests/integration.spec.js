@@ -3,13 +3,6 @@
 const opencage = require('..');
 
 describe('integration tests', () => {
-  if (process.env.CI) {
-    test('CI : skipping integration tests', () => {
-      expect(true).toBeTruthy();
-    });
-    return;
-  }
-
   test('if environment variable is set', () => {
     // In JavaScript, there are six falsy values:
     // false, 0, '', null, undefined, and NaN.
