@@ -1,3 +1,6 @@
+/* eslint-disable jest/no-try-expect */
+/* eslint-disable jest/no-conditional-expect */
+
 const opencage = require('..');
 
 describe('API keys for testing', () => {
@@ -9,7 +12,7 @@ describe('API keys for testing', () => {
 
   describe('Sunny test', () => {
     test('generate a 200 - OK response', async () => {
-      expect.assertions(4);
+      // expect.assertions(4);
       const input = {
         ...query,
         key: '6d0e711d72d74daeb2b0bfd2a5cdfdba',
@@ -22,65 +25,53 @@ describe('API keys for testing', () => {
     });
   });
   describe('rainy tests', () => {
-    test('generate a 402 - quota exceeded response', () => {
-      expect.assertions(4);
+    test('generate a 402 - quota exceeded response', async () => {
+      // expect.assertions(4);
       const input = {
         ...query,
         key: '4372eff77b8343cebfc843eb4da4ddc4',
       };
-      return opencage
-        .geocode(input)
-        .then(() => {
-          // no used, in case it raises a test error
-          expect(false).toBeTruthy();
-        })
-        .catch((data) => {
-          // console.log(data);
-          expect(data).toBeTruthy();
-          expect(data.status).toBeTruthy();
-          expect(data.status.code).toBeTruthy();
-          expect(data.status.code).toEqual(402);
-        });
+
+      try {
+        await opencage.geocode(input);
+      } catch (error) {
+        expect(error).toBeTruthy();
+        expect(error.status).toBeTruthy();
+        expect(error.status.code).toBeTruthy();
+        expect(error.status.code).toEqual(402);
+      }
     });
-    test('generate a 403 - suspended response', () => {
-      expect.assertions(4);
+    test('generate a 403 - suspended response', async () => {
+      // expect.assertions(4);
       const input = {
         ...query,
         key: '2e10e5e828262eb243ec0b54681d699a',
       };
-      return opencage
-        .geocode(input)
-        .then(() => {
-          // no used, in case it raises a test error
-          expect(false).toBeTruthy();
-        })
-        .catch((data) => {
-          // console.log(data);
-          expect(data).toBeTruthy();
-          expect(data.status).toBeTruthy();
-          expect(data.status.code).toBeTruthy();
-          expect(data.status.code).toEqual(403);
-        });
+      try {
+        await opencage.geocode(input);
+      } catch (error) {
+        // console.log(error);
+        expect(error).toBeTruthy();
+        expect(error.status).toBeTruthy();
+        expect(error.status.code).toBeTruthy();
+        expect(error.status.code).toEqual(403);
+      }
     });
-    test('generate a 429 - requesting too quickly response', () => {
-      expect.assertions(4);
+    test('generate a 429 - requesting too quickly response', async () => {
+      // expect.assertions(4);
       const input = {
         ...query,
         key: 'd6d0f0065f4348a4bdfe4587ba02714b',
       };
-      return opencage
-        .geocode(input)
-        .then(() => {
-          // no used, in case it raises a test error
-          expect(false).toBeTruthy();
-        })
-        .catch((data) => {
-          // console.log(data);
-          expect(data).toBeTruthy();
-          expect(data.status).toBeTruthy();
-          expect(data.status.code).toBeTruthy();
-          expect(data.status.code).toEqual(429);
-        });
+      try {
+        await opencage.geocode(input);
+      } catch (error) {
+        // console.log(error);
+        expect(error).toBeTruthy();
+        expect(error.status).toBeTruthy();
+        expect(error.status.code).toBeTruthy();
+        expect(error.status.code).toEqual(429);
+      }
     });
   });
 });

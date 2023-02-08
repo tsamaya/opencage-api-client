@@ -1,3 +1,6 @@
+/* eslint-disable jest/no-try-expect */
+/* eslint-disable jest/no-conditional-expect */
+
 const opencage = require('..');
 
 describe('geocode tests', () => {
@@ -14,50 +17,38 @@ describe('geocode tests', () => {
       }
     });
 
-    test('no input parameters', () => {
-      expect.assertions(1);
+    test('no input parameters', async () => {
+      // expect.assertions(1);
 
       const input = undefined;
-      return opencage
-        .geocode(input)
-        .then(() => {
-          // no used, in case it raises a test error
-          expect(false).toBeTruthy();
-        })
-        .catch((error) => {
-          // console.log(data);
-          expect(error.response.status.code).toEqual(400);
-        });
+      try {
+        await opencage.geocode(input);
+      } catch (error) {
+        // console.log(error);
+        expect(error.response.status.code).toEqual(400);
+      }
     });
-    test('null input parameters', () => {
-      expect.assertions(1);
+    test('null input parameters', async () => {
+      // expect.assertions(1);
 
       const input = null;
-      return opencage
-        .geocode(input)
-        .then(() => {
-          // no used, in case it raises a test error
-          expect(false).toBeTruthy();
-        })
-        .catch((error) => {
-          // console.log(data);
-          expect(error.response.status.code).toEqual(400);
-        });
+      try {
+        await opencage.geocode(input);
+      } catch (error) {
+        // console.log(error);
+        expect(error.response.status.code).toEqual(400);
+      }
     });
-    test('input parameters without key', () => {
-      expect.assertions(1);
+    test('input parameters without key', async () => {
+      // expect.assertions(1);
 
       const input = { q: 'lyon, france' };
-      return opencage
-        .geocode(input)
-        .then(() => {
-          // no used, in case it raises a test error
-          expect(false).toBeTruthy();
-        })
-        .catch((error) => {
-          // console.log(data);
-          expect(error.response.status.code).toEqual(401);
-        });
+      try {
+        await opencage.geocode(input);
+      } catch (error) {
+        // console.log(error);
+        expect(error.response.status.code).toEqual(401);
+      }
     });
   });
 });

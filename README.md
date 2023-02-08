@@ -4,7 +4,7 @@
 ![Downloads](https://img.shields.io/npm/dw/opencage-api-client)
 [![GitHub license](https://img.shields.io/github/license/tsamaya/opencage-api-client)](https://github.com/tsamaya/opencage-api-client/blob/master/LICENSE.md)
 
-This repository is an [OpenCage Data API](https://opencagedata.com/api) client for JavaScript and node.
+This repository is an [OpenCage Geocoding API](https://opencagedata.com/api) client for JavaScript and node.
 
 ### Continuous integration
 
@@ -15,19 +15,19 @@ This repository is an [OpenCage Data API](https://opencagedata.com/api) client f
 
 ### Security
 
-| Source                               | Scores                                                                                                                                                                                                                                                                                                                  |     |
-| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-- |
-| [Meterian](https://www.meterian.io/) | [![stability status](https://www.meterian.io/badge/gh/tsamaya/opencage-api-client/stability)](https://www.meterian.io/report/gh/tsamaya/opencage-api-client) [![security status](https://www.meterian.io/badge/gh/tsamaya/opencage-api-client/security)](https://www.meterian.io/report/gh/tsamaya/opencage-api-client) |     |
-| [FOSSA](https://fossa.com/)          | [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client?ref=badge_shield)                                                                                                |     |
-| [Snyk](https://snyk.io/)             | ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/tsamaya/opencage-api-client?label=GH%20Vulnerabilities) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/opencage-api-client?label=npm%20Vulnerabilities)                             |     |
+| Source                               | Scores                                                                                                                                                                                                                                                                                                                  |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Meterian](https://www.meterian.io/) | [![stability status](https://www.meterian.io/badge/gh/tsamaya/opencage-api-client/stability)](https://www.meterian.io/report/gh/tsamaya/opencage-api-client) [![security status](https://www.meterian.io/badge/gh/tsamaya/opencage-api-client/security)](https://www.meterian.io/report/gh/tsamaya/opencage-api-client) |
+| [FOSSA](https://fossa.com/)          | [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client?ref=badge_shield)                                                                                                |
+| [Snyk](https://snyk.io/)             | ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/tsamaya/opencage-api-client?label=GH%20Vulnerabilities) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/opencage-api-client?label=npm%20Vulnerabilities)                             |
 
 ## 🔧 Getting started
 
-Signup for a [free API Key](https://opencagedata.com/users/sign_up).
+Signup for a [free-trial API Key](https://opencagedata.com/users/sign_up).
 
 ### node
 
-The library uses [dotenv](https://www.npmjs.com/package/dotenv) on node runtime to configure OpenCage Data API key. But using `key` as an input parameter is always a possiblity.
+The library uses [dotenv](https://www.npmjs.com/package/dotenv) on node runtime to configure OpenCage Geocoding API key. But using `key` as an input parameter is always a possiblity.
 
 First install the library with `npm` or `yarn`:
 
@@ -140,7 +140,7 @@ will output for a 429:
 }
 ```
 
-Check the examples using the Test API key from Opencage [error handling examples](./examples/apitestkeys.js)
+Check the examples using the Test API key from OpenCage [error handling examples](./examples/apitestkeys.js)
 
 ## 🔨 Build and test
 
