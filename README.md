@@ -21,6 +21,10 @@ This repository is an [OpenCage Geocoding API](https://opencagedata.com/api) cli
 | [FOSSA](https://fossa.com/)          | [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client?ref=badge_shield)                                                                                                |
 | [Snyk](https://snyk.io/)             | ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/tsamaya/opencage-api-client?label=GH%20Vulnerabilities) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/opencage-api-client?label=npm%20Vulnerabilities)                             |
 
+## Tutorial
+
+You can find a comprehensive tutorial for using this module [on the OpenCage site](https://opencagedata.com/tutorials/geocode-in-nodejs).
+
 ## 🔧 Getting started
 
 Signup for a [free-trial API Key](https://opencagedata.com/users/sign_up).
