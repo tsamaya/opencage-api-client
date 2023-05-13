@@ -3,6 +3,7 @@
 [![Version](https://img.shields.io/npm/v/opencage-api-client.svg)](https://www.npmjs.com/package/opencage-api-client)
 ![Downloads](https://img.shields.io/npm/dw/opencage-api-client)
 [![GitHub license](https://img.shields.io/github/license/tsamaya/opencage-api-client)](https://github.com/tsamaya/opencage-api-client/blob/master/LICENSE.md)
+![Maintained](https://img.shields.io/maintenance/yes/2023.svg)
 
 This repository is an [OpenCage Geocoding API](https://opencagedata.com/api) client for JavaScript and node.
 
