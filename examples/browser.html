@@ -75,7 +75,7 @@
     }
 
     $('.button.is-text').click(function () {
-      console.log('submit button clicked');
+      console.log('cancel button clicked');
       clear();
       raz();
     });
@@ -84,6 +84,7 @@
       console.log('submit button clicked');
       clear();
       if (!check()) {
+        console.log('invalid input');
         return;
       }
 
