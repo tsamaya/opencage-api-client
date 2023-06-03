@@ -24,7 +24,7 @@ const buildQuery = (input) => {
     delete query.proxyURL;
   } else {
     if (helpers.isUndefinedOrEmpty(input.key)) {
-      query.key = process.env.OPENCAGE_API_KEY || process.env.OCD_API_KEY;
+      query.key = process?.env?.OPENCAGE_API_KEY || process?.env?.OCD_API_KEY;
     }
     if (helpers.isUndefinedOrEmpty(query.key)) {
       missingKey = true;
