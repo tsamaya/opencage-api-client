@@ -19,8 +19,8 @@ describe('fetch', () => {
     test('returns a json', () => {
       expect.assertions(1);
 
-      // const url = 'http://httpbin.org/ip';
-      const url = 'https://jsonplaceholder.typicode.com/todos/1';
+      const url = 'http://httpbin.org/ip';
+      // const url = 'https://jsonplaceholder.typicode.com/todos/1';
       return new Promise((resolve, reject) => {
         fetch(url, resolve, reject);
       })
