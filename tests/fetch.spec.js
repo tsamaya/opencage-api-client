@@ -27,7 +27,9 @@ describe('fetch', () => {
         .then((data) => {
           expect(data).toBeTruthy();
         })
-        .catch(() => {
+        .catch((ex) => {
+          // eslint-disable-next-line no-console
+          console.log(ex);
           // no used, in case it raises a test error
           expect(false).toBeTruthy();
         });
