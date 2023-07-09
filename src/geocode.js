@@ -50,24 +50,23 @@ const buildQuery = (input) => {
  *
  * @return {Promise}  a promise resolved by the json format API payload
  */
-const geocode = (input) =>
-  new Promise((resolve, reject) => {
-    if (helpers.isUndefinedOrNull(input)) {
-      const error = buildError(400, MISSING_OR_BAD_QUERY);
-      reject(error);
-      return;
-    }
-    const params = buildQuery(input);
-    if (params.missingKey) {
-      const error = buildError(401, MISSING_API_KEY);
-      reject(error);
-      return;
-    }
-    const { query, endpoint } = params;
-    const qs = buildQueryString(query);
-    const url = `${endpoint}?${qs}`;
-    // console.log(url);
-    fetch(url, resolve, reject);
-  });
+const geocode = (input) => new Promise((resolve, reject) => {
+  if (helpers.isUndefinedOrNull(input)) {
+    const error = buildError(400, MISSING_OR_BAD_QUERY);
+    reject(error);
+    return;
+  }
+  const params = buildQuery(input);
+  if (params.missingKey) {
+    const error = buildError(401, MISSING_API_KEY);
+    reject(error);
+    return;
+  }
+  const { query, endpoint } = params;
+  const qs = buildQueryString(query);
+  const url = `${endpoint}?${qs}`;
+  // console.log(url);
+  fetch(url, resolve, reject);
+});
 
 module.exports = geocode;
