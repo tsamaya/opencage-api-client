@@ -6,7 +6,7 @@ const buildQueryString = (input) => {
   }
   return Object.keys(input)
     .map(
-      (key) => `${encodeURIComponent(key)}=${encodeURIComponent(input[key])}`,
+      (key) => `${encodeURIComponent(key)}=${encodeURIComponent(input[key])}`
     )
     .join('&');
 };
