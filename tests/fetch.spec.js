@@ -16,17 +16,20 @@ describe('fetch', () => {
   });
 
   describe('fetch function', () => {
-    test('returns an object', () => {
+    test('returns a json', () => {
       expect.assertions(1);
 
-      const url = 'http://httpbin.org/ip';
+      // const url = 'http://httpbin.org/ip';
+      const url = 'https://jsonplaceholder.typicode.com/todos/1';
       return new Promise((resolve, reject) => {
         fetch(url, resolve, reject);
       })
         .then((data) => {
           expect(data).toBeTruthy();
         })
-        .catch(() => {
+        .catch((ex) => {
+          // eslint-disable-next-line no-console
+          console.log(ex);
           // no used, in case it raises a test error
           expect(false).toBeTruthy();
         });
