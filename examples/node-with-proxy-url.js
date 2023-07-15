@@ -2,7 +2,8 @@
 const opencage = require('..');
 // const proxyURL =
 //   'https://us-central1-ocd-315303.cloudfunctions.net/geocode';
-const proxyURL = 'https://jvkdf2pe18.execute-api.us-east-1.amazonaws.com/dev/geocode';
+const proxyURL =
+  'https://jvkdf2pe18.execute-api.us-east-1.amazonaws.com/dev/geocode';
 
 opencage
   .geocode({ q: 'rue de la république lyon', limit: 3, proxyURL })

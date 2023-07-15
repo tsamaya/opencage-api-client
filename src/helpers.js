@@ -20,7 +20,8 @@ const isArray = (val) => !!val && Array.isArray(val);
  * @param  {String}  param object property as a string
  * @return {Boolean}       returns value
  */
-const isUndefinedOrEmpty = (param) => typeof param === 'undefined' || param === '';
+const isUndefinedOrEmpty = (param) =>
+  typeof param === 'undefined' || param === '';
 
 /**
  * @private
@@ -28,7 +29,8 @@ const isUndefinedOrEmpty = (param) => typeof param === 'undefined' || param === 
  * @param  {String}  param object property as a string
  * @return {Boolean}       returns value
  */
-const isUndefinedOrNull = (param) => typeof param === 'undefined' || param === null;
+const isUndefinedOrNull = (param) =>
+  typeof param === 'undefined' || param === null;
 
 module.exports = {
   isNumber,
