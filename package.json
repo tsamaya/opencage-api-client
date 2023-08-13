@@ -8,8 +8,6 @@
   "types": "index.d.ts",
   "scripts": {
     "build": "webpack --mode production",
-    "codecov": "codecov",
-    "coverage": "npm run test && npm run codecov",
     "docs": "npx documentation build src/** -f html -o docs",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
@@ -29,7 +27,6 @@
   "author": "Arnaud Ferrand",
   "license": "MIT",
   "devDependencies": {
-    "codecov": "^3.8.3",
     "documentation": "^14.0.0",
     "eslint": "^8.33.0",
     "eslint-config-airbnb-base": "^15.0.0",
