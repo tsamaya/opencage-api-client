@@ -97,6 +97,14 @@ declare module 'opencage-api-client' {
      * When set to 1 the behaviour of the geocoder is changed to attempt to match the nearest road (as opposed to address). If possible we also fill additional information in the roadinfo annotation. Please see details API Documentation.
      */
     roadinfo?: number;
+    /**
+     * When set to 1 we include only the address (exluding POI names) in the formatted string we return.
+     *
+     * Example usage: address_only=1
+     *
+     * As an example, by default a reverse geocoding request for the coordinates 50.976004, 11.336753 returns a formatted value of Goethes Gartenhaus, Corona-Schröter-Weg 1, 99425 Weimar, Germany, but if address_only=1 is specified the value would be simply Corona-Schröter-Weg 1, 99425 Weimar, Germany. This can be particularly useful when there are many stores/restaurants/whatever at a single location (for example a multi-story building).
+     */
+    address_only?: number;
   }
 
   export function geocode(input: GeocodeRequest): Promise<any>;
