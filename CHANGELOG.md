@@ -8,6 +8,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
+## [1.0.3] - 2023-11-10
+
+### Changed
+
+- adds input parameter `address_only` into the typescript definition
+
 ## [1.0.2] - 2023-07-16
 
 ### Changed
