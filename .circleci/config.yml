@@ -7,7 +7,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/node:21.6.0
+      - image: cimg/node:21.6.1
 
     steps:
       - checkout
