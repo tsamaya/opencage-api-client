@@ -104,7 +104,10 @@ Open Cage website URL has changed
 
 First release
 
-[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.3...HEAD
+[1.0.3]: https://github.com/tsamaya/opencage-api-client/compare/v0.10.2...v1.0.3
+[1.0.2]: https://github.com/tsamaya/opencage-api-client/compare/v0.10.2...v1.0.2
+[1.0.1]: https://github.com/tsamaya/opencage-api-client/compare/v0.10.0...v1.0.1
 [1.0.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.10.0...v1.0.0
 [0.10.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.9.0...v0.10.0
 [0.9.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.8.1...v0.9.0
