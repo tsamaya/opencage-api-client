@@ -6,6 +6,20 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [1.0.4] - 2024-02-03
+
+### Changed
+
+- upgrade dependencies
+
+## [1.0.3] - 2023-11-10
+
+### Changed
+
+- adds input parameter `address_only` into the typescript definition
+
+## [1.0.2] - 2023-07-16
+
 ### Changed
 
 - upgrade dependencies
@@ -94,7 +108,11 @@ Open Cage website URL has changed
 
 First release
 
-[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.4...HEAD
+[1.0.4]: https://github.com/tsamaya/opencage-api-client/compare/v0.10.3...v1.0.4
+[1.0.3]: https://github.com/tsamaya/opencage-api-client/compare/v0.10.2...v1.0.3
+[1.0.2]: https://github.com/tsamaya/opencage-api-client/compare/v0.10.2...v1.0.2
+[1.0.1]: https://github.com/tsamaya/opencage-api-client/compare/v0.10.0...v1.0.1
 [1.0.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.10.0...v1.0.0
 [0.10.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.9.0...v0.10.0
 [0.9.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.8.1...v0.9.0
