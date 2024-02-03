@@ -152,8 +152,7 @@ Check the examples using the Test API key from OpenCage [error handling examples
 1.  Fork or clone this repository
 1.  `$ cd` into the `repository` folder
 1.  `$ npm install` to install all the required dependencies from [npm](https://www.npmjs.com/)
-1.  lint and test using `$ npm test`
-1.  coverage `$ npm run coverage`
+1.  lint and test coverage using `$ npm test`
 1.  Build : `$ npm run build`
 
 ## 🛣 Revision History
