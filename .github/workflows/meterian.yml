@@ -3,8 +3,12 @@
 name: Meterian Scanner workflow
 
 on:
+  push:
+    branches:
+      - master
   pull_request:
-    branches: ['master']
+    branches:
+      - master
 
 jobs:
   meterian_scan:

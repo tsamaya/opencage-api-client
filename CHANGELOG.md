@@ -6,6 +6,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [1.0.5] - 2024-04-27
+
+### Changed
+
+- upgrade dependencies
+
 ## [1.0.4] - 2024-02-03
 
 ### Changed
@@ -108,10 +114,11 @@ Open Cage website URL has changed
 
 First release
 
-[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.4...HEAD
-[1.0.4]: https://github.com/tsamaya/opencage-api-client/compare/v0.10.3...v1.0.4
-[1.0.3]: https://github.com/tsamaya/opencage-api-client/compare/v0.10.2...v1.0.3
-[1.0.2]: https://github.com/tsamaya/opencage-api-client/compare/v0.10.2...v1.0.2
+[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.5...HEAD
+[1.0.5]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.4...v1.0.5
+[1.0.4]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.3...v1.0.4
+[1.0.3]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.2...v1.0.3
+[1.0.2]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/tsamaya/opencage-api-client/compare/v0.10.0...v1.0.1
 [1.0.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.10.0...v1.0.0
 [0.10.0]: https://github.com/tsamaya/opencage-api-client/compare/v0.9.0...v0.10.0
