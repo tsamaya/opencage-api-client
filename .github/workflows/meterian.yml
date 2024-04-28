@@ -6,9 +6,7 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
+      - main
 
 jobs:
   meterian_scan:

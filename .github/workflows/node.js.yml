@@ -38,3 +38,6 @@ jobs:
         env:
           OPENCAGE_API_KEY: ${{ secrets.OPENCAGE_API_KEY }}
       - run: pnpm run build
+      - uses: codecov/codecov-action@v4
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
