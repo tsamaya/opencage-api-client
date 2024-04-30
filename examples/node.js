@@ -1,5 +1,4 @@
-/* eslint-disable no-console */
-const opencage = require('..');
+import opencage from '../src';
 
 opencage
   .geocode({ q: 'rue de la république lyon', limit: 3 })

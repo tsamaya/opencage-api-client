@@ -1,6 +1,6 @@
-/* eslint-disable jest/no-conditional-expect */
+import { describe, it, expect } from 'vitest';
 
-const opencage = require('..');
+import opencage from '../src';
 
 describe('API keys for testing', () => {
   const query = {
@@ -10,8 +10,7 @@ describe('API keys for testing', () => {
   };
 
   describe('Sunny test', () => {
-    test('generate a 200 - OK response', async () => {
-      // expect.assertions(4);
+    it('generate a 200 - OK response', async () => {
       const input = {
         ...query,
         key: '6d0e711d72d74daeb2b0bfd2a5cdfdba',
@@ -24,8 +23,7 @@ describe('API keys for testing', () => {
     });
   });
   describe('rainy tests', () => {
-    test('generate a 402 - quota exceeded response', async () => {
-      // expect.assertions(4);
+    it('generate a 402 - quota exceeded response', async () => {
       const input = {
         ...query,
         key: '4372eff77b8343cebfc843eb4da4ddc4',
@@ -40,8 +38,7 @@ describe('API keys for testing', () => {
         expect(error.status.code).toEqual(402);
       }
     });
-    test('generate a 403 - suspended response', async () => {
-      // expect.assertions(4);
+    it('generate a 403 - suspended response', async () => {
       const input = {
         ...query,
         key: '2e10e5e828262eb243ec0b54681d699a',
@@ -56,8 +53,7 @@ describe('API keys for testing', () => {
         expect(error.status.code).toEqual(403);
       }
     });
-    test('generate a 429 - requesting too quickly response', async () => {
-      // expect.assertions(4);
+    it('generate a 429 - requesting too quickly response', async () => {
       const input = {
         ...query,
         key: 'd6d0f0065f4348a4bdfe4587ba02714b',

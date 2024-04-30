@@ -1,6 +1,5 @@
-/* eslint-disable jest/no-conditional-expect */
-
-const opencage = require('..');
+import { describe, it, expect, beforeAll, afterAll } from 'vitest';
+import opencage from '../src';
 
 describe('geocode tests', () => {
   describe('rainy tests', () => {
@@ -16,9 +15,7 @@ describe('geocode tests', () => {
       }
     });
 
-    test('no input parameters', async () => {
-      // expect.assertions(1);
-
+    it('tests no input parameters', async () => {
       const input = undefined;
       try {
         await opencage.geocode(input);
@@ -27,9 +24,7 @@ describe('geocode tests', () => {
         expect(error.response.status.code).toEqual(400);
       }
     });
-    test('null input parameters', async () => {
-      // expect.assertions(1);
-
+    it('tests a null input parameter', async () => {
       const input = null;
       try {
         await opencage.geocode(input);
@@ -38,9 +33,7 @@ describe('geocode tests', () => {
         expect(error.response.status.code).toEqual(400);
       }
     });
-    test('input parameters without key', async () => {
-      // expect.assertions(1);
-
+    it('tests an input parameters without key', async () => {
       const input = { q: 'lyon, france' };
       try {
         await opencage.geocode(input);

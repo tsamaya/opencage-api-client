@@ -1,5 +1,7 @@
-declare module 'opencage-api-client' {
-  interface GeocodeRequest {
+/**
+ * GeocodeRequest interface
+ */
+interface GeocodeRequest {
     /**
      * a 30 character long, alphanumeric string.
      */
@@ -105,7 +107,34 @@ declare module 'opencage-api-client' {
      * As an example, by default a reverse geocoding request for the coordinates 50.976004, 11.336753 returns a formatted value of Goethes Gartenhaus, Corona-Schröter-Weg 1, 99425 Weimar, Germany, but if address_only=1 is specified the value would be simply Corona-Schröter-Weg 1, 99425 Weimar, Germany. This can be particularly useful when there are many stores/restaurants/whatever at a single location (for example a multi-story building).
      */
     address_only?: number;
-  }
-
-  export function geocode(input: GeocodeRequest): Promise<any>;
 }
+/**
+ * @private
+ * returns true is `param` is not defined or empty
+ * @param  {String}  param object property as a string
+ * @return {Boolean}       returns value
+ */
+export declare function isUndefinedOrEmpty(param: string): boolean;
+/**
+ * @private
+ * returns true is `param` is not defined or null
+ * @param  {String}  param object property as a string
+ * @return {Boolean}       returns value
+ */
+export declare function isUndefinedOrNull(param: GeocodeRequest): boolean;
+export declare function buildQueryString(input: any): string;
+/**
+ * geocode address and reverse geocode coordinates using
+ * [OpenCage API](https://opencagedata.com/api) requesting the json format.
+ *
+ * @param  {Object} input the input query parameter as JSON object,
+ *  the attribute `q` is required, the `key` can be omitted when using
+ *  a `proxyURL`, and when using node with a dedicated environment variable
+ *  (OPENCAGE_API_KEY).
+ *  Others optional paameters can be found at Opencage Data API
+ *  [documentation](https://opencagedata.com/api#forward-opt)
+ *
+ * @return {Promise}  a promise resolved by the json format API payload
+ */
+export declare function geocode(input: GeocodeRequest): Promise<any>;
+export default geocode;

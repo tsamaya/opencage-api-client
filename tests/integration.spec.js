@@ -1,15 +1,15 @@
-/* eslint-disable jest/no-conditional-expect */
-const opencage = require('..');
+import { describe, it, expect, beforeAll, afterAll } from 'vitest';
+import opencage from '../src';
 
 describe('integration tests', () => {
-  test('if environment variable is set', () => {
+  it('tests if environment variable is set', () => {
     // In JavaScript, there are six falsy values:
     // false, 0, '', null, undefined, and NaN.
     // Everything else is truthy.
     expect(process.env.OPENCAGE_API_KEY).toBeTruthy();
   });
 
-  test('an invalid API key', async () => {
+  it('test an invalid API key', async () => {
     // expect.assertions(3);
     const input = {
       q: 'Brandenburg Gate',
@@ -24,7 +24,7 @@ describe('integration tests', () => {
       expect(error.status.code).toEqual(401);
     }
   });
-  test('geocode Brandenburg Gate', async () => {
+  it('geocodes Brandenburg Gate', async () => {
     // expect.assertions(1);
     const input = {
       q: 'Brandenburg Gate',
@@ -36,7 +36,7 @@ describe('integration tests', () => {
     //   console.log(error);
     // }
   });
-  test('reverse geocode Brandenburg Gate with space', async () => {
+  it('reverse geocodes Brandenburg Gate with space', async () => {
     // expect.assertions(1);
     const input = {
       q: '52.5162767 13.3777025',
@@ -48,7 +48,7 @@ describe('integration tests', () => {
     //   console.log(error);
     // }
   });
-  test('reverse geocode Brandenburg Gate with comma', async () => {
+  it('reverse geocodes Brandenburg Gate with comma', async () => {
     // expect.assertions(1);
     const input = {
       q: '52.5162767,13.3777025',
@@ -60,7 +60,7 @@ describe('integration tests', () => {
     //   console.log(error);
     // }
   });
-  test('reverse geocode Brandenburg Gate with space and comma', async () => {
+  it('reverse geocodes Brandenburg Gate with space and comma', async () => {
     // expect.assertions(1);
     const input = {
       q: '52.5162767, 13.3777025',
@@ -74,7 +74,7 @@ describe('integration tests', () => {
   });
   describe('proxy tests', () => {
     if (!process.env.PROXY_URL) {
-      test('No Proxy set', () => {
+      it('No Proxy set', () => {
         expect(true).toBeTruthy();
       });
       return;
@@ -92,13 +92,13 @@ describe('integration tests', () => {
       }
     });
     if (proxyURL) {
-      test('environment variable PROXY_URL is set', () => {
+      it('test if environment variable PROXY_URL is set', () => {
         // In JavaScript, there are six falsy values:
         // false, 0, '', null, undefined, and NaN.
         // Everything else is truthy.
         expect(proxyURL).toBeTruthy();
       });
-      test('geocode Brandenburg Gate via proxy', async () => {
+      it('geocodes Brandenburg Gate via proxy', async () => {
         // expect.assertions(1);
         const input = {
           q: 'Brandenburg Gate',

@@ -1,43 +1,44 @@
-const buildQueryString = require('../src/qs');
+import { describe, it, expect } from 'vitest';
+import { buildQueryString } from '../src/geocode';
 
 describe('buildQueryString', () => {
-  test('function exists', () => {
+  it('function exists', () => {
     expect(buildQueryString).toBeTruthy();
     expect(typeof buildQueryString).toBe('function');
   });
-  test('call with undefined', () => {
-    const result = buildQueryString();
+  it('call with undefined', () => {
+    const result = buildQueryString(undefined);
     expect(result).toBe('');
   });
-  test('call with null', () => {
+  it('call with null', () => {
     const result = buildQueryString(null);
     expect(result).toBe('');
   });
-  test('call with empty object', () => {
+  it('call with empty object', () => {
     const result = buildQueryString({});
     expect(result).toBe('');
   });
-  test('call with a string value', () => {
+  it('call with a string value', () => {
     const result = buildQueryString({ q: 'value' });
     expect(result).toBe('q=value');
   });
-  test('call with a string value with diacritics', () => {
+  it('call with a string value with diacritics', () => {
     const result = buildQueryString({ q: 'république' });
     expect(result).toBe('q=r%C3%A9publique');
   });
-  test('call with a numeric value', () => {
+  it('call with a numeric value', () => {
     const result = buildQueryString({ q: 10 });
     expect(result).toBe('q=10');
   });
-  test('call with a negative numeric value', () => {
+  it('call with a negative numeric value', () => {
     const result = buildQueryString({ q: -10 });
     expect(result).toBe('q=-10');
   });
-  test('call with two parameters', () => {
+  it('call with two parameters', () => {
     const result = buildQueryString({ q: -10, a: 'z' });
     expect(result).toBe('q=-10&a=z');
   });
-  test('call with nested parameters (NOT SUPPORTED)', () => {
+  it('call with nested parameters (NOT SUPPORTED)', () => {
     const result = buildQueryString({ q: -10, a: { b: 'z' } });
     // a=[object object]
     expect(result).toBe('q=-10&a=%5Bobject%20Object%5D');
