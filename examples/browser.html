@@ -1,109 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OpenCage Data Geocode API Client Example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"
+    ></script>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OpenCage Data Geocode API Client Example</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
-</head>
-
-<body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">OpenCage Data Geocode API Client</h1>
-      <h2 class="title">Query</h2>
-      <!-- API key -->
-      <div class="field">
-        <label class="label">Your API key</label>
-        <div class="control has-icons-left">
-          <input class="input" type="text" placeholder="your-api-key" name="key">
-          <span class="icon is-small is-left">
-            <i class="fas fa-key"></i>
-          </span>
+  <body>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">OpenCage Data Geocode API Client</h1>
+        <h2 class="title">Query</h2>
+        <!-- API key -->
+        <div class="field">
+          <label class="label">Your API key</label>
+          <div class="control has-icons-left">
+            <input
+              class="input"
+              type="text"
+              placeholder="your-api-key"
+              name="key"
+            />
+            <span class="icon is-small is-left">
+              <i class="fas fa-key"></i>
+            </span>
+          </div>
+        </div>
+        <!-- Query -->
+        <div class="field">
+          <label class="label">Query</label>
+          <div class="control has-icons-left">
+            <input
+              class="input"
+              type="text"
+              placeholder="your query (i.e.: `Brandenburg Gate` or `51.508341,-0.125499`)"
+              name="q"
+            />
+            <span class="icon is-small is-left">
+              <i class="fas fa-edit"></i>
+            </span>
+          </div>
+        </div>
+        <!-- Submit / cancel -->
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link">Submit</button>
+          </div>
+          <div class="control">
+            <button class="button is-text">Cancel</button>
+          </div>
+        </div>
+        <h2 class="title">Result</h2>
+        <!-- Result -->
+        <div class="field">
+          <label class="label">json</label>
+          <textarea class="textarea" rows="15"></textarea>
         </div>
       </div>
-      <!-- Query -->
-      <div class="field">
-        <label class="label">Query</label>
-        <div class="control has-icons-left">
-          <input class="input" type="text" placeholder="your query (i.e.: `Brandenburg Gate` or `51.508341,-0.125499`)"
-            name="q">
-          <span class="icon is-small is-left">
-            <i class="fas fa-edit"></i>
-          </span>
-        </div>
-      </div>
-      <!-- Submit / cancel -->
-      <div class="field is-grouped">
-        <div class="control">
-          <button class="button is-link">Submit</button>
-        </div>
-        <div class="control">
-          <button class="button is-text">Cancel</button>
-        </div>
-      </div>
-      <h2 class="title">Result</h2>
-      <!-- Result -->
-      <div class="field">
-        <label class="label">json</label>
-        <textarea class="textarea" rows="15"></textarea>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="../dist/opencage-api.min.js"></script>
-  <script>
-    function clear() {
-      $('.textarea').val('');
-    }
-    function raz() {
-      $('input[name="key"]').val('');
-      $('input[name="q"]').val('');
-    }
-
-    function check() {
-      if ($('input[name="key"]').val() === '') {
-        return false;
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="../dist/opencage-api.umd.js"></script>
+    <script>
+      function clear() {
+        $('.textarea').val('');
       }
-      if ($('input[name="q"]').val() === '') {
-        return false;
-      }
-      return true;
-    }
-
-    $('.button.is-text').click(function () {
-      console.log('submit button clicked');
-      clear();
-      raz();
-    });
-
-    $('.button.is-link').click(function () {
-      console.log('submit button clicked');
-      clear();
-      if (!check()) {
-        return;
+      function raz() {
+        $('input[name="key"]').val('');
+        $('input[name="q"]').val('');
       }
 
-      var query = {
-        pretty: 1,
-      };
-      query.key = $('input[name="key"]').val();
-      console.log('Query with api key', query.key);
-      query.q = $('input[name="q"]').val();
-      console.log('Query is', query.q);
-      opencage
-        .geocode(query)
-        .then(data => {
-          $('.textarea').val(JSON.stringify(data, null, 2));
-        })
-        .catch(err => {
-          $('.textarea').val(err);
-        });
-    });
-  </script>
-</body>
+      function check() {
+        if ($('input[name="key"]').val() === '') {
+          return false;
+        }
+        if ($('input[name="q"]').val() === '') {
+          return false;
+        }
+        return true;
+      }
 
+      $('.button.is-text').click(function () {
+        console.log('submit button clicked');
+        clear();
+        raz();
+      });
+
+      $('.button.is-link').click(function () {
+        console.log('submit button clicked');
+        clear();
+        if (!check()) {
+          return;
+        }
+
+        var query = {
+          pretty: 1,
+        };
+        query.key = $('input[name="key"]').val();
+        console.log('Query with api key', query.key);
+        query.q = $('input[name="q"]').val();
+        console.log('Query is', query.q);
+        opencage
+          .geocode(query)
+          .then((data) => {
+            $('.textarea').val(JSON.stringify(data, null, 2));
+          })
+          .catch((err) => {
+            $('.textarea').val(err);
+          });
+      });
+    </script>
+  </body>
 </html>

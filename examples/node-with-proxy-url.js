@@ -1,5 +1,5 @@
-/* eslint-disable no-console */
-const opencage = require('..');
+import opencage from '../dist/opencage-api.mjs';
+
 // const proxyURL =
 //   'https://us-central1-ocd-315303.cloudfunctions.net/geocode';
 const proxyURL =

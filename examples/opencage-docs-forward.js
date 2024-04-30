@@ -1,6 +1,4 @@
-/* eslint-disable no-console */
-const opencage = require('..');
-
+import opencage from '../dist/opencage-api.mjs';
 opencage
   .geocode({ q: 'Theresienhöhe 11, München' })
   .then((data) => {
