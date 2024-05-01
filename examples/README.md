@@ -10,10 +10,13 @@ This example shows how to use the library within a vanilla javascript applicatio
 
 This example shows how to use the library with NodeJS using a environnement variable for the API key
 
-[node.js](./node.js)
+__ESM__
+[esm.js](./esm.js)
+```bash
+node esm.js
+```
 
-ComonJS example:
-
+__ComonJS__
 [apitestkeys.js](./apitestkeys.js)
 ```bash
 node apitestkeys.cjs
