@@ -1,5 +1,4 @@
-/* eslint-disable no-console */
-const opencage = require('..');
+import opencage from '../dist/opencage-api.mjs';
 
 opencage
   .geocode({ q: '45.188529,5.724524', no_annotations: 1 })

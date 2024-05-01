@@ -1,4 +1,4 @@
-import { geocode, GeocodeRequest } from 'opencage-api-client';
+import { geocode, GeocodeRequest } from '../src';
 
 export const doGeocode = async () => {
   const input: GeocodeRequest = {
@@ -10,3 +10,5 @@ export const doGeocode = async () => {
   console.log(result);
   return result;
 };
+
+doGeocode();
