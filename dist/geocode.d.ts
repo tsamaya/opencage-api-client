@@ -1,7 +1,7 @@
 /**
  * GeocodeRequest interface
  */
-interface GeocodeRequest {
+export interface GeocodeRequest {
     /**
      * a 30 character long, alphanumeric string.
      */
@@ -109,6 +109,13 @@ interface GeocodeRequest {
     address_only?: number;
 }
 /**
+ *
+ */
+export declare class GeocodeError extends Error {
+    response?: any;
+    status?: any;
+}
+/**
  * @private
  * returns true is `param` is not defined or empty
  * @param  {String}  param object property as a string
@@ -137,4 +144,3 @@ export declare function buildQueryString(input: any): string;
  * @return {Promise}  a promise resolved by the json format API payload
  */
 export declare function geocode(input: GeocodeRequest): Promise<any>;
-export default geocode;

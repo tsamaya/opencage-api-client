@@ -6,7 +6,7 @@ const MISSING_API_KEY = 'missing API key';
 /**
  * GeocodeRequest interface
  */
-interface GeocodeRequest  {
+export type GeocodeRequest = {
   /**
    * a 30 character long, alphanumeric string.
    */
@@ -112,12 +112,12 @@ interface GeocodeRequest  {
    * As an example, by default a reverse geocoding request for the coordinates 50.976004, 11.336753 returns a formatted value of Goethes Gartenhaus, Corona-Schröter-Weg 1, 99425 Weimar, Germany, but if address_only=1 is specified the value would be simply Corona-Schröter-Weg 1, 99425 Weimar, Germany. This can be particularly useful when there are many stores/restaurants/whatever at a single location (for example a multi-story building).
    */
   address_only?: number;
-}
+};
 
 /**
  *
  */
-class GeocodeError extends Error {
+export class GeocodeError extends Error {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   response?: any;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -277,5 +277,3 @@ export function geocode(input: GeocodeRequest): Promise<any> {
     fetchUrl(url, resolve, reject);
   });
 }
-
-export default geocode;

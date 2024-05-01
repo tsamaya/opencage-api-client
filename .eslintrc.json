@@ -4,8 +4,14 @@
     "node": true
   },
   "parser": "@typescript-eslint/parser",
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
   "plugins": ["@typescript-eslint"],
-  "rules": {},
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "warn"
+  },
   "ignorePatterns": ["node_modules/", "dist/"]
 }

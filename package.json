@@ -24,8 +24,8 @@
   "module": "dist/opencage-api.mjs",
   "unpkg": "dist/opencage-api.umd.js",
   "exports": {
-    "require": "./dist/opencage-api.cjs", 
-    "default": "./dist/opencage-api.modern.js" 
+    "require": "./dist/opencage-api.cjs",
+    "default": "./dist/opencage-api.modern.js"
   },
   "browser": "dist/opencage-api.umd.js",
   "scripts": {
@@ -43,9 +43,11 @@
     "@typescript-eslint/parser": "7.7.1",
     "documentation": "^14.0.0",
     "eslint": "8.57",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
     "microbundle": "^0.15.1",
     "prettier": "3.2.5",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.8.2",
     "typescript": "^5.4.5",
     "vite": "^5.2.10",
     "vitest": "^1.5.2"

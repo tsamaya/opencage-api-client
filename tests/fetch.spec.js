@@ -1,8 +1,8 @@
 import { it, expect } from 'vitest';
 
 // const fetch = require('../src/fetch');
-it('expects true to be true', ()=>{
-expect(true).toBeTruthy()
+it('expects true to be true', () => {
+  expect(true).toBeTruthy();
 });
 // describe('fetch', () => {
 //   test('Library exists', () => {
