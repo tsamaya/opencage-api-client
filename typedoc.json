@@ -1,0 +1,6 @@
+{
+  "entryPoints": ["./src/index.ts"],
+  "sidebarLinks": {
+      "OpenCage Data": "https://opencagedata.com"
+  }
+}

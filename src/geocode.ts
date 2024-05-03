@@ -118,9 +118,7 @@ export type GeocodeRequest = {
  *
  */
 export class GeocodeError extends Error {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   response?: any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   status?: any;
 }
 
@@ -147,7 +145,6 @@ function buildError(code: number, message: string) {
  * @param response
  * @returns
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const checkStatus = (response: any) => {
   if (response.status >= 200 && response.status < 300) {
     return response;
@@ -162,10 +159,8 @@ const checkStatus = (response: any) => {
   throw error;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const parseJSON = (response: any) => response.json();
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function fetchUrl(url: string, resolve: any, reject: any) {
   fetch(url)
     .then(checkStatus)
@@ -200,7 +195,6 @@ export function isUndefinedOrNull(param: GeocodeRequest): boolean {
   return typeof param === 'undefined' || param === null;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function buildQueryString(input: any): string {
   if (isUndefinedOrNull(input)) {
     return '';
@@ -217,7 +211,6 @@ export function buildQueryString(input: any): string {
  *
  * @param {*} input
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function buildQuery(input: any) {
   const query = { ...input };
 
@@ -255,8 +248,6 @@ function buildQuery(input: any) {
  *
  * @return {Promise}  a promise resolved by the json format API payload
  */
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function geocode(input: GeocodeRequest): Promise<any> {
   return new Promise((resolve, reject) => {
     if (isUndefinedOrNull(input)) {

@@ -7,21 +7,21 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ## [Unreleased]
 
-### Changed
+### Chore
 
 - Drop CircleCI
-- Uses pnpm as pacakage manager
+- Uses pnpm as package manager
 
 ## [1.0.5] - 2024-04-27
 
-### Changed
+### Chore
 
 - Adds CI using GitHub actions
 - upgrade dependencies
 
 ## [1.0.4] - 2024-02-03
 
-### Changed
+### Chore
 
 - upgrade dependencies
 
@@ -33,13 +33,13 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ## [1.0.2] - 2023-07-16
 
-### Changed
+### Chore
 
 - upgrade dependencies
 
 ## [1.0.1] - 2023-02-08
 
-### Changed
+### Chore
 
 - Adds opencage documentation tutorial as examples
 - upgrade dependencies

@@ -17,5 +17,9 @@ export default defineConfig({
     globals: true,
     environment: 'node',
     // setupFiles: "./src/setup.node.ts",
+    coverage: {
+      provider: 'v8', // or 'istanbul'
+      exclude: ['examples/**', 'docs/**']
+    },
   },
 });
