@@ -1,6 +1,7 @@
-import { geocode, GeocodeRequest, GeocodeError } from './geocode';
+import { geocode, GeocodeError } from './geocode';
+import type { GeocodeRequest } from './geocode';
 declare const opencage: {
     geocode: typeof geocode;
 };
-export { geocode, GeocodeRequest, GeocodeError };
+export { geocode, GeocodeError, GeocodeRequest };
 export default opencage;

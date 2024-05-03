@@ -1,7 +1,7 @@
 /**
  * GeocodeRequest interface
  */
-export interface GeocodeRequest {
+export type GeocodeRequest = {
     /**
      * a 30 character long, alphanumeric string.
      */
@@ -107,7 +107,7 @@ export interface GeocodeRequest {
      * As an example, by default a reverse geocoding request for the coordinates 50.976004, 11.336753 returns a formatted value of Goethes Gartenhaus, Corona-Schröter-Weg 1, 99425 Weimar, Germany, but if address_only=1 is specified the value would be simply Corona-Schröter-Weg 1, 99425 Weimar, Germany. This can be particularly useful when there are many stores/restaurants/whatever at a single location (for example a multi-story building).
      */
     address_only?: number;
-}
+};
 /**
  *
  */
