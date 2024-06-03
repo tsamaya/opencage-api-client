@@ -1,6 +1,6 @@
 {
   "name": "opencage-api-client",
-  "version": "1.0.5",
+  "version": "2.0.0-alpha-1",
   "description": "An OpenCageData Geocoder API client library for node and browsers (UMD)",
   "keywords": [
     "geocoder",
@@ -34,9 +34,10 @@
     "build:browser": "microbundle -f umd -i src/browser.ts -o dist/opencage-api.umd.js --name opencage --no-pkg-main --generateTypes false",
     "dev": "microbundle watch",
     "docs": "typedoc",
+    "format": "pnpm run lint:fix && prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "format": "pnpm run lint:fix && prettier --write .",
+    "release:changelog": "tsx ./scripts/valid-changelog.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
