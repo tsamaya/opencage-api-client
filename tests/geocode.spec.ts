@@ -17,7 +17,7 @@ describe('geocode tests', () => {
 
     it('tests no input parameters [browser]', async () => {
       const input = undefined;
-      try {        
+      try {
         // @ts-expect-error Argument of type 'undefined' is not assignable to parameter of type 'GeocodeRequest'.ts(2345)
         await opencage.geocode(input);
       } catch (error) {

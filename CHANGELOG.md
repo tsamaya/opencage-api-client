@@ -7,7 +7,17 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ## [unreleased]
 
+## [2.0.0-alpha.2] (2024-06-03)
+
+### Chore
+
+- Wrong tag publishing v2.0.0-alpha.1, publishing a new alpha version as next
+
 ## [2.0.0-alpha.1] (2024-06-03)
+
+### Changed
+
+- Drop support for Node 16
 
 ### Features
 
@@ -21,7 +31,11 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 - Uses [typedoc](https://typedoc.org/)
 
-## [1.0.6] (2024-06-03)
+## [1.0.7] (2024-06-03)
+
+### Chore
+
+- Wrong tag publishing v2.0.0-alpha.1, publishing a new stable version as latest
 
 ### Chore
 
@@ -165,8 +179,10 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 - First release
 
-[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.1...HEAD
+[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.2...HEAD
+[2.0.0-alpha.2]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.1...v2.0.0-alpha.2
 [2.0.0-alpha.1]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.6...v2.0.0-alpha.1
+[1.0.7]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.6...v1.0.7
 [1.0.6]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.3...v1.0.4
