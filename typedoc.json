@@ -1,6 +1,3 @@
 {
-  "entryPoints": ["./src/index.ts"],
-  "sidebarLinks": {
-      "OpenCage Data": "https://opencagedata.com"
-  }
+  "entryPoints": ["./src/geocode.ts", "./src/browser.ts"],
 }

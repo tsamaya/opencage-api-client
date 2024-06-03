@@ -10,14 +10,16 @@ This example shows how to use the library within a vanilla javascript applicatio
 
 This example shows how to use the library with NodeJS using a environnement variable for the API key
 
-__ESM__
+**ESM**
 [esm.js](./esm.js)
+
 ```bash
 node esm.js
 ```
 
-__ComonJS__
+**ComonJS**
 [apitestkeys.js](./apitestkeys.js)
+
 ```bash
 node apitestkeys.cjs
 # geocode - 402 Payment Required ------------
@@ -64,6 +66,7 @@ Following a github issue (question) here are some more examples of reverse geoco
 This example shos how to use the library with TypeScript
 
 [typescript.ts](./typescript.ts)
+
 ```bash
 npx tsx typescript.ts
 ```

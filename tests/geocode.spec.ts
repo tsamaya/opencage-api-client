@@ -15,18 +15,20 @@ describe('geocode tests', () => {
       }
     });
 
-    it('tests no input parameters', async () => {
+    it('tests no input parameters [browser]', async () => {
       const input = undefined;
-      try {
+      try {        
+        // @ts-expect-error Argument of type 'undefined' is not assignable to parameter of type 'GeocodeRequest'.ts(2345)
         await opencage.geocode(input);
       } catch (error) {
         // console.log(error);
         expect(error.response.status.code).toEqual(400);
       }
     });
-    it('tests a null input parameter', async () => {
+    it('tests a null input parameter [browser]', async () => {
       const input = null;
       try {
+        // @ts-expect-error Argument of type 'null' is not assignable to parameter of type 'GeocodeRequest'.ts(2345)
         await opencage.geocode(input);
       } catch (error) {
         // console.log(error);

@@ -4,11 +4,13 @@ const MISSING_OR_BAD_QUERY = 'missing or bad query';
 const MISSING_API_KEY = 'missing API key';
 
 /**
- * GeocodeRequest interface
+ * GeocodeRequest type
+ *
+ * Represents the Request Object
  */
 export type GeocodeRequest = {
   /**
-   * a 30 character long, alphanumeric string.
+   * a 30 character long, alphanumeric string. The API Key is required when used in a browser. In a Node environment, it is optional, as it will be added automatically from the environment variable OPENAI_API_KEY, and a `.env` file can also be used.
    */
   key?: string;
   /**
@@ -115,7 +117,7 @@ export type GeocodeRequest = {
 };
 
 /**
- *
+ * TODO GeocodeError
  */
 export class GeocodeError extends Error {
   response?: any;
@@ -145,7 +147,7 @@ function buildError(code: number, message: string) {
  * @param response
  * @returns
  */
-const checkStatus = (response: any) => {
+function checkStatus(response: any) {
   if (response.status >= 200 && response.status < 300) {
     return response;
   }
@@ -157,9 +159,11 @@ const checkStatus = (response: any) => {
   };
   // error.response = response;
   throw error;
-};
+}
 
-const parseJSON = (response: any) => response.json();
+function parseJSON(response: any) {
+  return response.json();
+}
 
 async function fetchUrl(url: string, resolve: any, reject: any) {
   fetch(url)
@@ -195,6 +199,11 @@ export function isUndefinedOrNull(param: GeocodeRequest): boolean {
   return typeof param === 'undefined' || param === null;
 }
 
+/**
+ * @private
+ * @param input
+ * @returns
+ */
 export function buildQueryString(input: any): string {
   if (isUndefinedOrNull(input)) {
     return '';
@@ -207,6 +216,7 @@ export function buildQueryString(input: any): string {
 }
 
 /**
+ * @private
  * Builds the query params including key and proxy URL
  *
  * @param {*} input
