@@ -2,14 +2,31 @@
 
 All notable changes to this project will be documented in this file.
 
-This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.0.7] - 2024-06-03
+
+### Chore
+
+- Wrong tag publishing v2-alpha, publishing a new stable version as latest
+
+## [1.0.6] - 2024-06-03
+
+### Chore
+
+- Uses pnpm as package manager
+- upgrade dependencies
+- Drop CircleCI
+- GHActions codecov and meterian runs only on branch master
 
 ## [1.0.5] - 2024-04-27
 
 ### Changed
 
+- Adds CI using GitHub actions
 - upgrade dependencies
 
 ## [1.0.4] - 2024-02-03
@@ -114,7 +131,9 @@ Open Cage website URL has changed
 
 First release
 
-[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.5...HEAD
+[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.7...HEAD
+[1.0.7]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.6...v1.0.7
+[1.0.6]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.2...v1.0.3

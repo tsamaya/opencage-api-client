@@ -46,6 +46,12 @@ or
 $ yarn add opencage-api-client
 ```
 
+or
+
+```
+$ pnpm add opencage-api-client
+```
+
 Create a `.env` file with:
 
 ```
