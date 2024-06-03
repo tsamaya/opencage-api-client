@@ -10,11 +10,13 @@ const changelog = readFileSync('./CHANGELOG.md', 'utf-8');
 const packageJson = JSON.parse(readFileSync('./package.json', 'utf-8'));
 
 if (!packageJson || !packageJson.version) {
-  throw new Error('Could not get current version from package.json');
+  console.error('❌ Could not get current version from package.json');
+  process.exit();
 }
 
 if (!changelog.startsWith('# Changelog')) {
-  throw new Error('Change log should start with changelog title');
+  console.error('❌ Change log should start with changelog title');
+  process.exit();
 }
 
 const version = `[${packageJson.version}]`;
@@ -23,34 +25,40 @@ console.log(`Version detected: ${version}`);
 
 const changes = changelog.split('## ');
 
-if (!changes[1].startsWith(version)) {
-  throw new Error('Latest version is not latest change log title');
+// console.log(changes);
+
+if (!changes[2].startsWith(version)) {
+  console.error('❌ Latest version is not latest change log title');
+  process.exit();
 }
 
 if (changes.length === 0) {
-  throw new Error('No changes detected in change log');
+  console.error('❌ No changes detected in change log');
+  process.exit();
 }
 
 if (changes.length === 1) {
-  throw new Error(
-    'Changelog appears invalid with only one change title and no entries'
+  console.error(
+    '❌ Changelog appears invalid with only one change title and no entries'
   );
+  process.exit();
 }
 
-if (changes[0].startsWith('[') && changes[1].startsWith('[')) {
-  throw new Error('Changelog should always have at least one change');
+if (changes[2].startsWith('[') && changes[3].startsWith('[')) {
+  console.error('❌ Changelog should always have at least one change');
+  process.exit();
 }
 
-const lastChanges = changelog.split('## [')[1];
+const lastChanges = changelog.split('## [')[2];
 
-const lastChangesTypes = lastChanges.split('###');
-
+const lastChangesTypes = lastChanges.split('### ');
 lastChangesTypes.shift(); // Remove title
 
 const lastGranularChanges = lastChanges.split('- ');
 
-if (lastGranularChanges.length === 0) {
-  throw new Error('Changelog should always have at least one change');
+if (lastGranularChanges.length === 1) {
+  console.error('❌ Changelog should always have at least one change per type');
+  process.exit();
 }
 
 console.log(`Changelog for ${packageJson.version} is valid! ✅`);

@@ -1,6 +1,11 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [unreleased]
 
 ## [2.0.0-alpha-1] (2024-06-xx)
 
@@ -8,19 +13,21 @@ All notable changes to this project will be documented in this file. See [standa
 
 - Refactor using typescript, microbundle for packaging
 
+### Chore
+
+- Script to validate CHANGELOG file
+
 ### Documentation
 
 - Uses [typedoc](https://typedoc.org/)
 
-<!-- ## [unreleased] -->
-
-## [1.0.6] (2024-06-xx)
+## [1.0.6] (2024-06-03)
 
 ### Chore
 
-- Drop CircleCI
 - Uses pnpm as package manager
-- upgrade dependencies
+- Upgrade dependencies
+- Drop CircleCI
 - GHActions codecov and meterian runs only on branch master
 
 ## [1.0.5] (2024-04-27)
