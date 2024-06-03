@@ -1,9 +1,11 @@
 /**
- * GeocodeRequest interface
+ * GeocodeRequest type
+ *
+ * Represents the Request Object
  */
 export type GeocodeRequest = {
     /**
-     * a 30 character long, alphanumeric string.
+     * a 30 character long, alphanumeric string. The API Key is required when used in a browser. In a Node environment, it is optional, as it will be added automatically from the environment variable OPENAI_API_KEY, and a `.env` file can also be used.
      */
     key?: string;
     /**
@@ -109,7 +111,7 @@ export type GeocodeRequest = {
     address_only?: number;
 };
 /**
- *
+ * TODO GeocodeError
  */
 export declare class GeocodeError extends Error {
     response?: any;
@@ -129,6 +131,11 @@ export declare function isUndefinedOrEmpty(param: string): boolean;
  * @return {Boolean}       returns value
  */
 export declare function isUndefinedOrNull(param: GeocodeRequest): boolean;
+/**
+ * @private
+ * @param input
+ * @returns
+ */
 export declare function buildQueryString(input: any): string;
 /**
  * geocode address and reverse geocode coordinates using
