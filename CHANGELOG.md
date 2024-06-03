@@ -7,6 +7,12 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ## [Unreleased]
 
+## [1.0.7] - 2024-06-03
+
+### Chore
+
+- Wrong tag publishing v2-alpha, publishing a new stable version as latest
+
 ## [1.0.6] - 2024-06-03
 
 ### Chore
@@ -125,7 +131,8 @@ Open Cage website URL has changed
 
 First release
 
-[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.6...HEAD
+[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.7...HEAD
+[1.0.7]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.6...v1.0.7
 [1.0.6]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.3...v1.0.4
