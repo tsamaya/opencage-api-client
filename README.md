@@ -58,8 +58,9 @@ Create a `.env` file with:
 OPENCAGE_API_KEY=YOUR-OPENCAGE_DATA_API_KEY
 ```
 
-Here is an example:
+Here are examples:
 
+1. CommonJS
 ```javascript
 const opencage = require('opencage-api-client');
 
@@ -73,6 +74,34 @@ opencage
   });
 ```
 
+2. ESM
+```javascript
+import opencage from 'opencage-api-client';
+
+opencage
+  .geocode({ q: 'lyon' })
+  .then((data) => {
+    console.log(JSON.stringify(data));
+  })
+  .catch((error) => {
+    console.log('error', error.message);
+  });
+```
+
+3. Typescript
+```javascript
+import { geocode, GeocodeRequest } from 'opencage-api-client';
+
+async function geocode() {
+  const input: GeocodeRequest = {
+    q: '51.952659,7.632473',
+    key: '6d0e711d72d74daeb2b0bfd2a5cdfdba', // https://opencagedata.com/api#testingkeys
+    no_annotations: 1,
+  };
+  const result = await geocode(input);
+  console.log(JSON.stringify(result,null,2));
+}
+```
 ### browser
 
 The browser version is built over the node one, obviously without the dotenv feature.
