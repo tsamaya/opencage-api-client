@@ -116,6 +116,239 @@ export type GeocodeRequest = {
   address_only?: number;
 };
 
+type Rate = {
+  limit: number;
+  remaining: number;
+  reset: number;
+};
+
+type License = {
+  name: string;
+  url: string;
+};
+
+type Status = {
+  message?: string;
+  code?: number;
+};
+
+type StayInformed = {
+  blog?: string;
+  twitter?: string;
+  mastodon: string;
+};
+
+type TimeStamp = {
+  created_http?: string;
+  created_unix?: number;
+};
+/**
+ * Information about the local currency
+ *
+ * Example:
+ * ```
+ * "currency": {
+ *    "alternate_symbols": [
+ *    ],
+ *  "decimal_mark": ",",
+ *  "html_entity": "€",
+ *  "iso_code": "EUR",
+ *  "iso_numeric": "978",
+ *  "name": "Euro",
+ *  "smallest_denomination": 1,
+ *  "subunit": "Cent",
+ *  "subunit_to_unit": 100,
+ *  "symbol": "€",
+ *  "symbol_first": 0,
+ *  "thousands_separator": "."
+ * }
+ *```
+ */
+type Currency = {
+  alternateSymbols: string[];
+  decimalMark: string;
+  disambiguateSymbol: string;
+  htmlEntity: string;
+  isoCode: string;
+  isoNumeric: string;
+  name: string;
+  smallestDenomination: number;
+  subunit: string;
+  subunitToUnit: number;
+  symbol: string;
+  symbolFirst: number;
+  thousandsSeparator: string;
+};
+
+interface DMS {
+  lat: string;
+  lng: string;
+}
+
+interface FIPS {
+  county: string;
+  state: string;
+}
+
+interface Mercator {
+  x: number;
+  y: number;
+}
+
+interface Osm {
+  editURL: string;
+  noteURL: string;
+  url: string;
+}
+
+interface Roadinfo {
+  driveOn: string;
+  road: string;
+  speedIn: string;
+}
+
+interface Sun {
+  rise: Rise;
+  set: Rise;
+}
+
+interface Rise {
+  apparent: number;
+  astronomical: number;
+  civil: number;
+  nautical: number;
+}
+
+interface Timezone {
+  name: string;
+  nowInDst: number;
+  offsetSEC: number;
+  offsetString: string;
+  shortName: string;
+}
+
+interface Regions {
+  americas: string;
+  northernAmerica: string;
+  us: string;
+  world: string;
+}
+
+/**
+ * Contains the relevant United Nations M49 codes for the location.
+ *
+ * Consists of two keys: regions and statistical_groupings.
+ *
+ * regions contains keys which are human-readable names of the regions in English and values which are 3 digit UN M49 codes. Note: The codes are strings and not numbers, they can have leading zeros. See a list of all possible regions and the corresponding codes.
+ * statistical_groupings contains a list of abbreviations of various country groupings commonly used in statistical analysis.
+ *
+ * Possible values are
+ *
+ *   - LDC	Least Developed Country
+ *   - LEDC	Less Economically Developed Country
+ *   - LLDC	Landlocked Developing Country
+ *   - MEDC	More Economically Developed Country
+ *   - SIDS	Small Island Developing State
+ *
+ * Example (for a location in Haiti)
+ * ```
+ * "UN_M49": {
+ *   "regions": {
+ *     "AMERICAS": "019",
+ *     "CARIBBEAN": "029",
+ *     "HT": "332",
+ *     "LATIN_AMERICA": "419",
+ *     "WORLD": "001"
+ *   },
+ *   "statistical_groupings": [
+ *     "LDC",
+ *     "LEDC",
+ *     "SIDS"
+ *   ]
+ * },
+ * ```
+ */
+interface UnM49 {
+  regions: Regions;
+  statisticalGroupings: string[];
+}
+
+interface What3Words {
+  words: string;
+}
+
+type Geometry = {
+  lat: number;
+  lng: number;
+};
+
+type Bounds = {
+  northeast: Geometry;
+  southwest: Geometry;
+};
+
+type Components = {
+  iso31661_Alpha2: string;
+  iso31661_Alpha3: string;
+  iso31662: string[];
+  category: string;
+  type: string;
+  city: string;
+  continent: string;
+  country: string;
+  countryCode: string;
+  county: string;
+  houseNumber: string;
+  postcode: string;
+  road: string;
+  state: string;
+  stateCode: string;
+  suburb: string;
+};
+
+type Annotations = {
+  dms: DMS;
+  fips: FIPS;
+  mgrs: string;
+  maidenhead: string;
+  mercator: Mercator;
+  osm: Osm;
+  unM49: UnM49;
+  /**
+   * The international telephone calling code for the country of the result.
+   *
+   * Example: 49
+   */
+  callingcode: number;
+  currency: Currency;
+  flag: string;
+  geohash: string;
+  qibla: number;
+  roadinfo: Roadinfo;
+  sun: Sun;
+  timezone: Timezone;
+  what3Words: What3Words;
+};
+
+type GeocodeResult = {
+  annotations: Annotations;
+  bounds: Bounds;
+  components: Components;
+  confidence: number;
+  formatted: string;
+  geometry: Geometry;
+};
+export type GeocodeResponse = {
+  documentation?: string;
+  rate?: Rate;
+  licenses?: License[];
+  results?: GeocodeResult[];
+  status?: Status;
+  stay_informed?: StayInformed;
+  thanks?: string;
+  timestamp?: TimeStamp;
+  totalResults?: number;
+};
 /**
  * TODO GeocodeError
  */
@@ -161,7 +394,7 @@ function checkStatus(response: any) {
   throw error;
 }
 
-function parseJSON(response: any) {
+function parseJSON(response: Response) {
   return response.json();
 }
 
@@ -258,7 +491,7 @@ function buildQuery(input: any) {
  *
  * @return {Promise}  a promise resolved by the json format API payload
  */
-export function geocode(input: GeocodeRequest): Promise<any> {
+export function geocode(input: GeocodeRequest): Promise<GeocodeResponse> {
   return new Promise((resolve, reject) => {
     if (isUndefinedOrNull(input)) {
       const error = buildError(400, MISSING_OR_BAD_QUERY);
