@@ -33,7 +33,7 @@
     "build:node": "microbundle",
     "build:browser": "microbundle -f umd -i src/browser.ts -o dist/opencage-api.umd.js --name opencage --no-pkg-main --generateTypes false",
     "dev": "microbundle watch",
-    "docs": "typedoc",
+    "build:docs": "typedoc",
     "format": "pnpm run lint:fix && prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
