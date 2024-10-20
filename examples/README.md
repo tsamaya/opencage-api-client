@@ -71,4 +71,4 @@ This example shos how to use the library with TypeScript
 npx tsx typescript.ts
 ```
 
-The complete example can be found here : https://github.com/tsamaya/opencage-api-client-typescript-test
+The complete example can be found here : [opencage-api-client-typescript-test](https://github.com/tsamaya/opencage-api-client-typescript-test)

@@ -1,6 +1,7 @@
 openapi: 3.0.3
 info:
   contact:
+    email: support@opencagedata.com
     name: OpenCage GmbH
     url: https://opencagedata.com/contact
   version: 1.1.0
@@ -33,6 +34,7 @@ paths:
     get:
       description: Geocode (JSON)
       operationId: get-json
+      summary: request a JSON geocoding response
       tags:
         - Geocoding
         - Reverse Geocoding
@@ -122,6 +124,12 @@ paths:
                 $ref: '#/components/schemas/Response'
         '429':
           description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '500':
+          description: Internal server error
           content:
             application/json:
               schema:
@@ -134,8 +142,9 @@ paths:
                 $ref: '#/components/schemas/Response'
   /xml:
     get:
-      operationId: get-xml
       description: Geocode (XML)
+      operationId: get-xml
+      summary: request an XML geocoding response
       tags:
         - Geocoding
         - Reverse Geocoding
@@ -229,6 +238,12 @@ paths:
             text/xml; charset=utf-8:
               schema:
                 $ref: '#/components/schemas/Response'
+        '500':
+          description: Internal server error
+          content:
+            text/xml; charset=utf-8:
+              schema:
+                $ref: '#/components/schemas/Response'
         '503':
           description: Internal server error
           content:
@@ -237,8 +252,9 @@ paths:
                 $ref: '#/components/schemas/Response'
   /geojson:
     get:
-      operationId: get-geojson
       description: Geocode (GeoJSON)
+      operationId: get-geojson
+      summary: request a GeoJSON geocoding response
       tags:
         - Geocoding
         - Reverse Geocoding
@@ -327,6 +343,12 @@ paths:
                 $ref: '#/components/schemas/Response'
         '429':
           description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        '500':
+          description: Internal server error
           content:
             application/json:
               schema:

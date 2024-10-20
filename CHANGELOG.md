@@ -7,6 +7,17 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ## [unreleased]
 
+## [2.0.0-alpha.3] (2024-10-20)
+
+### Added
+
+- GeocodeResponse type
+
+### Chore
+
+- Upgrade dependencies
+- Eslint v9
+
 ## [2.0.0-alpha.2] (2024-06-03)
 
 ### Chore
@@ -179,7 +190,8 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 - First release
 
-[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.2...HEAD
+[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.3...HEAD
+[2.0.0-alpha.3]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.2...v2.0.0-apha.3
 [2.0.0-alpha.2]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.1...v2.0.0-alpha.2
 [2.0.0-alpha.1]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.6...v2.0.0-alpha.1
 [1.0.7]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.6...v1.0.7

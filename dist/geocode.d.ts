@@ -110,6 +110,11 @@ export type GeocodeRequest = {
      */
     address_only?: number;
 };
+/**
+ * Rate/Usage Limits
+ *
+ * The OpenCage geocoding API uses rate limits to ensure that the service stays available to all users.
+ */
 type Rate = {
     limit: number;
     remaining: number;
@@ -128,7 +133,7 @@ type StayInformed = {
     twitter?: string;
     mastodon: string;
 };
-type TimeStamp = {
+type Timestamp = {
     created_http?: string;
     created_unix?: number;
 };
@@ -169,14 +174,34 @@ type Currency = {
     symbolFirst: number;
     thousandsSeparator: string;
 };
+/**
+ * Contains the latitude and longitude of the center point of the result in degree minute decimal second format.
+ *
+ * Example: { "lat": "52° 23' 16.01880'' N", "lng": "9° 44' 0.38184'' E" }
+ */
 interface DMS {
     lat: string;
     lng: string;
 }
+/**
+ * Contains the US Federal Information Processing Standards (FIPS) code for the state (two digit) and county (five digit) of the center point of the result, if we can determine it.
+ *
+ * Example: { "county": "08101", "state": "08" }
+ *
+ *Note:
+ * - Only for locations in the United States and associated territories.
+ * - The values are strings - not numbers - and can have leading zeros.
+ */
 interface FIPS {
     county: string;
     state: string;
 }
+/**
+ * contains the Mercator projection (EPSG:41001, sometimes also referred to as "Simple Mercator") x and y unit meter values of the center point of the result.
+ *
+ * Example: { "x": 1083521.518, "y": 6836676.75 }
+ * Note: use of Mercator projection on latitudes above/below +70/-70 degrees is strongly discouraged, due to the gross distortions of the projection.
+ */
 interface Mercator {
     x: number;
     y: number;
@@ -255,6 +280,11 @@ interface UnM49 {
 interface What3Words {
     words: string;
 }
+/**
+ * LatLng coordinates
+ * - lat
+ * - kng
+ */
 type Geometry = {
     lat: number;
     lng: number;
@@ -295,8 +325,19 @@ type Annotations = {
      * Example: 49
      */
     callingcode: number;
+    /**
+     * {@link .Rate}
+     */
     currency: Currency;
+    /**
+     * Emoji flag of the country of the result.
+     *
+     * Example: 🇩🇪
+     */
     flag: string;
+    /**	Contains a [geohash](https://en.wikipedia.org/wiki/Geohash) for the center point of the result.
+     * Example: u1qfj2zsvwd6ntczum3r
+     */
     geohash: string;
     qibla: number;
     roadinfo: Roadinfo;
@@ -310,17 +351,69 @@ type GeocodeResult = {
     components: Components;
     confidence: number;
     formatted: string;
+    /**
+     * Geometry LatLng
+     */
     geometry: Geometry;
 };
+/**
+ * The API response is formatted according to the format specified in the request.
+ *
+ * All returned coordinates use WGS 84 (sometimes also known as EPSG:4326) as reference coordinate system.
+ *
+ * The response structure will vary slightly depending on:
+ * - The optional request parameters specified.
+ * - Whether or not you are a subscription customer. Because subscription customer do not face hard limits, their responses do NOT contain the rate element. Details.
+ * - The location requested and the information we have available for that location.
+ * - Reverse geocoding results contain the field distance_from_q which is the distance (in meters) to the coordinates in the request to the coordinates of the result.
+ *
+ * Ranking of Results
+ * - Reverse geocoding requests return at most one result.
+ * - Forward geocoding requests may return multiple results.
+ * 1. Results are ordered from most relevant to least.
+ * 2. Results are NOT ordered by confidence score (see definition of confidence score).
+ */
 export type GeocodeResponse = {
+    /**
+     * Link to the OpenCageData Geocoding API documentation
+     */
     documentation?: string;
+    /**
+     * The OpenCage geocoding API uses rate limits to ensure that the service stays available to all users.
+     *
+     * **Free trial usage limits**
+     * - Free trial accounts have a hard limit of 2,500 requests per day for testing purposes. Our definition of "day" is based on [the UTC timezone](https://en.wikipedia.org/wiki/Coordinated_Universal_Time). Daily counts reset at 24:00 UTC. [See current UTC time](https://opencagedata.com/tools/current-utc-time).
+     * - Free trial accounts are limited to one request per second. If you exceed that rate you may see a 429 - too many requests response.
+     * - We offer a free TRIAL, not a free tier. If you are regularly depending on our service, you are not testing.
+     */
     rate?: Rate;
+    /**
+     * Credits
+     */
     licenses?: License[];
+    /**
+     * Results
+     */
     results?: GeocodeResult[];
+    /**
+     * Response Statu
+     */
     status?: Status;
+    /**
+     * links to stay tuned about OpenCageData API
+     */
     stay_informed?: StayInformed;
+    /**
+     * Thanks message
+     */
     thanks?: string;
-    timestamp?: TimeStamp;
+    /**
+     * Server timestamp
+     */
+    timestamp?: Timestamp;
+    /**
+     * Number of results
+     */
     totalResults?: number;
 };
 /**
