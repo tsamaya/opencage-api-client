@@ -39,7 +39,7 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
-    "cross-fetch": "4.0.0",
+    "cross-fetch": "4.1.0",
     "dotenv": "16.4.7"
   },
   "repository": {
