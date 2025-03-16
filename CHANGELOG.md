@@ -7,6 +7,16 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ## [Unreleased]
 
+### Changed
+
+- upgrade dependencies
+- removes node 16 from the tested platform
+
+### Chore
+
+- removes Meterian badges and GHActions on Meterian
+- update maintenance badge
+
 ## [1.0.7] - 2024-06-03
 
 ### Chore
