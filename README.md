@@ -1,4 +1,4 @@
-# opencage-api-client
+# OpenCage API Client
 
 [![Version](https://img.shields.io/npm/v/opencage-api-client.svg)](https://www.npmjs.com/package/opencage-api-client)
 ![Downloads](https://img.shields.io/npm/dw/opencage-api-client)
@@ -7,29 +7,29 @@
 
 This repository is an [OpenCage Geocoding API](https://opencagedata.com/api) client for JavaScript and node.
 
-### Continuous integration
+## Continuous integration
 
 [![CircleCI (all branches)](https://img.shields.io/circleci/project/github/tsamaya/opencage-api-client.svg)](https://circleci.com/gh/tsamaya/opencage-api-client)
 [![codecov](https://codecov.io/gh/tsamaya/opencage-api-client/branch/master/graph/badge.svg)](https://codecov.io/gh/tsamaya/opencage-api-client)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8f0f9ba00ade907ef576/maintainability)](https://codeclimate.com/github/tsamaya/opencage-api-client/maintainability)
 [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 
-### Security
+## Security
 
 | Source                      | Scores                                                                                                                                                                                                                   |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [FOSSA](https://fossa.com/) | [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client?ref=badge_shield) |
 | [Snyk](https://snyk.io/)    | ![Known Vulnerabilities](https://snyk.io/test/github/tsamaya/opencage-api-client/badge.svg)                                                                                                                              |
 
-## Tutorial
+# 🎓 Tutorial
 
 You can find a comprehensive tutorial for using this module [on the OpenCage site](https://opencagedata.com/tutorials/geocode-in-nodejs).
 
-## 🔧 Getting started
+# 🔧 Getting started
 
 Sign up for a [free-trial API Key](https://opencagedata.com/users/sign_up).
 
-### node
+## node
 
 The library uses [dotenv](https://www.npmjs.com/package/dotenv) on node runtime to configure OpenCage Geocoding API key. But using `key` as an input parameter is always a possibility.
 
@@ -106,7 +106,7 @@ async function geocode() {
 }
 ```
 
-### browser
+## browser
 
 The browser version is built over the node one, obviously without the dotenv feature.
 
@@ -141,9 +141,9 @@ opencage
 
 Found some examples in the [examples](./examples/) folder.
 
-## ✨ API
+# ✨ API
 
-### geocode
+## geocode
 
 | Parameter | Type   | Optional? | Description                                                                                                                  |
 | --------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -151,7 +151,7 @@ Found some examples in the [examples](./examples/) folder.
 | key       | String | optional  | the `key` can be omitted when using a `proxyURL` or when using node with a dedicated environment variable `OPENCAGE_API_KEY` |
 | proxyURL  | String | optional  | The proxy URL parameter (useful to hide your API key)                                                                        |
 
-### Error handling
+## Error handling
 
 API can return errors like invalid key, to many requests, daily quota exceeded, etc. Those errors are thrown as Javascript [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) by the `geocode` function. The error object contains the same status object as the [OpenCage API](https://opencagedata.com/api#response).
 
@@ -186,7 +186,7 @@ will output for a 429:
 
 Check the examples using the Test API key from OpenCage [error handling examples](./examples/apitestkeys.js)
 
-## 🔨 Build and test
+# 🔨 Build and test
 
 1.  Fork or clone this repository
 1.  `$ cd` into the `repository` folder
@@ -194,19 +194,19 @@ Check the examples using the Test API key from OpenCage [error handling examples
 1.  lint and test coverage using `$ npm test`
 1.  Build : `$ npm run build`
 
-## 🛣 Revision History
+# 🛣 Revision History
 
 Check the [CHANGELOG](CHANGELOG.md) file.
 
-## 🥂 Contributing
+# 🥂 Contributing
 
 Anyone and everyone is welcome to contribute.
 
-## 🐞 Issues
+# 🐞 Issues
 
 Find a bug or want to request a new feature? Please let me know by submitting an issue.
 
-## 🗝 Licensing
+# 🗝 Licensing
 
 Licensed under the MIT License
 
