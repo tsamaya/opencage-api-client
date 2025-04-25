@@ -35,6 +35,7 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm lint
+      - run: pnpm check-types
       - run: pnpm test:coverage
         env:
           OPENCAGE_API_KEY: ${{ secrets.OPENCAGE_API_KEY }}
