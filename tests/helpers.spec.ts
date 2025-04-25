@@ -35,6 +35,7 @@ describe('Helpers library', () => {
     });
     it('100', () => {
       const input = 100;
+      // @ts-expect-error testing with wrong type
       const result = isUndefinedOrEmpty(input);
       expect(result).toBe(false);
     });
@@ -47,16 +48,19 @@ describe('Helpers library', () => {
     });
     it('empty', () => {
       const input = '';
+      // @ts-expect-error testing with wrong type
       const result = isUndefinedOrNull(input);
       expect(result).toBe(false);
     });
     it('a', () => {
       const input = 'a';
+      // @ts-expect-error testing with wrong type
       const result = isUndefinedOrNull(input);
       expect(result).toBe(false);
     });
     it('0', () => {
       const input = 0;
+      // @ts-expect-error testing with wrong type
       const result = isUndefinedOrNull(input);
       expect(result).toBe(false);
     });

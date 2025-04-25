@@ -18,7 +18,11 @@ export type GeocodeRequest = {
    */
   q: string;
   /**
-   * When set to 1 we attempt to abbreviate and shorten the formatted string we return. Learn more about formatted placenames.
+   * The URL of a proxy server to use for the request. This is useful if you want to hide your API Key.
+   */
+  proxyURL?: string;
+  /**
+   * When set to 1 we attempt to abbreviate and shorten the formatted string we return. Learn more about formatted placename.
    */
   abbrv?: number;
   /**
@@ -103,11 +107,11 @@ export type GeocodeRequest = {
    */
   proximity?: string;
   /**
-   * When set to 1 the behaviour of the geocoder is changed to attempt to match the nearest road (as opposed to address). If possible we also fill additional information in the roadinfo annotation. Please see details API Documentation.
+   * When set to 1 the behavior of the geocoder is changed to attempt to match the nearest road (as opposed to address). If possible we also fill additional information in the roadinfo annotation. Please see details API Documentation.
    */
   roadinfo?: number;
   /**
-   * When set to 1 we include only the address (exluding POI names) in the formatted string we return.
+   * When set to 1 we include only the address (excluding POI names) in the formatted string we return.
    *
    * Example usage: address_only=1
    *
@@ -121,29 +125,50 @@ export type GeocodeRequest = {
  *
  * The OpenCage geocoding API uses rate limits to ensure that the service stays available to all users.
  */
-type Rate = {
+export type Rate = {
   limit: number;
   remaining: number;
   reset: number;
 };
 
-type License = {
+/**
+ * License
+ *
+ * See the credits detail page https://opencagedata.com/credits.
+ */
+export type License = {
   name: string;
   url: string;
 };
 
-type Status = {
+/**
+ * Status
+ *
+ * The status object contains the following fields:
+ * - message: a human-readable message
+ * - code: an integer code
+ */
+export type Status = {
   message?: string;
   code?: number;
 };
 
-type StayInformed = {
+/**
+ * StayInformed
+ *
+ * Links to stay tuned about OpenCageData API
+ */
+export type StayInformed = {
   blog?: string;
-  twitter?: string;
-  mastodon: string;
+  mastodon?: string;
 };
 
-type Timestamp = {
+/**
+ * Timestamp
+ *
+ * The timestamp of the request in HTTP and UNIX format.
+ */
+export type Timestamp = {
   created_http?: string;
   created_unix?: number;
 };
@@ -170,7 +195,7 @@ type Timestamp = {
  * }
  *```
  */
-type Currency = {
+export type Currency = {
   alternateSymbols: string[];
   decimalMark: string;
   disambiguateSymbol: string;
@@ -191,24 +216,24 @@ type Currency = {
  *
  * Example: { "lat": "52° 23' 16.01880'' N", "lng": "9° 44' 0.38184'' E" }
  */
-interface DMS {
+export type DMS = {
   lat: string;
   lng: string;
-}
+};
 
 /**
  * Contains the US Federal Information Processing Standards (FIPS) code for the state (two digit) and county (five digit) of the center point of the result, if we can determine it.
  *
  * Example: { "county": "08101", "state": "08" }
  *
- *Note:
- * - Only for locations in the United States and associated territories.
- * - The values are strings - not numbers - and can have leading zeros.
+ * Note:
+ *  - Only for locations in the United States and associated territories.
+ *  - The values are strings - not numbers - and can have leading zeros.
  */
-interface FIPS {
+export type FIPS = {
   county: string;
   state: string;
-}
+};
 
 /**
  * contains the Mercator projection (EPSG:41001, sometimes also referred to as "Simple Mercator") x and y unit meter values of the center point of the result.
@@ -216,49 +241,48 @@ interface FIPS {
  * Example: { "x": 1083521.518, "y": 6836676.75 }
  * Note: use of Mercator projection on latitudes above/below +70/-70 degrees is strongly discouraged, due to the gross distortions of the projection.
  */
-interface Mercator {
+export type Mercator = {
   x: number;
   y: number;
-}
+};
 
-interface Osm {
+export type Osm = {
   editURL: string;
   noteURL: string;
   url: string;
-}
+};
 
-interface Roadinfo {
+export type Roadinfo = {
   driveOn: string;
   road: string;
   speedIn: string;
-}
+};
 
-interface Sun {
-  rise: Rise;
-  set: Rise;
-}
-
-interface Rise {
+export type Rise = {
   apparent: number;
   astronomical: number;
   civil: number;
   nautical: number;
-}
+};
+export type Sun = {
+  rise: Rise;
+  set: Rise;
+};
 
-interface Timezone {
+export type Timezone = {
   name: string;
   nowInDst: number;
   offsetSEC: number;
   offsetString: string;
   shortName: string;
-}
+};
 
-interface Regions {
+export type Regions = {
   americas: string;
   northernAmerica: string;
   us: string;
   world: string;
-}
+};
 
 /**
  * Contains the relevant United Nations M49 codes for the location.
@@ -294,31 +318,34 @@ interface Regions {
  * },
  * ```
  */
-interface UnM49 {
+export type UnM49 = {
   regions: Regions;
   statisticalGroupings: string[];
-}
+};
 
-interface What3Words {
+export type What3Words = {
   words: string;
-}
+};
 
 /**
  * LatLng coordinates
  * - lat
  * - kng
  */
-type Geometry = {
+export type Geometry = {
   lat: number;
   lng: number;
 };
 
-type Bounds = {
+export type Bounds = {
   northeast: Geometry;
   southwest: Geometry;
 };
 
-type Components = {
+/**
+ * Response components
+ */
+export type Components = {
   iso31661_Alpha2: string;
   iso31661_Alpha3: string;
   iso31662: string[];
@@ -337,7 +364,7 @@ type Components = {
   suburb: string;
 };
 
-type Annotations = {
+export type Annotations = {
   dms: DMS;
   fips: FIPS;
   mgrs: string;
@@ -352,7 +379,7 @@ type Annotations = {
    */
   callingcode: number;
   /**
-   * {@link .Rate}
+   *
    */
   currency: Currency;
   /**
@@ -365,6 +392,9 @@ type Annotations = {
    * Example: u1qfj2zsvwd6ntczum3r
    */
   geohash: string;
+  /**
+   *
+   */
   qibla: number;
   roadinfo: Roadinfo;
   sun: Sun;
@@ -372,7 +402,7 @@ type Annotations = {
   what3Words: What3Words;
 };
 
-type GeocodeResult = {
+export type GeocodeResult = {
   annotations: Annotations;
   bounds: Bounds;
   components: Components;
@@ -385,7 +415,7 @@ type GeocodeResult = {
 };
 
 /**
- * The API response is formatted according to the format specified in the request.
+ * The API response is formatted according to the format specified in the request (json).
  *
  * All returned coordinates use WGS 84 (sometimes also known as EPSG:4326) as reference coordinate system.
  *
@@ -444,38 +474,67 @@ export type GeocodeResponse = {
    */
   totalResults?: number;
 };
+
 /**
- * TODO GeocodeError
+ * GeocodeError type
+ *
+ * Represents the Error Type
+ */
+
+export type GeocodeErrorStatus = {
+  /**
+   * The HTTP status code
+   */
+  code: number;
+  /**
+   * The error message
+   */
+  message: string;
+};
+
+/**
+ * GeocodeError type
+ *
+ * Represents the Error Object
  */
 export class GeocodeError extends Error {
-  response?: any;
-  status?: any;
+  /**
+   * The response error object or the status error object for backward compatibility
+   */
+  response?: Response | { status: GeocodeErrorStatus };
+  /**
+   * The status error object
+   */
+  status?: GeocodeErrorStatus;
 }
 
 /**
- * Returns an {GeocodeError} object with response and status
- * @param code
- * @param message
- * @returns
+ * @private
+ * @description Returns a {GeocodeError} object with status (validation error)
+ * @param code {number} HTTP status code
+ * @param message {string} error message
+ * @returns {GeocodeError}
+ *
  */
-function buildError(code: number, message: string) {
+function buildValidationError(code: number, message: string) {
   const error = new GeocodeError(message);
   const status = {
     code,
     message,
   };
-  error.response = {
-    status,
-  };
+  error.status = status;
+  error.response = { status };
   return error;
 }
 
 /**
- *
- * @param response
- * @returns
+ * @private
+ * @description checks the response status and throws an error if the status is not ok
+ * @param response {Response} the response object
+ * @returns {Response} the response object
+ * @throws {GeocodeError} the error object
  */
-function checkStatus(response: any) {
+function checkFetchStatus(response: Response) {
   if (response.status >= 200 && response.status < 300) {
     return response;
   }
@@ -485,24 +544,30 @@ function checkStatus(response: any) {
     code: response.status,
     message: response.statusText,
   };
-  // error.response = response;
+  error.response = response;
   throw error;
 }
 
 function parseJSON(response: Response) {
   return response.json();
 }
-
+/**
+ * @private
+ * fetches the url and returns a promise
+ * @param  {String}  url     the url to fetch
+ * @param  {Function} resolve the resolve function
+ * @param  {Function} reject  the reject function
+ */
 async function fetchUrl(url: string, resolve: any, reject: any) {
   fetch(url)
-    .then(checkStatus)
+    .then(checkFetchStatus)
     .then(parseJSON)
     .then((data) => {
-      // console.log('request succeeded with JSON response', data);
+      // console.debug('request succeeded with JSON response', data);
       resolve(data);
     })
     .catch((error) => {
-      // console.log('request failed', { error });
+      // console.debug('request failed', { error });
       reject(error);
     });
 }
@@ -513,7 +578,7 @@ async function fetchUrl(url: string, resolve: any, reject: any) {
  * @param  {String}  param object property as a string
  * @return {Boolean}       returns value
  */
-export function isUndefinedOrEmpty(param: string): boolean {
+export function isUndefinedOrEmpty(param: string | null | undefined): boolean {
   return typeof param === 'undefined' || param === '';
 }
 
@@ -523,22 +588,26 @@ export function isUndefinedOrEmpty(param: string): boolean {
  * @param  {String}  param object property as a string
  * @return {Boolean}       returns value
  */
-export function isUndefinedOrNull(param: GeocodeRequest): boolean {
+export function isUndefinedOrNull(
+  param: GeocodeRequest | undefined | null
+): boolean {
   return typeof param === 'undefined' || param === null;
 }
 
 /**
  * @private
+ *
  * @param input
- * @returns
+ * @returns the request query string
  */
-export function buildQueryString(input: any): string {
+export function buildQueryString(input: GeocodeRequest): string {
   if (isUndefinedOrNull(input)) {
     return '';
   }
   return Object.keys(input)
     .map(
-      (key) => `${encodeURIComponent(key)}=${encodeURIComponent(input[key])}`
+      (key) =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(input[key as keyof GeocodeRequest] || '')}`
     )
     .join('&');
 }
@@ -549,18 +618,18 @@ export function buildQueryString(input: any): string {
  *
  * @param {*} input
  */
-function buildQuery(input: any) {
+function buildQuery(input: GeocodeRequest) {
   const query = { ...input };
 
   let endpoint = OPENCAGEDATA_JSON_URL;
   let missingKey = false;
   if (!isUndefinedOrEmpty(input.proxyURL)) {
     // endpoint will be the proxyURL
-    endpoint = input.proxyURL;
+    endpoint = input.proxyURL as string;
     delete query.proxyURL;
   } else {
     if (isUndefinedOrEmpty(input.key)) {
-      query.key = process.env.OPENCAGE_API_KEY || process.env.OCD_API_KEY;
+      query.key = process.env.OPENCAGE_API_KEY;
     }
     if (isUndefinedOrEmpty(query.key)) {
       missingKey = true;
@@ -581,28 +650,28 @@ function buildQuery(input: any) {
  *  the attribute `q` is required, the `key` can be omitted when using
  *  a `proxyURL`, and when using node with a dedicated environment variable
  *  (OPENCAGE_API_KEY).
- *  Others optional paameters can be found at Opencage Data API
+ *  Others optional parameters can be found at OpenCage Data API
  *  [documentation](https://opencagedata.com/api#forward-opt)
  *
  * @return {Promise}  a promise resolved by the json format API payload
  */
-export function geocode(input: GeocodeRequest): Promise<GeocodeResponse> {
+export async function geocode(input: GeocodeRequest): Promise<GeocodeResponse> {
   return new Promise((resolve, reject) => {
     if (isUndefinedOrNull(input)) {
-      const error = buildError(400, MISSING_OR_BAD_QUERY);
+      const error = buildValidationError(400, MISSING_OR_BAD_QUERY);
       reject(error);
       return;
     }
     const params = buildQuery(input);
     if (params.missingKey) {
-      const error = buildError(401, MISSING_API_KEY);
+      const error = buildValidationError(401, MISSING_API_KEY);
       reject(error);
       return;
     }
     const { query, endpoint } = params;
     const qs = buildQueryString(query);
     const url = `${endpoint}?${qs}`;
-    // console.log(url);
+    // console.debug(url);
     fetchUrl(url, resolve, reject);
   });
 }
