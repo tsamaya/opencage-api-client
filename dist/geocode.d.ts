@@ -396,7 +396,7 @@ export type GeocodeResponse = {
      */
     results?: GeocodeResult[];
     /**
-     * Response Statu
+     * Response Status
      */
     status?: Status;
     /**

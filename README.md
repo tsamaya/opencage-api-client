@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/npm/v/opencage-api-client.svg)](https://www.npmjs.com/package/opencage-api-client)
 ![Downloads](https://img.shields.io/npm/dw/opencage-api-client)
 [![GitHub license](https://img.shields.io/github/license/tsamaya/opencage-api-client)](https://github.com/tsamaya/opencage-api-client/blob/master/LICENSE.md)
-![Maintained](https://img.shields.io/maintenance/yes/2024.svg)
+![Maintained](https://img.shields.io/maintenance/yes/2025.svg)
 
 This repository is an [OpenCage Geocoding API](https://opencagedata.com/api) client for JavaScript and node.
 
@@ -16,11 +16,10 @@ This repository is an [OpenCage Geocoding API](https://opencagedata.com/api) cli
 
 ### Security
 
-| Source                               | Scores                                                                                                                                                                                                                                                                                                                                                  |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Meterian](https://www.meterian.io/) | [![security status](https://www.meterian.com/badge/gh/tsamaya/opencage-api-client/security?branch=master)](https://www.meterian.com/report/gh/tsamaya/opencage-api-client) [![stability status](https://www.meterian.com/badge/gh/tsamaya/opencage-api-client/stability?branch=master)](https://www.meterian.com/report/gh/tsamaya/opencage-api-client) |
-| [FOSSA](https://fossa.com/)          | [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client?ref=badge_shield)                                                                                                                                |
-| [Snyk](https://snyk.io/)             | ![Known Vulnerabilities](https://snyk.io/test/github/tsamaya/opencage-api-client/badge.svg)                                                                                                                                                                                                                                                             |
+| Source                      | Scores                                                                                                                                                                                                                   |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [FOSSA](https://fossa.com/) | [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client?ref=badge_shield) |
+| [Snyk](https://snyk.io/)    | ![Known Vulnerabilities](https://snyk.io/test/github/tsamaya/opencage-api-client/badge.svg)                                                                                                                              |
 
 ## Tutorial
 
@@ -61,6 +60,7 @@ OPENCAGE_API_KEY=YOUR-OPENCAGE_DATA_API_KEY
 Here are examples:
 
 1. CommonJS
+
 ```javascript
 const opencage = require('opencage-api-client');
 
@@ -75,6 +75,7 @@ opencage
 ```
 
 2. ESM
+
 ```javascript
 import opencage from 'opencage-api-client';
 
@@ -89,6 +90,7 @@ opencage
 ```
 
 3. Typescript
+
 ```javascript
 import { geocode, GeocodeRequest } from 'opencage-api-client';
 
@@ -102,6 +104,7 @@ async function geocode() {
   console.log(JSON.stringify(result,null,2));
 }
 ```
+
 ### browser
 
 The browser version is built over the node one, obviously without the dotenv feature.

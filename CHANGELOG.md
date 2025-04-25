@@ -7,6 +7,13 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ## [unreleased]
 
+## [2.0.0-alpha.4] (2025-04-24)
+
+### Chore
+
+- Upgrade dependencies
+- Port changes from Version 1.1.0
+
 ## [2.0.0-alpha.3] (2024-10-20)
 
 ### Added
@@ -41,6 +48,18 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 ### Documentation
 
 - Uses [typedoc](https://typedoc.org/)
+
+## [1.1.0] - 2025-03-16
+
+### Changed
+
+- upgrade dependencies
+- removes node 16 from the tested platforms
+
+### Chore
+
+- removes Meterian badges and GHActions on Meterian
+- update maintenance badge for 2025
 
 ## [1.0.7] (2024-06-03)
 
@@ -190,10 +209,13 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 - First release
 
-[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.3...HEAD
+[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.4...HEAD
+[2.0.0-alpha.4]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.3...v2.0.0-apha.4
 [2.0.0-alpha.3]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.2...v2.0.0-apha.3
 [2.0.0-alpha.2]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.1...v2.0.0-alpha.2
-[2.0.0-alpha.1]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.6...v2.0.0-alpha.1
+[2.0.0-alpha.1]: https://github.com/tsamaya/opencage-api-client/compare/v1.1.0...v2.0.0-alpha.1
+[1.1.0]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.7...v1.1.0
+[1.0.7]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.6...v1.0.7
 [1.0.7]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.6...v1.0.7
 [1.0.6]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.4...v1.0.5
