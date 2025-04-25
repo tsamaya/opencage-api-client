@@ -27,11 +27,11 @@ You can find a comprehensive tutorial for using this module [on the OpenCage sit
 
 ## 🔧 Getting started
 
-Signup for a [free-trial API Key](https://opencagedata.com/users/sign_up).
+Sign up for a [free-trial API Key](https://opencagedata.com/users/sign_up).
 
 ### node
 
-The library uses [dotenv](https://www.npmjs.com/package/dotenv) on node runtime to configure OpenCage Geocoding API key. But using `key` as an input parameter is always a possiblity.
+The library uses [dotenv](https://www.npmjs.com/package/dotenv) on node runtime to configure OpenCage Geocoding API key. But using `key` as an input parameter is always a possibility.
 
 First install the library with `npm` or `yarn`:
 
@@ -97,6 +97,7 @@ import { geocode, GeocodeRequest } from 'opencage-api-client';
 async function geocode() {
   const input: GeocodeRequest = {
     q: '51.952659,7.632473',
+    // The API Key value from process.env.OPENCAGE_API_KEY is overridden by the one provided below
     key: '6d0e711d72d74daeb2b0bfd2a5cdfdba', // https://opencagedata.com/api#testingkeys
     no_annotations: 1,
   };
@@ -120,7 +121,7 @@ The library is available with `unkpg` _CDN_ : https://unpkg.com/opencage-api-cli
 
 ```html
 <!-- specific version -->
-<script src="https://unpkg.com/opencage-api-client@0.10.0/dist/opencage-api.min.js"></script>
+<script src="https://unpkg.com/opencage-api-client@1.1.0/dist/opencage-api.min.js"></script>
 ```
 
 2- use it
@@ -144,17 +145,17 @@ Found some examples in the [examples](./examples/) folder.
 
 ### geocode
 
-| Parameter | Type   | Optional? | Description                                                                                               |
-| --------- | ------ | --------- | --------------------------------------------------------------------------------------------------------- |
-| q         | String | mandatory | the query string to be geocoded: a placename, address or coordinates as lat,long                          |
-| key       | String | optional  | the `key` can be omitted when using a `proxyURL` or when using node with a dedicated environment variable |
-| proxyURL  | String | optional  | The proxy URL parameter (useful to hide your API key)                                                     |
+| Parameter | Type   | Optional? | Description                                                                                                                  |
+| --------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| q         | String | mandatory | the query string to be geocoded: a placename, address or coordinates as lat,long                                             |
+| key       | String | optional  | the `key` can be omitted when using a `proxyURL` or when using node with a dedicated environment variable `OPENCAGE_API_KEY` |
+| proxyURL  | String | optional  | The proxy URL parameter (useful to hide your API key)                                                                        |
 
 ### Error handling
 
-API can return errors like invalid key, to many requests, daily quota exceeded, etc. Thoses errors are thrown as Javascript [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) by the `geocode` function. The error object contains the same status object as the [OpenCage API](https://opencagedata.com/api#response).
+API can return errors like invalid key, to many requests, daily quota exceeded, etc. Those errors are thrown as Javascript [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) by the `geocode` function. The error object contains the same status object as the [OpenCage API](https://opencagedata.com/api#response).
 
-Assuming the catch statment uses `error` as variable name:
+Assuming the catch statement uses `error` as variable name:
 
 ```js
 console.log('Error caught:', error.message);
