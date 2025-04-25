@@ -5,7 +5,7 @@
 [![GitHub license](https://img.shields.io/github/license/tsamaya/opencage-api-client)](https://github.com/tsamaya/opencage-api-client/blob/master/LICENSE.md)
 ![Maintained](https://img.shields.io/maintenance/yes/2025.svg)
 
-This repository is an [OpenCage Geocoding API](https://opencagedata.com/api) client for JavaScript and node.
+This repository is an [OpenCage Geocoding API](https://opencagedata.com/api) client for Node Typescript and JavaScript.
 
 ## Continuous integration
 
@@ -139,7 +139,7 @@ opencage
 
 3- others Examples
 
-Found some examples in the [examples](./examples/) folder.
+Found some examples in the [examples](https://github.com/tsamaya/opencage-api-client/tree/main/examples) folder.
 
 # ✨ API
 
@@ -184,7 +184,7 @@ will output for a 429:
 }
 ```
 
-Check the examples using the Test API key from OpenCage [error handling examples](./examples/apitestkeys.js)
+Check the examples using the Test API key from OpenCage [error handling examples](https://github.com/tsamaya/opencage-api-client/tree/main/examples/apitestkeys.js)
 
 # 🔨 Build and test
 

@@ -13,7 +13,11 @@ export type GeocodeRequest = {
      */
     q: string;
     /**
-     * When set to 1 we attempt to abbreviate and shorten the formatted string we return. Learn more about formatted placenames.
+     * The URL of a proxy server to use for the request. This is useful if you want to hide your API Key.
+     */
+    proxyURL?: string;
+    /**
+     * When set to 1 we attempt to abbreviate and shorten the formatted string we return. Learn more about formatted placename.
      */
     abbrv?: number;
     /**
@@ -98,11 +102,11 @@ export type GeocodeRequest = {
      */
     proximity?: string;
     /**
-     * When set to 1 the behaviour of the geocoder is changed to attempt to match the nearest road (as opposed to address). If possible we also fill additional information in the roadinfo annotation. Please see details API Documentation.
+     * When set to 1 the behavior of the geocoder is changed to attempt to match the nearest road (as opposed to address). If possible we also fill additional information in the roadinfo annotation. Please see details API Documentation.
      */
     roadinfo?: number;
     /**
-     * When set to 1 we include only the address (exluding POI names) in the formatted string we return.
+     * When set to 1 we include only the address (excluding POI names) in the formatted string we return.
      *
      * Example usage: address_only=1
      *
@@ -115,25 +119,46 @@ export type GeocodeRequest = {
  *
  * The OpenCage geocoding API uses rate limits to ensure that the service stays available to all users.
  */
-type Rate = {
+export type Rate = {
     limit: number;
     remaining: number;
     reset: number;
 };
-type License = {
+/**
+ * License
+ *
+ * See the credits detail page https://opencagedata.com/credits.
+ */
+export type License = {
     name: string;
     url: string;
 };
-type Status = {
+/**
+ * Status
+ *
+ * The status object contains the following fields:
+ * - message: a human-readable message
+ * - code: an integer code
+ */
+export type Status = {
     message?: string;
     code?: number;
 };
-type StayInformed = {
+/**
+ * StayInformed
+ *
+ * Links to stay tuned about OpenCageData API
+ */
+export type StayInformed = {
     blog?: string;
-    twitter?: string;
-    mastodon: string;
+    mastodon?: string;
 };
-type Timestamp = {
+/**
+ * Timestamp
+ *
+ * The timestamp of the request in HTTP and UNIX format.
+ */
+export type Timestamp = {
     created_http?: string;
     created_unix?: number;
 };
@@ -159,7 +184,7 @@ type Timestamp = {
  * }
  *```
  */
-type Currency = {
+export type Currency = {
     alternateSymbols: string[];
     decimalMark: string;
     disambiguateSymbol: string;
@@ -179,66 +204,66 @@ type Currency = {
  *
  * Example: { "lat": "52° 23' 16.01880'' N", "lng": "9° 44' 0.38184'' E" }
  */
-interface DMS {
+export type DMS = {
     lat: string;
     lng: string;
-}
+};
 /**
  * Contains the US Federal Information Processing Standards (FIPS) code for the state (two digit) and county (five digit) of the center point of the result, if we can determine it.
  *
  * Example: { "county": "08101", "state": "08" }
  *
- *Note:
- * - Only for locations in the United States and associated territories.
- * - The values are strings - not numbers - and can have leading zeros.
+ * Note:
+ *  - Only for locations in the United States and associated territories.
+ *  - The values are strings - not numbers - and can have leading zeros.
  */
-interface FIPS {
+export type FIPS = {
     county: string;
     state: string;
-}
+};
 /**
  * contains the Mercator projection (EPSG:41001, sometimes also referred to as "Simple Mercator") x and y unit meter values of the center point of the result.
  *
  * Example: { "x": 1083521.518, "y": 6836676.75 }
  * Note: use of Mercator projection on latitudes above/below +70/-70 degrees is strongly discouraged, due to the gross distortions of the projection.
  */
-interface Mercator {
+export type Mercator = {
     x: number;
     y: number;
-}
-interface Osm {
+};
+export type Osm = {
     editURL: string;
     noteURL: string;
     url: string;
-}
-interface Roadinfo {
+};
+export type Roadinfo = {
     driveOn: string;
     road: string;
     speedIn: string;
-}
-interface Sun {
-    rise: Rise;
-    set: Rise;
-}
-interface Rise {
+};
+export type Rise = {
     apparent: number;
     astronomical: number;
     civil: number;
     nautical: number;
-}
-interface Timezone {
+};
+export type Sun = {
+    rise: Rise;
+    set: Rise;
+};
+export type Timezone = {
     name: string;
     nowInDst: number;
     offsetSEC: number;
     offsetString: string;
     shortName: string;
-}
-interface Regions {
+};
+export type Regions = {
     americas: string;
     northernAmerica: string;
     us: string;
     world: string;
-}
+};
 /**
  * Contains the relevant United Nations M49 codes for the location.
  *
@@ -273,27 +298,30 @@ interface Regions {
  * },
  * ```
  */
-interface UnM49 {
+export type UnM49 = {
     regions: Regions;
     statisticalGroupings: string[];
-}
-interface What3Words {
+};
+export type What3Words = {
     words: string;
-}
+};
 /**
  * LatLng coordinates
  * - lat
  * - kng
  */
-type Geometry = {
+export type Geometry = {
     lat: number;
     lng: number;
 };
-type Bounds = {
+export type Bounds = {
     northeast: Geometry;
     southwest: Geometry;
 };
-type Components = {
+/**
+ * Response components
+ */
+export type Components = {
     iso31661_Alpha2: string;
     iso31661_Alpha3: string;
     iso31662: string[];
@@ -311,7 +339,7 @@ type Components = {
     stateCode: string;
     suburb: string;
 };
-type Annotations = {
+export type Annotations = {
     dms: DMS;
     fips: FIPS;
     mgrs: string;
@@ -326,7 +354,7 @@ type Annotations = {
      */
     callingcode: number;
     /**
-     * {@link .Rate}
+     *
      */
     currency: Currency;
     /**
@@ -339,13 +367,16 @@ type Annotations = {
      * Example: u1qfj2zsvwd6ntczum3r
      */
     geohash: string;
+    /**
+     *
+     */
     qibla: number;
     roadinfo: Roadinfo;
     sun: Sun;
     timezone: Timezone;
     what3Words: What3Words;
 };
-type GeocodeResult = {
+export type GeocodeResult = {
     annotations: Annotations;
     bounds: Bounds;
     components: Components;
@@ -357,7 +388,7 @@ type GeocodeResult = {
     geometry: Geometry;
 };
 /**
- * The API response is formatted according to the format specified in the request.
+ * The API response is formatted according to the format specified in the request (json).
  *
  * All returned coordinates use WGS 84 (sometimes also known as EPSG:4326) as reference coordinate system.
  *
@@ -417,11 +448,36 @@ export type GeocodeResponse = {
     totalResults?: number;
 };
 /**
- * TODO GeocodeError
+ * GeocodeError type
+ *
+ * Represents the Error Type
+ */
+export type GeocodeErrorStatus = {
+    /**
+     * The HTTP status code
+     */
+    code: number;
+    /**
+     * The error message
+     */
+    message: string;
+};
+/**
+ * GeocodeError type
+ *
+ * Represents the Error Object
  */
 export declare class GeocodeError extends Error {
-    response?: any;
-    status?: any;
+    /**
+     * The response error object or the status error object for backward compatibility
+     */
+    response?: Response | {
+        status: GeocodeErrorStatus;
+    };
+    /**
+     * The status error object
+     */
+    status?: GeocodeErrorStatus;
 }
 /**
  * @private
@@ -429,20 +485,21 @@ export declare class GeocodeError extends Error {
  * @param  {String}  param object property as a string
  * @return {Boolean}       returns value
  */
-export declare function isUndefinedOrEmpty(param: string): boolean;
+export declare function isUndefinedOrEmpty(param: string | null | undefined): boolean;
 /**
  * @private
  * returns true is `param` is not defined or null
  * @param  {String}  param object property as a string
  * @return {Boolean}       returns value
  */
-export declare function isUndefinedOrNull(param: GeocodeRequest): boolean;
+export declare function isUndefinedOrNull(param: GeocodeRequest | undefined | null): boolean;
 /**
  * @private
+ *
  * @param input
- * @returns
+ * @returns the request query string
  */
-export declare function buildQueryString(input: any): string;
+export declare function buildQueryString(input: GeocodeRequest): string;
 /**
  * geocode address and reverse geocode coordinates using
  * [OpenCage API](https://opencagedata.com/api) requesting the json format.
@@ -451,10 +508,9 @@ export declare function buildQueryString(input: any): string;
  *  the attribute `q` is required, the `key` can be omitted when using
  *  a `proxyURL`, and when using node with a dedicated environment variable
  *  (OPENCAGE_API_KEY).
- *  Others optional paameters can be found at Opencage Data API
+ *  Others optional parameters can be found at OpenCage Data API
  *  [documentation](https://opencagedata.com/api#forward-opt)
  *
  * @return {Promise}  a promise resolved by the json format API payload
  */
 export declare function geocode(input: GeocodeRequest): Promise<GeocodeResponse>;
-export {};
