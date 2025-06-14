@@ -44,7 +44,7 @@ importers:
         version: 30.0.0(@types/node@22.15.21)
       lint-staged:
         specifier: ^16.0.0
-        version: 16.1.0
+        version: 16.1.1
       prettier:
         specifier: ^3.0.3
         version: 3.5.3
@@ -2200,8 +2200,8 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  lint-staged@16.1.0:
-    resolution: {integrity: sha512-HkpQh69XHxgCjObjejBT3s2ILwNjFx8M3nw+tJ/ssBauDlIpkx2RpqWSi1fBgkXLSSXnbR3iEq1NkVtpvV+FLQ==}
+  lint-staged@16.1.1:
+    resolution: {integrity: sha512-kVZvRAHw9WuufENnwuZLiB1X/8B8YpGszzjMET0bP+uJSjjB7KXeaX2ckYRtQyHfeQdCWMc6tRK34t4geHL9sg==}
     engines: {node: '>=20.17'}
     hasBin: true
 
@@ -3376,7 +3376,7 @@ snapshots:
       '@babel/traverse': 7.24.1
       '@babel/types': 7.24.0
       convert-source-map: 2.0.0
-      debug: 4.4.0
+      debug: 4.4.1
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -3633,7 +3633,7 @@ snapshots:
       '@babel/helper-split-export-declaration': 7.22.6
       '@babel/parser': 7.24.4
       '@babel/types': 7.24.0
-      debug: 4.4.0
+      debug: 4.4.1
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -6021,7 +6021,7 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
-  lint-staged@16.1.0:
+  lint-staged@16.1.1:
     dependencies:
       chalk: 5.4.1
       commander: 14.0.0
