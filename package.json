@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "cross-fetch": "4.1.0",
-    "dotenv": "16.6.1"
+    "dotenv": "17.0.0"
   },
   "repository": {
     "type": "git",
