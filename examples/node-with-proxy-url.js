@@ -1,4 +1,5 @@
-import opencage from '../dist/index.js';
+import 'dotenv/config';
+// - or add `key` as an input parameter of the function geocodeimport opencage from '../dist/index.js';
 
 // const proxyURL =
 //   'https://us-central1-ocd-315303.cloudfunctions.net/geocode';

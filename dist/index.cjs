@@ -27,9 +27,7 @@ __webpack_require__.d(__webpack_exports__, {
     default: ()=>src,
     geocode: ()=>external_geocode_cjs_namespaceObject.geocode
 });
-const external_dotenv_namespaceObject = require("dotenv");
 const external_geocode_cjs_namespaceObject = require("./geocode.cjs");
-external_dotenv_namespaceObject.config();
 const opencage = {
     geocode: external_geocode_cjs_namespaceObject.geocode
 };
