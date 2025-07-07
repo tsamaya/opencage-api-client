@@ -1,4 +1,4 @@
-import opencage from '../dist/opencage-api.mjs';
+import opencage from '../dist/index.js';
 
 opencage
   .geocode({ q: 'rue de la république lyon', limit: 3 })
