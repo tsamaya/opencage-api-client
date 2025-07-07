@@ -22,6 +22,7 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 - Upgrade dependencies
 - Port changes from Version 1.2.0
+- Removes HoundCI
 
 ## [2.0.0-alpha.4] (2025-04-24)
 
