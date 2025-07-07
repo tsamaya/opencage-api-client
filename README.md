@@ -91,7 +91,8 @@ opencage
 3. Typescript
 
 ```javascript
-import { geocode, GeocodeRequest } from 'opencage-api-client';
+import { geocode } from 'opencage-api-client';
+import type { GeocodeRequest } from '../src/';
 
 async function geocode() {
   const input: GeocodeRequest = {
