@@ -3,6 +3,8 @@ const OPENCAGEDATA_JSON_URL = 'https://api.opencagedata.com/geocode/v1/json';
 const MISSING_OR_BAD_QUERY = 'missing or bad query';
 const MISSING_API_KEY = 'missing API key';
 
+const USER_AGENT = 'OpenCageData Geocoding NodeJS API Client';
+
 /**
  * GeocodeRequest type
  *
@@ -558,8 +560,15 @@ function parseJSON(response: Response) {
  * @param  {Function} resolve the resolve function
  * @param  {Function} reject  the reject function
  */
-async function fetchUrl(url: string, resolve: any, reject: any) {
-  fetch(url)
+export async function fetchUrl(url: string, resolve: any, reject: any) {
+  fetch(url, {
+    method: 'GET',
+    headers: {
+      'User-Agent': USER_AGENT,
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+  })
     .then(checkFetchStatus)
     .then(parseJSON)
     .then((data) => {

@@ -481,6 +481,14 @@ export declare class GeocodeError extends Error {
 }
 /**
  * @private
+ * fetches the url and returns a promise
+ * @param  {String}  url     the url to fetch
+ * @param  {Function} resolve the resolve function
+ * @param  {Function} reject  the reject function
+ */
+export declare function fetchUrl(url: string, resolve: any, reject: any): Promise<void>;
+/**
+ * @private
  * returns true is `param` is not defined or empty
  * @param  {String}  param object property as a string
  * @return {Boolean}       returns value
