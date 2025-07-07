@@ -12,7 +12,6 @@ This repository is an [OpenCage Geocoding API](https://opencagedata.com/api) cli
 [![CircleCI (all branches)](https://img.shields.io/circleci/project/github/tsamaya/opencage-api-client.svg)](https://circleci.com/gh/tsamaya/opencage-api-client)
 [![codecov](https://codecov.io/gh/tsamaya/opencage-api-client/branch/master/graph/badge.svg)](https://codecov.io/gh/tsamaya/opencage-api-client)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8f0f9ba00ade907ef576/maintainability)](https://codeclimate.com/github/tsamaya/opencage-api-client/maintainability)
-[![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 
 ## Security
 
@@ -190,8 +189,8 @@ Check the examples using the Test API key from OpenCage [error handling examples
 
 1.  Fork or clone this repository
 1.  `$ cd` into the `repository` folder
-1.  `$ npm install` to install all the required dependencies from [npm](https://www.npmjs.com/)
-1.  lint and test coverage using `$ npm test`
+1.  `$ pnpm install` to install all the required dependencies from [npm](https://www.npmjs.com/)
+1.  lint and test coverage using `$ pnpm run test:coverage`
 1.  Build : `$ npm run build`
 
 # 🛣 Revision History

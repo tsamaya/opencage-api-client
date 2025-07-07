@@ -1,4 +1,0 @@
-eslint:
-  version: 8.44.0
-  esversion: 6
-  ignore_file: .eslintignore

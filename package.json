@@ -1,6 +1,6 @@
 {
   "name": "opencage-api-client",
-  "version": "2.0.0-alpha.4",
+  "version": "2.0.0-alpha.5",
   "description": "An OpenCageData Geocoder API client library for node and browsers (UMD)",
   "keywords": [
     "geocoder",
@@ -20,21 +20,19 @@
   "homepage": "https://github.com/tsamaya/opencage-api-client#readme",
   "type": "module",
   "types": "dist/index.d.ts",
-  "main": "dist/opencage-api.cjs",
-  "module": "dist/opencage-api.mjs",
-  "browser": "dist/opencage-api.umd.js",
-  "unpkg": "dist/opencage-api.umd.js",
-  "exports": {
-    "require": "./dist/opencage-api.cjs",
-    "default": "./dist/opencage-api.modern.js"
-  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "browser": "dist/opencage-api.min.js",
+  "unpkg": "dist/opencage-api.min.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "clean": "rm -rf dist",
     "build": "pnpm run build:node && pnpm run build:browser",
-    "build:node": "microbundle",
-    "build:browser": "microbundle -f umd -i src/browser.ts -o dist/opencage-api.umd.js --name opencage --no-pkg-main --generateTypes false",
+    "build:node": "rslib build",
+    "build:browser": "rslib build --config rslib.browser.config.ts",
     "check-types": "tsc --noEmit",
-    "dev": "microbundle watch",
     "build:docs": "typedoc",
     "format": "pnpm run lint:fix && prettier --write .",
     "lint": "eslint .",
@@ -47,26 +45,27 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "3.3.1",
-    "@eslint/js": "9.25.1",
-    "@types/node": "22.15.2",
-    "@typescript-eslint/eslint-plugin": "8.31.0",
-    "@typescript-eslint/parser": "8.31.0",
-    "@vitest/coverage-v8": "3.1.2",
-    "@vitest/ui": "3.1.2",
-    "eslint": "9.25.1",
-    "eslint-config-prettier": "10.1.2",
+    "@eslint/js": "9.30.1",
+    "@rsbuild/plugin-umd": "^1.0.4",
+    "@rslib/core": "^0.10.4",
+    "@types/node": "24.0.10",
+    "@typescript-eslint/eslint-plugin": "8.35.1",
+    "@typescript-eslint/parser": "8.35.1",
+    "@vitest/coverage-v8": "3.2.4",
+    "@vitest/ui": "3.2.4",
+    "eslint": "9.30.1",
+    "eslint-config-prettier": "10.1.5",
     "eslint-plugin-prettier": "5.2.6",
-    "globals": "16.0.0",
-    "microbundle": "0.15.1",
-    "prettier": "3.5.3",
-    "tsx": "4.19.3",
-    "typedoc": "0.28.3",
+    "globals": "16.3.0",
+    "prettier": "3.6.2",
+    "tsx": "4.20.3",
+    "typedoc": "0.28.7",
     "typescript": "5.8.3",
-    "vite": "6.3.3",
-    "vitest": "3.1.2"
+    "vite": "7.0.2",
+    "vitest": "3.2.4"
   },
   "dependencies": {
-    "dotenv": "16.5.0"
+    "dotenv": "17.0.1"
   },
   "lint-staged": {
     "*.{json,md,yml,yaml}": [
