@@ -1,4 +1,4 @@
-import opencage from '../dist/opencage-api.mjs';
+import opencage from '../dist/index.js';
 opencage
   .geocode({ q: 'Theresienhöhe 11, München' })
   .then((data) => {

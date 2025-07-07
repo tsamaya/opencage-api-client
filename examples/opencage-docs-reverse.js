@@ -1,4 +1,4 @@
-import opencage from '../dist/opencage-api.mjs';
+import opencage from '../dist/index.js';
 
 opencage
   .geocode({ q: '37.4396, -122.1864', language: 'fr' })

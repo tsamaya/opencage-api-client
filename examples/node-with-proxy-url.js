@@ -1,4 +1,4 @@
-import opencage from '../dist/opencage-api.mjs';
+import opencage from '../dist/index.js';
 
 // const proxyURL =
 //   'https://us-central1-ocd-315303.cloudfunctions.net/geocode';

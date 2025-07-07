@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-const opencage = require('../dist/opencage-api.cjs');
+const opencage = require('../dist/index.cjs');
 
 opencage
   .geocode({
