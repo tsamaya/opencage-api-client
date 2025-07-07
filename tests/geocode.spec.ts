@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
 import { fetchUrl } from '../src/geocode.ts';
+import {version} from '../src/version';
 import opencage from '../src';
-
 describe('geocode tests', () => {
   describe('rainy tests', () => {
     const savedKey = process.env.OPENCAGE_API_KEY;
@@ -48,7 +48,8 @@ describe('geocode tests', () => {
   });
 
   describe('fetchUrl', () => {
-    const USER_AGENT = 'OpenCageData Geocoding NodeJS API Client';
+    const USER_AGENT = `OpenCageData Geocoding NodeJS API Client/${version}`;
+
     let originalFetch: typeof global.fetch;
 
     beforeAll(() => {

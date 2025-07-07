@@ -38,6 +38,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "release:changelog": "tsx ./scripts/valid-changelog.ts",
+    "release:updateversion": "tsx ./scripts/update-version.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",

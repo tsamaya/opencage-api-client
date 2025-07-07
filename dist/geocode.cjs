@@ -24,17 +24,18 @@ var __webpack_require__ = {};
 var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
-    GeocodeError: ()=>GeocodeError,
-    buildQueryString: ()=>buildQueryString,
-    fetchUrl: ()=>fetchUrl,
-    geocode: ()=>geocode,
     isUndefinedOrEmpty: ()=>isUndefinedOrEmpty,
+    fetchUrl: ()=>fetchUrl,
+    buildQueryString: ()=>buildQueryString,
+    geocode: ()=>geocode,
+    GeocodeError: ()=>GeocodeError,
     isUndefinedOrNull: ()=>isUndefinedOrNull
 });
+const external_version_cjs_namespaceObject = require("./version.cjs");
 const OPENCAGEDATA_JSON_URL = 'https://api.opencagedata.com/geocode/v1/json';
 const MISSING_OR_BAD_QUERY = 'missing or bad query';
 const MISSING_API_KEY = 'missing API key';
-const USER_AGENT = 'OpenCageData Geocoding NodeJS API Client';
+const USER_AGENT = `OpenCageData Geocoding NodeJS API Client/${external_version_cjs_namespaceObject.version}`;
 class GeocodeError extends Error {
     response;
     status;

@@ -1,9 +1,11 @@
+import {version} from './version'
+
 const OPENCAGEDATA_JSON_URL = 'https://api.opencagedata.com/geocode/v1/json';
 
 const MISSING_OR_BAD_QUERY = 'missing or bad query';
 const MISSING_API_KEY = 'missing API key';
 
-const USER_AGENT = 'OpenCageData Geocoding NodeJS API Client';
+const USER_AGENT = `OpenCageData Geocoding NodeJS API Client/${version}`;
 
 /**
  * GeocodeRequest type
