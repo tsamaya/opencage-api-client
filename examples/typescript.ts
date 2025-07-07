@@ -1,4 +1,4 @@
-import { geocode,  } from '../src';
+import { geocode } from '../src';
 import type { GeocodeRequest } from '../src/';
 
 export const doGeocode = async () => {

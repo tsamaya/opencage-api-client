@@ -192,7 +192,8 @@ Check the examples using the Test API key from OpenCage [error handling examples
 1.  `$ cd` into the `repository` folder
 1.  `$ pnpm install` to install all the required dependencies from [npm](https://www.npmjs.com/)
 1.  lint and test coverage using `$ pnpm run test:coverage`
-1.  Build : `$ npm run build`
+1.  Build : `$ pnpm run build`
+1.  Build the docs : `$ pnpm run build:docs`
 
 # 🛣 Revision History
 

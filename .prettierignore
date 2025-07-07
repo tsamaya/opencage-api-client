@@ -3,3 +3,4 @@ dist/
 coverage/
 docs/
 .github/
+pnpm-lock.yaml

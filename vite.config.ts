@@ -19,7 +19,16 @@ export default defineConfig({
     // setupFiles: "./src/setup.node.ts",
     coverage: {
       provider: 'v8', // or 'istanbul'
-      exclude: ['examples/**', 'docs/**', 'dist/**', 'scripts/**', 'eslint.config.mjs', 'vite.config.ts', 'rslib.browser.config.ts', 'rslib.config.ts'],
+      exclude: [
+        'examples/**',
+        'docs/**',
+        'dist/**',
+        'scripts/**',
+        'eslint.config.mjs',
+        'vite.config.ts',
+        'rslib.browser.config.ts',
+        'rslib.config.ts',
+      ],
     },
   },
 });
