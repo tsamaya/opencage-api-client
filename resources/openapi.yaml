@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.1.3
 info:
   contact:
     email: support@opencagedata.com
@@ -14,7 +14,7 @@ info:
   x-origin:
     format: openapi
     url: https://opencagedata.com/openapi.yaml
-    version: 3.0.3
+    version: 3.1.3
   x-logo:
     url: https://opencagedata.com/opencagelogo-green.png
 servers:
@@ -365,21 +365,35 @@ components:
       type: apiKey
       in: query
       name: key
-      description: 30 character long, alphanumeric string unique to your account. See https://opencagedata.com/api#required-params
+      description: 30 character long, alphanumeric string
+      externalDocs:
+        description: API key unique to your account
+        url: https://opencagedata.com/api#required-param
   parameters:
     query:
       name: q
-      description: string or lat,lng to be geocoded. ex Eiffel tower or 52.3877830, 9.7334394
+      description: string or lat,lng to be geocoded
       in: query
-      example: 52.3877830, 9.7334394
       required: true
+      externalDocs:
+        description: q parameter documentation
+        url: https://opencagedata.com/api#q-param
       schema:
         type: string
+        description: Location to geocode - can be an address, place name, or decimal coordinates in latitude, longitude order
+        minLength: 2
+        examples:
+          - 52.5432379, 13.4142133
+          - Times Square, New York, USA
+          - Eiffel Tower
     abbrv:
       description: when true we attempt to abbreviate the formatted field of results.
       in: query
       name: abbrv
       required: false
+      externalDocs:
+        description: abbrv parameter documentation
+        url: https://opencagedata.com/api#abbrv-param
       schema:
         type: boolean
         default: false
@@ -388,6 +402,9 @@ components:
       description: when true we include only address details in the formatted field of results.
       in: query
       required: false
+      externalDocs:
+        description: address_only parameter documentation
+        url: https://opencagedata.com/api#address_only-param
       schema:
         type: boolean
         default: false
@@ -396,160 +413,268 @@ components:
       in: query
       description: if true the request is included in the response.
       required: false
+      externalDocs:
+        description: add_request parameter documentation
+        url: https://opencagedata.com/api#add_request-param
       schema:
         default: false
         type: boolean
     bounds:
       in: query
-      description: four coordinate points forming the south-west and north-east corners of a bounding box (min long, min lat, max long, max lat).
+      description: four coordinate points forming the south-west and north-east corners of a bounding box
       name: bounds
       required: false
+      externalDocs:
+        description: bound parameter documentation
+        url: https://opencagedata.com/api#bounds-param
       schema:
         type: string
-        example: '-0.563160,51.280430,0.278970,51.683979'
+        description: decimal coordinates in min long, min lat, max long, max lat order
+        examples:
+          - '-0.563160,51.280430,0.278970,51.683979'
     countrycode:
       name: countrycode
-      description: CSV list of two letter ISO 3166-1 Alpha 2 codes) to limit results to that country/countries.
+      description: CSV list of lowercase two letter ISO 3166-1 Alpha 2 codes to limit results to that country/countries.
       in: query
       required: false
+      externalDocs:
+        description: countrycode parameter documentation
+        url: https://opencagedata.com/api#countrycode-param
       schema:
-        example: de,at,ch,li,lu
         type: string
+        examples:
+          - de
+          - at
+          - ch,li
+        minLength: 2
     jsonp:
       name: jsonp
       description: wraps the returned JSON with a function name.
       in: query
       required: false
-      example: myfunc
+      externalDocs:
+        description: jsonp parameter documentation
+        url: https://opencagedata.com/api#jsonp-param
       schema:
         type: string
+        description: Function name to wrap the JSON response in for JSONP callbacks
+        examples:
+          - myfunc
+          - callback
+          - handleResult
     language:
-      description: 'an IETF format language code (ex: "es" or "pt-BR").'
+      description: an IETF format language code or "native"
       name: language
       in: query
       required: false
-      example: de
+      externalDocs:
+        description: language parameter documentation
+        url: https://opencagedata.com/api#language
       schema:
         type: string
+        description: the preferred language of results
+        examples:
+          - de
+          - pt-BR
+          - native
     limit:
       name: limit
       description: maximum number of results to return. Default is 10. Maximum is 100.
       in: query
       required: false
-      example: 1
+      externalDocs:
+        description: limit parameter documentation
+        url: https://opencagedata.com/api#limit-param
       schema:
         type: integer
         minimum: 1
         maximum: 100
+        examples:
+          - 1
+          - 3
     no_annotations:
       name: no_annotations
       description: when true annotations are not added to results.
       in: query
       required: false
+      externalDocs:
+        description: no_annotations parameter documentation
+        url: https://opencagedata.com/api#no_annotations-param
       schema:
         type: boolean
         default: false
     no_dedupe:
       name: no_dedupe
-      description: when true results are not deduplicated.
+      description: when true results are not deduplicated
       in: query
       required: false
+      externalDocs:
+        description: no_dedupe parameter documentation
+        url: https://opencagedata.com/api#no_dedupe-param
       schema:
         type: boolean
         default: false
     no_record:
       name: no_record
-      description: when true query content is not logged.
+      description: when true query content is not logged
       in: query
       required: false
+      externalDocs:
+        description: no_record parameter documentation
+        url: https://opencagedata.com/api#no_record-param
       schema:
         type: boolean
         default: false
     pretty:
       name: pretty
-      description: when true results are pretty printed. Useful for debugging.
+      description: when true results are pretty printed
       in: query
       required: false
+      externalDocs:
+        description: pretty parameter documentation
+        url: https://opencagedata.com/api#pretty-param
       schema:
         type: boolean
         default: false
     proximity:
       name: proximity
-      description: lat,lng to bias results.
+      description: lat,lng to bias results
       in: query
       required: false
-      example: 52.3877830,9.7334394
+      externalDocs:
+        description: proximity parameter documentation
+        url: https://opencagedata.com/api#proximity-param
       schema:
         type: string
+        description: Latitude and longitude decimal coordinates to bias results toward
+        pattern: ^-?[0-9]{1,2}(\.[0-9]+)?,\s*-?[0-9]{1,3}(\.[0-9]+)?$
+        examples:
+          - 52.3877830, 9.7334394
+          - 51.522618,-0.102530
+          - 42.359578,-71.091982
     roadinfo:
       name: roadinfo
       description: when true we geocode to nearest road, include roadinfo annotation
       in: query
       required: false
+      externalDocs:
+        description: roadinfo parameter documentation
+        url: https://opencagedata.com/api#roadinfo-param
       schema:
         type: boolean
         default: false
   headers:
     ratelimit-limit:
       description: '**Non-subscription customers only.** Total number of API requests your account is limited to over given time period (24 hours for free trials).'
+      externalDocs:
+        description: rate limit documentation
+        url: https://opencagedata.com/api#rate-limiting
       schema:
         type: integer
-      example: 2500
+        examples:
+          - 2500
     ratelimit-remaining:
       description: '**Non-subscription customers only.** The number of requests left for the time window.'
+      externalDocs:
+        description: rate limit documentation
+        url: https://opencagedata.com/api#rate-limiting
       schema:
         type: integer
-      example: 2498
+        examples:
+          - 2498
     ratelimit-reset:
       description: '**Non-subscription customers only.** The UNIX timestamp at which the current rate limit window resets.'
+      externalDocs:
+        description: rate limit documentation
+        url: https://opencagedata.com/api#rate-limiting
       schema:
         type: integer
-      example: 1605312000
+        examples:
+          - 1605312000
   schemas:
     LatLng:
       type: object
+      description: Geographic coordinates (latitude and longitude)
       properties:
         lat:
           type: number
-          format: float
+          description: Latitude coordinate in decimal degrees
+          format: double
+          minimum: -90
+          maximum: 90
+          examples:
+            - 40.7128
+            - 51.5074
+            - -33.8688
         lng:
           type: number
-          format: float
+          description: Longitude coordinate in decimal degrees
+          format: double
+          minimum: -180
+          maximum: 180
+          examples:
+            - -74.006
+            - -0.1278
+            - 151.2093
+      required:
+        - lat
+        - lng
     Response:
+      type: object
       properties:
         documentation:
           type: string
+          description: URL to the API documentation
+          format: uri
         rate:
-          type: object
+          type:
+            - object
+            - 'null'
+          description: Rate limit information. Not present for subscription customers.
           properties:
             limit:
               type: integer
+              description: Total number of requests allowed within the time window
             remaining:
               type: integer
+              description: Number of requests remaining within the current time window
             reset:
               type: integer
+              description: Unix timestamp when the rate limit will reset
         licenses:
           type: array
+          description: License information for data sources used in the response
           items:
             type: object
+            required:
+              - name
+              - url
             properties:
               name:
                 type: string
+                description: Name of the license
               url:
                 type: string
+                format: uri
+                description: URL where the full license text can be found
         results:
           type: array
+          description: Array of geocoding results
           items:
             type: object
             properties:
               annotations:
                 description: |
-                  which annotations are returned depends on the location of the result
-                  see https://opencagedata.com/api#annotations
+                  Additional data about the location. Which annotations are returned depends 
+                  on the location of the result.
                 type: object
+                externalDocs:
+                  description: Annotations documentation
+                  url: https://opencagedata.com/api#annotations
                 properties:
                   DMS:
                     type: object
+                    description: Degrees, minutes, seconds representation of coordinates
                     properties:
                       lat:
                         type: string
@@ -560,6 +685,7 @@ components:
                       - lng
                   FIPS:
                     type: object
+                    description: FIPS (Federal Information Processing Standards) codes
                     properties:
                       county:
                         type: string
@@ -569,15 +695,20 @@ components:
                       - state
                   H3:
                     description: |
-                      only available to paying customers and by request
-                      see https://opencagedata.com/api#h3
+                      H3 geospatial indexing system, only available to paying customers and by request
                     type: string
+                    externalDocs:
+                      description: H3 annotation documentation
+                      url: https://opencagedata.com/api#h3
                   MGRS:
                     type: string
+                    description: Military Grid Reference System coordinates
                   Maidenhead:
                     type: string
+                    description: Maidenhead Locator System coordinates
                   Mercator:
                     type: object
+                    description: Web Mercator projection coordinates
                     properties:
                       x:
                         type: number
@@ -588,6 +719,7 @@ components:
                       - 'y'
                   NUTS:
                     type: object
+                    description: Nomenclature of Territorial Units for Statistics codes
                     properties:
                       NUTS0:
                         type: object
@@ -624,20 +756,27 @@ components:
                       - NUTS3
                   OSM:
                     type: object
+                    description: OpenStreetMap related information
                     properties:
                       edit_url:
                         type: string
+                        format: uri
                       note_url:
                         type: string
+                        format: uri
                       url:
                         type: string
+                        format: uri
                     required:
                       - note_url
                       - url
                   UN/LOCODE:
                     description: |
-                      see https://opencagedata.com/api#unlocode
+                      United Nations Code for Trade and Transport Locations
                     type: object
+                    externalDocs:
+                      description: UN/LOCODE documentation
+                      url: https://opencagedata.com/api#unlocode
                     properties:
                       code:
                         type: string
@@ -654,8 +793,10 @@ components:
                   UN_M49:
                     type: object
                     description: |
-                      response varies based on region
-                      see https://opencagedata.com/api#unm49
+                      UN M49 standard country or area codes. Response varies based on region.
+                    externalDocs:
+                      description: UN M49 documentation
+                      url: https://opencagedata.com/api#unm49
                     properties:
                       regions:
                         type: object
@@ -685,8 +826,10 @@ components:
                       - statistical_groupings
                   callingcode:
                     type: number
+                    description: International calling code for the country
                   currency:
                     type: object
+                    description: Currency information for the location's country
                     properties:
                       alternate_symbols:
                         type: array
@@ -731,15 +874,23 @@ components:
                       - thousands_separator
                   flag:
                     type: string
+                    description: Unicode representation of the country's flag
                   geohash:
                     type: string
+                    description: Geohash representation of the coordinates
                   qibla:
                     type: number
+                    description: Direction of the Qibla (in degrees from north)
                   roadinfo:
                     type: object
+                    description: Information about roads at or near the location
                     properties:
                       drive_on:
                         type: string
+                        enum:
+                          - left
+                          - right
+                        description: Which side of the road traffic drives on
                       lanes:
                         type: number
                       maxheight:
@@ -752,6 +903,10 @@ components:
                         type: number
                       oneway:
                         type: number
+                        enum:
+                          - 0
+                          - 1
+                        description: Whether the road is one-way (1) or two-way (0)
                       road:
                         type: string
                       road_reference:
@@ -762,6 +917,10 @@ components:
                         type: string
                       speed_in:
                         type: string
+                        enum:
+                          - km/h
+                          - mph
+                        description: Units used for speed limits
                       surface:
                         type: number
                       toll:
@@ -773,18 +932,24 @@ components:
                       - speed_in
                   sun:
                     type: object
+                    description: Sun rise and set times for the location
                     properties:
                       rise:
                         type: object
+                        description: Various sunrise times
                         properties:
                           apparent:
                             type: number
+                            description: Sunrise time considering atmospheric refraction
                           astronomical:
                             type: number
+                            description: When the sun is 18 degrees below the horizon
                           civil:
                             type: number
+                            description: When the sun is 6 degrees below the horizon
                           nautical:
                             type: number
+                            description: When the sun is 12 degrees below the horizon
                         required:
                           - apparent
                           - astronomical
@@ -792,15 +957,20 @@ components:
                           - nautical
                       set:
                         type: object
+                        description: Various sunset times
                         properties:
                           apparent:
                             type: number
+                            description: Sunset time considering atmospheric refraction
                           astronomical:
                             type: number
+                            description: When the sun is 18 degrees below the horizon
                           civil:
                             type: number
+                            description: When the sun is 6 degrees below the horizon
                           nautical:
                             type: number
+                            description: When the sun is 12 degrees below the horizon
                         required:
                           - apparent
                           - astronomical
@@ -811,17 +981,26 @@ components:
                       - set
                   timezone:
                     type: object
+                    description: Timezone information for the location
                     properties:
                       name:
                         type: string
+                        description: IANA timezone database name
                       now_in_dst:
                         type: number
+                        enum:
+                          - 0
+                          - 1
+                        description: Whether daylight saving time is currently in effect
                       offset_sec:
                         type: number
+                        description: Offset from UTC in seconds
                       offset_string:
                         type: string
+                        description: Offset from UTC as string (e.g., +01:00)
                       short_name:
                         type: string
+                        description: Short timezone name (e.g., EST, CEST)
                     required:
                       - name
                       - now_in_dst
@@ -830,36 +1009,49 @@ components:
                       - short_name
                   what3words:
                     type: object
+                    description: What3Words representation of the location
                     properties:
                       words:
                         type: string
+                        description: Three-word address
                     required:
                       - words
               bounds:
                 type: object
+                description: Bounding box containing the location
                 properties:
                   northeast:
                     $ref: '#/components/schemas/LatLng'
                   southwest:
                     $ref: '#/components/schemas/LatLng'
               components:
-                description: fields will depend on the location see https://opencagedata.com/api#formatted
+                description: |
+                  Normalized components of the address. Fields will depend on the location.
+                externalDocs:
+                  description: Components documentation
+                  url: https://opencagedata.com/api#formatted
                 type: object
                 properties:
                   ISO_3166-1_alpha-2:
                     type: string
+                    description: Two-letter country code
                   ISO_3166-1_alpha-3:
                     type: string
+                    description: Three-letter country code
                   ISO_3166-2:
                     type: array
+                    description: Codes for country subdivisions
                     items:
                       type: string
                   _category:
                     type: string
+                    description: Category of the location
                   _normalized_city:
                     type: string
+                    description: Normalized city name
                   _type:
                     type: string
+                    description: Type of the location
                   body_of_water:
                     type: string
                   borough:
@@ -903,145 +1095,233 @@ components:
                   - _category
               confidence:
                 type: integer
+                description: |
+                  Confidence score from 0-10 (10 being the most confident)
+                minimum: 0
+                maximum: 10
               distance_from_q:
                 description: |
-                  only for reverse geocoding requests
-                  see https://opencagedata.com/api#response
+                  Only for reverse geocoding requests. Distance from the query point to the result.
                 type: object
+                externalDocs:
+                  description: Response documentation
+                  url: https://opencagedata.com/api#response
                 properties:
                   meters:
                     type: number
+                    description: Distance in meters
               formatted:
                 type: string
+                description: Human-readable formatted address
               geometry:
                 $ref: '#/components/schemas/LatLng'
         status:
           type: object
+          description: Status information about the request
           properties:
             message:
               type: string
+              description: Status message
             code:
               type: integer
+              description: HTTP status code
         stay_informed:
           type: object
+          description: Links to follow OpenCage for updates
           properties:
             blog:
               type: string
+              format: uri
+              description: URL to the OpenCage blog
             twitter:
               type: string
+              format: uri
+              description: URL to OpenCage Twitter account
             mastodon:
               type: string
+              format: uri
+              description: URL to OpenCage Mastodon account
           required:
             - mastodon
         thanks:
           type: string
+          description: Thank you message
         timestamp:
           type: object
+          description: Timestamp information
           properties:
             created_http:
               type: string
+              format: date-time
+              description: HTTP-formatted timestamp
             created_unix:
               type: integer
+              description: Unix timestamp
         total_results:
           type: integer
-      type: object
+          description: Total number of results found
+      required:
+        - documentation
+        - licenses
+        - results
+        - status
+        - stay_informed
+        - timestamp
+        - total_results
     GetGeojson200ResponseBody:
       type: object
+      description: GeoJSON response from the OpenCage Geocoder API
+      externalDocs:
+        description: Response format documentation
+        url: https://opencagedata.com/api#response
       properties:
         documentation:
           type: string
+          format: uri
+          description: URL to the API documentation
         features:
           type: array
+          description: Array of GeoJSON feature objects containing geocoding results
           items:
             type: object
+            description: GeoJSON feature object
             properties:
               geometry:
                 type: object
+                description: GeoJSON geometry object representing the location point
                 properties:
                   coordinates:
                     type: array
+                    description: Location coordinates in [longitude, latitude] order (GeoJSON standard)
+                    minItems: 2
+                    maxItems: 3
                     items:
                       type: number
+                      format: double
                   type:
                     type: string
+                    description: GeoJSON geometry type
+                    enum:
+                      - Point
                 required:
                   - coordinates
                   - type
               properties:
                 type: object
+                description: Properties of the geocoded location
                 properties:
                   annotations:
-                    type: object
+                    type:
+                      - object
+                      - 'null'
+                    description: |
+                      Additional data about the location. The annotations provided depend on 
+                      the specific location being geocoded.
+                    externalDocs:
+                      description: Annotations documentation
+                      url: https://opencagedata.com/api#annotations
                     properties:
                       DMS:
                         type: object
+                        description: Degrees, minutes, seconds representation of coordinates
                         properties:
                           lat:
                             type: string
+                            description: Latitude in degrees, minutes, seconds format
                           lng:
                             type: string
+                            description: Longitude in degrees, minutes, seconds format
                         required:
                           - lat
                           - lng
                       FIPS:
                         type: object
+                        description: FIPS (Federal Information Processing Standards) codes
                         properties:
                           county:
                             type: string
+                            description: FIPS county code
                           state:
                             type: string
+                            description: FIPS state code
                         required:
                           - state
                       MGRS:
                         type: string
+                        description: Military Grid Reference System coordinates
                       Maidenhead:
                         type: string
+                        description: Maidenhead Locator System coordinates
                       Mercator:
                         type: object
+                        description: Web Mercator projection coordinates
                         properties:
                           x:
                             type: number
+                            description: X coordinate (longitude) in Web Mercator projection
                           'y':
                             type: number
+                            description: Y coordinate (latitude) in Web Mercator projection
                         required:
                           - x
                           - 'y'
                       OSM:
                         type: object
+                        description: OpenStreetMap related information
                         properties:
                           edit_url:
                             type: string
+                            format: uri
+                            description: URL to edit this location on OpenStreetMap
                           note_url:
                             type: string
+                            format: uri
+                            description: URL to add a note about this location on OpenStreetMap
                           url:
                             type: string
+                            format: uri
+                            description: URL to view this location on OpenStreetMap
                         required:
                           - note_url
                           - url
                       UN_M49:
                         type: object
+                        description: |
+                          UN M49 standard country or area codes. Response varies based on region.
+                        externalDocs:
+                          description: UN M49 documentation
+                          url: https://opencagedata.com/api#unm49
                         properties:
                           regions:
                             type: object
+                            description: Hierarchical region codes
                             properties:
                               AMERICAS:
                                 type: string
+                                description: Americas regional code
                               NORTHERN_AMERICA:
                                 type: string
+                                description: Northern America regional code
                               US:
                                 type: string
+                                description: Country code
                               WORLD:
                                 type: string
+                                description: World code
                               DE:
                                 type: string
+                                description: Country code
                               EUROPE:
                                 type: string
+                                description: Europe regional code
                               WESTERN_EUROPE:
                                 type: string
+                                description: Western Europe regional code
                             required:
                               - WORLD
                           statistical_groupings:
                             type: array
+                            description: Statistical groupings the location belongs to
                             items:
                               type: string
                         required:
@@ -1049,37 +1329,55 @@ components:
                           - statistical_groupings
                       callingcode:
                         type: number
+                        description: International calling code for the country
                       currency:
                         type: object
+                        description: Currency information for the location's country
                         properties:
                           alternate_symbols:
                             type: array
+                            description: Alternative symbols used for the currency
                             items:
                               type: string
                           decimal_mark:
                             type: string
+                            description: Character used as decimal separator
                           disambiguate_symbol:
                             type: string
+                            description: Symbol used to disambiguate the currency
                           html_entity:
                             type: string
+                            description: HTML entity for the currency symbol
                           iso_code:
                             type: string
+                            description: ISO 4217 currency code
                           iso_numeric:
                             type: string
+                            description: ISO 4217 numeric currency code
                           name:
                             type: string
+                            description: Full name of the currency
                           smallest_denomination:
                             type: number
+                            description: Smallest denomination in circulation
                           subunit:
                             type: string
+                            description: Name of the subunit of the currency
                           subunit_to_unit:
                             type: number
+                            description: Number of subunits in one unit
                           symbol:
                             type: string
+                            description: Primary symbol used for the currency
                           symbol_first:
                             type: number
+                            enum:
+                              - 0
+                              - 1
+                            description: Whether the symbol appears before (1) or after (0) the amount
                           thousands_separator:
                             type: string
+                            description: Character used as thousands separator
                         required:
                           - alternate_symbols
                           - decimal_mark
@@ -1095,36 +1393,55 @@ components:
                           - thousands_separator
                       flag:
                         type: string
+                        description: Unicode representation of the country's flag
                       geohash:
                         type: string
+                        description: Geohash representation of the coordinates
                       qibla:
                         type: number
+                        description: Direction of the Qibla (in degrees from north)
                       roadinfo:
                         type: object
+                        description: Information about roads at or near the location
                         properties:
                           drive_on:
                             type: string
+                            enum:
+                              - left
+                              - right
+                            description: Which side of the road traffic drives on
                           road:
                             type: string
+                            description: Road name or identifier
                           speed_in:
                             type: string
+                            enum:
+                              - km/h
+                              - mph
+                            description: Units used for speed limits
                         required:
                           - drive_on
                           - speed_in
                       sun:
                         type: object
+                        description: Sun rise and set times for the location
                         properties:
                           rise:
                             type: object
+                            description: Various sunrise times
                             properties:
                               apparent:
                                 type: number
+                                description: Sunrise time considering atmospheric refraction
                               astronomical:
                                 type: number
+                                description: When the sun is 18 degrees below the horizon
                               civil:
                                 type: number
+                                description: When the sun is 6 degrees below the horizon
                               nautical:
                                 type: number
+                                description: When the sun is 12 degrees below the horizon
                             required:
                               - apparent
                               - astronomical
@@ -1132,15 +1449,20 @@ components:
                               - nautical
                           set:
                             type: object
+                            description: Various sunset times
                             properties:
                               apparent:
                                 type: number
+                                description: Sunset time considering atmospheric refraction
                               astronomical:
                                 type: number
+                                description: When the sun is 18 degrees below the horizon
                               civil:
                                 type: number
+                                description: When the sun is 6 degrees below the horizon
                               nautical:
                                 type: number
+                                description: When the sun is 12 degrees below the horizon
                             required:
                               - apparent
                               - astronomical
@@ -1151,17 +1473,26 @@ components:
                           - set
                       timezone:
                         type: object
+                        description: Timezone information for the location
                         properties:
                           name:
                             type: string
+                            description: IANA timezone database name
                           now_in_dst:
                             type: number
+                            enum:
+                              - 0
+                              - 1
+                            description: Whether daylight saving time is currently in effect
                           offset_sec:
                             type: number
+                            description: Offset from UTC in seconds
                           offset_string:
                             type: string
+                            description: Offset from UTC as string (e.g., +01:00)
                           short_name:
                             type: string
+                            description: Short timezone name (e.g., EST, CEST)
                         required:
                           - name
                           - now_in_dst
@@ -1170,40 +1501,51 @@ components:
                           - short_name
                       what3words:
                         type: object
+                        description: What3Words representation of the location
                         properties:
                           words:
                             type: string
+                            description: Three-word address
                         required:
                           - words
                       NUTS:
                         type: object
+                        description: Nomenclature of Territorial Units for Statistics codes
                         properties:
                           NUTS0:
                             type: object
+                            description: Country-level NUTS code
                             properties:
                               code:
                                 type: string
+                                description: NUTS0 code
                             required:
                               - code
                           NUTS1:
                             type: object
+                            description: Major socio-economic region NUTS code
                             properties:
                               code:
                                 type: string
+                                description: NUTS1 code
                             required:
                               - code
                           NUTS2:
                             type: object
+                            description: Basic region NUTS code
                             properties:
                               code:
                                 type: string
+                                description: NUTS2 code
                             required:
                               - code
                           NUTS3:
                             type: object
+                            description: Small region NUTS code
                             properties:
                               code:
                                 type: string
+                                description: NUTS3 code
                             required:
                               - code
                         required:
@@ -1211,42 +1553,45 @@ components:
                           - NUTS1
                           - NUTS2
                           - NUTS3
-                    required:
-                      - DMS
-                      - MGRS
-                      - Maidenhead
-                      - Mercator
-                      - OSM
-                      - UN_M49
-                      - callingcode
-                      - currency
-                      - flag
-                      - geohash
-                      - qibla
-                      - roadinfo
-                      - sun
-                      - timezone
-                      - what3words
                   bounds:
                     type: object
+                    description: Bounding box containing the location
                     properties:
                       northeast:
                         type: object
+                        description: Northeast corner of bounding box
                         properties:
                           lat:
                             type: number
+                            format: double
+                            minimum: -90
+                            maximum: 90
+                            description: Latitude of northeast corner
                           lng:
                             type: number
+                            format: double
+                            minimum: -180
+                            maximum: 180
+                            description: Longitude of northeast corner
                         required:
                           - lat
                           - lng
                       southwest:
                         type: object
+                        description: Southwest corner of bounding box
                         properties:
                           lat:
                             type: number
+                            format: double
+                            minimum: -90
+                            maximum: 90
+                            description: Latitude of southwest corner
                           lng:
                             type: number
+                            format: double
+                            minimum: -180
+                            maximum: 180
+                            description: Longitude of southwest corner
                         required:
                           - lat
                           - lng
@@ -1255,147 +1600,202 @@ components:
                       - southwest
                   components:
                     type: object
+                    description: |
+                      Normalized components of the address. Fields will depend on the location.
+                    externalDocs:
+                      description: Components documentation
+                      url: https://opencagedata.com/api#components
                     properties:
                       ISO_3166-1_alpha-2:
                         type: string
+                        description: Two-letter country code
                       ISO_3166-1_alpha-3:
                         type: string
+                        description: Three-letter country code
                       ISO_3166-2:
                         type: array
+                        description: Codes for country subdivisions
                         items:
                           type: string
                       _category:
                         type: string
+                        description: Category of the location
+                      _normalized_city:
+                        type: string
+                        description: The city / town / village placename
                       _type:
                         type: string
+                        description: Type of the location
                       borough:
                         type: string
+                        description: Borough or district within a city
                       city:
                         type: string
+                        description: City name
                       continent:
                         type: string
+                        description: Continent name
                       country:
                         type: string
+                        description: Country name
                       country_code:
                         type: string
+                        description: Two-letter country code (lowercase)
                       county:
                         type: string
+                        description: County or district name
                       house_number:
                         type: string
+                        description: Building or house number
                       neighbourhood:
                         type: string
+                        description: Neighborhood name
                       postcode:
                         type: string
+                        description: Postal code
                       road:
                         type: string
+                        description: Street or road name
                       state:
                         type: string
+                        description: State, province, or region name
                       state_code:
                         type: string
+                        description: State or province code
                       town:
                         type: string
+                        description: Town name
                       village:
                         type: string
+                        description: Village name
                       city_district:
                         type: string
+                        description: District within a city
                       office:
                         type: string
+                        description: Office or building name
                       political_union:
                         type: string
+                        description: Political union (e.g., European Union)
                       suburb:
                         type: string
-                    required:
-                      - ISO_3166-1_alpha-2
-                      - ISO_3166-1_alpha-3
-                      - ISO_3166-2
-                      - _category
-                      - _type
-                      - continent
-                      - country
-                      - country_code
-                      - state
-                      - state_code
+                        description: Suburb name
                   confidence:
                     type: number
+                    description: |
+                      Confidence score from 0-10 (10 being the most confident)
+                    minimum: 0
+                    maximum: 10
                   formatted:
                     type: string
+                    description: Human-readable formatted address
                 required:
-                  - annotations
                   - components
                   - confidence
                   - formatted
               type:
                 type: string
+                description: GeoJSON object type
+                enum:
+                  - Feature
             required:
               - geometry
               - properties
               - type
         licenses:
           type: array
+          description: License information for data sources used in the response
           items:
             type: object
+            description: License information
             properties:
               name:
                 type: string
+                description: Name of the license
               url:
                 type: string
+                format: uri
+                description: URL where the full license text can be found
             required:
               - name
               - url
         rate:
-          type: object
+          description: Rate limit information (not present for subscription customers)
           properties:
             limit:
               type: number
+              description: Total number of requests allowed within the time window
             remaining:
               type: number
+              description: Number of requests remaining within the current time window
             reset:
               type: number
+              description: Unix timestamp when the rate limit will reset
           required:
             - limit
             - remaining
             - reset
+          type:
+            - object
+            - 'null'
         status:
           type: object
+          description: Status information about the request
           properties:
             code:
               type: number
+              description: HTTP status code
             message:
               type: string
+              description: Status message
           required:
             - code
             - message
         stay_informed:
           type: object
+          description: Links to follow OpenCage for updates
           properties:
             blog:
               type: string
+              format: uri
+              description: URL to the OpenCage blog
             mastodon:
               type: string
+              format: uri
+              description: URL to OpenCage Mastodon account
           required:
             - blog
             - mastodon
         thanks:
           type: string
+          description: Thank you message
         timestamp:
           type: object
+          description: Timestamp information
           properties:
             created_http:
               type: string
+              format: date-time
+              description: HTTP-formatted timestamp
             created_unix:
               type: number
+              format: int64
+              description: Unix timestamp
           required:
             - created_http
             - created_unix
         total_results:
           type: number
+          description: Total number of results found
         type:
           type: string
+          description: GeoJSON object type
+          enum:
+            - FeatureCollection
       required:
         - documentation
         - features
         - licenses
-        - rate
         - status
         - stay_informed
         - thanks
