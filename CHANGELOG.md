@@ -49,6 +49,12 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 - Uses [typedoc](https://typedoc.org/)
 
+## [1.2.0] - 2025-07-07
+
+### Changed
+
+- upgrade dependencies
+
 ## [1.1.0] - 2025-03-16
 
 ### Changed
@@ -214,6 +220,7 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 [2.0.0-alpha.3]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.2...v2.0.0-apha.3
 [2.0.0-alpha.2]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.1...v2.0.0-alpha.2
 [2.0.0-alpha.1]: https://github.com/tsamaya/opencage-api-client/compare/v1.1.0...v2.0.0-alpha.1
+[1.2.0]: https://github.com/tsamaya/opencage-api-client/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.7...v1.1.0
 [1.0.7]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.6...v1.0.7
 [1.0.7]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.6...v1.0.7
