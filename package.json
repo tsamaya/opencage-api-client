@@ -29,6 +29,7 @@
     "default": "./dist/opencage-api.modern.js"
   },
   "scripts": {
+    "clean": "rm -rf dist",
     "build": "pnpm run build:node && pnpm run build:browser",
     "build:node": "microbundle",
     "build:browser": "microbundle -f umd -i src/browser.ts -o dist/opencage-api.umd.js --name opencage --no-pkg-main --generateTypes false",
