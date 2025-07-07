@@ -7,6 +7,22 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ## [unreleased]
 
+## [2.0.0-alpha.5] (2025-07-07)
+
+### Features
+
+- Adds HTTP Header 'User-Agent'
+
+### Changed
+
+- Drop support for Node 18
+- Use Rsbuild for packaging
+
+### Chore
+
+- Upgrade dependencies
+- Port changes from Version 1.2.0
+
 ## [2.0.0-alpha.4] (2025-04-24)
 
 ### Chore
