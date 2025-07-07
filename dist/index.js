@@ -1,6 +1,4 @@
-import { config } from "dotenv";
 import { geocode } from "./geocode.js";
-config();
 const opencage = {
     geocode: geocode
 };

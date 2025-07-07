@@ -1,6 +1,6 @@
 {
   "name": "opencage-api-client",
-  "version": "2.0.0-alpha.5",
+  "version": "2.0.0-beta.1",
   "description": "An OpenCageData Geocoder API client library for node and browsers (UMD)",
   "keywords": [
     "geocoder",
@@ -54,6 +54,7 @@
     "@typescript-eslint/parser": "8.35.1",
     "@vitest/coverage-v8": "3.2.4",
     "@vitest/ui": "3.2.4",
+    "dotenv": "17.0.1",
     "eslint": "9.30.1",
     "eslint-config-prettier": "10.1.5",
     "eslint-plugin-prettier": "5.2.6",
@@ -66,7 +67,6 @@
     "vitest": "3.2.4"
   },
   "dependencies": {
-    "dotenv": "17.0.1"
   },
   "lint-staged": {
     "*.{json,md,yml,yaml}": [

@@ -30,8 +30,6 @@ Sign up for a [free-trial API Key](https://opencagedata.com/users/sign_up).
 
 ## node
 
-The library uses [dotenv](https://www.npmjs.com/package/dotenv) on node runtime to configure OpenCage Geocoding API key. But using `key` as an input parameter is always a possibility.
-
 First install the library with `npm` or `yarn`:
 
 ```
@@ -50,6 +48,8 @@ or
 $ pnpm add opencage-api-client
 ```
 
+Starting in v2, [dotenv](https://www.npmjs.com/package/dotenv) is no longer bundled as a dependency. While we still recommend using `.env` files for configuration, you'll need to set up dotenv yourself in your project.
+
 Create a `.env` file with:
 
 ```
@@ -61,6 +61,8 @@ Here are examples:
 1. CommonJS
 
 ```javascript
+require('dotenv').config(); // or add `key` as an input parameter of the function geocode
+
 const opencage = require('opencage-api-client');
 
 opencage
@@ -76,6 +78,8 @@ opencage
 2. ESM
 
 ```javascript
+import 'dotenv/config'; // or add `key` as an input parameter of the function geocode
+
 import opencage from 'opencage-api-client';
 
 opencage
@@ -89,6 +93,8 @@ opencage
 ```
 
 3. Typescript
+
+This example does not use `dotenv` and specify the API `key` as input parameter
 
 ```javascript
 import { geocode } from 'opencage-api-client';

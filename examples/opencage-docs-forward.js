@@ -1,4 +1,8 @@
+import 'dotenv/config';
+// - or add `key` as an input parameter of the function geocode
+
 import opencage from '../dist/index.js';
+
 opencage
   .geocode({ q: 'Theresienhöhe 11, München' })
   .then((data) => {

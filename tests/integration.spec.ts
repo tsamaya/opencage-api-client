@@ -1,3 +1,5 @@
+import 'dotenv/config';
+
 import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import opencage from '../src';
 

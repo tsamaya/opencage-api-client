@@ -1,3 +1,6 @@
+import 'dotenv/config';
+// - or add `key` as an input parameter of the function geocode
+
 import opencage from '../dist/index.js';
 
 opencage
