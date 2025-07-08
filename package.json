@@ -28,12 +28,13 @@
     "dist"
   ],
   "scripts": {
-    "clean": "rm -rf dist",
-    "build": "pnpm run build:node && pnpm run build:browser && pnpm run build:docs",
+    "build:clean": "rm -rf dist",
     "build:node": "rslib build",
     "build:browser": "rslib build --config rslib.browser.config.ts",
-    "check-types": "tsc --noEmit",
     "build:docs": "typedoc",
+    "build": "pnpm run build:clean && pnpm run build:node && pnpm run build:browser && pnpm run build:docs",
+    "check-types": "tsc --noEmit",
+    "dev": "rslib build --watch",
     "format": "pnpm run lint:fix && prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",

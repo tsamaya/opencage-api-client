@@ -9,15 +9,15 @@ export default defineConfig({
   lib: [
     {
       format: 'esm',
-      syntax: 'es2022',
+      // syntax: 'es2022', tsconfig will handle the syntax
       bundle: false,
       dts: true,
     },
     {
       format: 'cjs',
-      syntax: 'es2022',
+      // syntax: 'es2022', tsconfig will handle the syntax
       bundle: false,
-      dts: true,
+      dts: false, // ESM and CJS will share the same dts file
     },
   ],
   output: {
