@@ -1,5 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { isUndefinedOrEmpty, isUndefinedOrNull } from '../src/geocode';
+import {
+  isUndefinedOrEmpty,
+  isUndefinedOrNull,
+} from '../src/helpers/geocodeHelpers';
 
 describe('Helpers library', () => {
   describe('function isUndefinedOrEmpty', () => {
