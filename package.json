@@ -28,11 +28,11 @@
     "dist"
   ],
   "scripts": {
-    "build:clean": "rm -rf dist",
+    "clean": "rm -rf dist",
     "build:node": "rslib build",
     "build:browser": "rslib build --config rslib.browser.config.ts",
     "build:docs": "typedoc",
-    "build": "pnpm run build:clean && pnpm run build:node && pnpm run build:browser && pnpm run build:docs",
+    "build": "pnpm run build:node && pnpm run build:browser",
     "check-types": "tsc --noEmit",
     "dev": "rslib build --watch",
     "format": "pnpm run lint:fix && prettier --write .",
@@ -40,6 +40,7 @@
     "lint:fix": "eslint --fix .",
     "release:check-changelog": "tsx ./scripts/check-changelog.ts",
     "release:update-version": "tsx ./scripts/update-version.ts",
+    "release:build": "pnpm run clean && pnpm run build && pnpm run build:docs",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
