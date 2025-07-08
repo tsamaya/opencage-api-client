@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const opencage = require('../dist/index.cjs');
 
 opencage

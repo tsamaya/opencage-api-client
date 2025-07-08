@@ -1,4 +1,4 @@
-import {version} from './version'
+import { version } from './version';
 
 const OPENCAGEDATA_JSON_URL = 'https://api.opencagedata.com/geocode/v1/json';
 

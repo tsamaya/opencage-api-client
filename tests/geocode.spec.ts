@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
 import { fetchUrl } from '../src/geocode.ts';
-import {version} from '../src/version';
+import { version } from '../src/version';
 import opencage from '../src';
 describe('geocode tests', () => {
   describe('rainy tests', () => {

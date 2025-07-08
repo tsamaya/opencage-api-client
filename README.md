@@ -32,27 +32,27 @@ Sign up for a [free-trial API Key](https://opencagedata.com/users/sign_up).
 
 First install the library with `npm` or `yarn`:
 
-```
-$ npm i --save opencage-api-client
-```
-
-or
-
-```
-$ yarn add opencage-api-client
+```bash
+npm i --save opencage-api-client
 ```
 
 or
 
+```bash
+yarn add opencage-api-client
 ```
-$ pnpm add opencage-api-client
+
+or
+
+```bash
+pnpm add opencage-api-client
 ```
 
 Starting in v2, [dotenv](https://www.npmjs.com/package/dotenv) is no longer bundled as a dependency. While we still recommend using `.env` files for configuration, you'll need to set up dotenv yourself in your project.
 
 Create a `.env` file with:
 
-```
+```bash
 OPENCAGE_API_KEY=YOUR-OPENCAGE_DATA_API_KEY
 ```
 
@@ -98,7 +98,7 @@ This example does not use `dotenv` and specify the API `key` as input parameter
 
 ```javascript
 import { geocode } from 'opencage-api-client';
-import type { GeocodeRequest } from '../src/';
+import type { GeocodeRequest } from 'opencage-api-client';
 
 async function geocode() {
   const input: GeocodeRequest = {
@@ -112,9 +112,9 @@ async function geocode() {
 }
 ```
 
-## browser
+## Browser
 
-The browser version is built over the node one, obviously without the dotenv feature.
+The browser version is built using UMD notation. Modern browser can use the ESM version, here the example use the legacy JS notation.
 
 The library is available with `unkpg` _CDN_ : https://unpkg.com/opencage-api-client
 
@@ -145,7 +145,7 @@ opencage
 
 3- others Examples
 
-Found some examples in the [examples](https://github.com/tsamaya/opencage-api-client/tree/main/examples) folder.
+You can find some examples in the [examples](https://github.com/tsamaya/opencage-api-client/tree/main/examples) folder.
 
 # ✨ API
 
@@ -153,7 +153,7 @@ Found some examples in the [examples](https://github.com/tsamaya/opencage-api-cl
 
 | Parameter | Type   | Optional? | Description                                                                                                                  |
 | --------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| q         | String | mandatory | the query string to be geocoded: a placename, address or coordinates as lat,long                                             |
+| q         | String | mandatory | the query string to be geocoded: a place name, address or coordinates as lat,long                                            |
 | key       | String | optional  | the `key` can be omitted when using a `proxyURL` or when using node with a dedicated environment variable `OPENCAGE_API_KEY` |
 | proxyURL  | String | optional  | The proxy URL parameter (useful to hide your API key)                                                                        |
 
@@ -190,16 +190,17 @@ will output for a 429:
 }
 ```
 
-Check the examples using the Test API key from OpenCage [error handling examples](https://github.com/tsamaya/opencage-api-client/tree/main/examples/apitestkeys.js)
+Check the examples using the Test API key from OpenCage [error handling examples](https://github.com/tsamaya/opencage-api-client/tree/main/examples/apitestkeys.cjs)
 
 # 🔨 Build and test
 
 1.  Fork or clone this repository
-1.  `$ cd` into the `repository` folder
-1.  `$ pnpm install` to install all the required dependencies from [npm](https://www.npmjs.com/)
-1.  lint and test coverage using `$ pnpm run test:coverage`
-1.  Build : `$ pnpm run build`
-1.  Build the docs : `$ pnpm run build:docs`
+1.  `cd` into the `repository` folder
+1.  `pnpm install` to install all the required dependencies from [npm](https://www.npmjs.com/)
+1.  `echo "OPENCAGE_API_KEY=YOUR-OPENCAGE_DATA_API_KEY" >.env` to allow integration tests with your API key
+1.  lint and test coverage using `pnpm run test:coverage`
+1.  Build : `pnpm run build`
+1.  Test with the examples running `./scripts/run-examples.sh`
 
 # 🛣 Revision History
 

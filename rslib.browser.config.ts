@@ -4,7 +4,7 @@ import { pluginUmd } from '@rsbuild/plugin-umd';
 export default defineConfig({
   source: {
     entry: {
-      index: 'src/browser.ts', // or your main browser entry
+      index: 'src/browser.ts',
     },
   },
   lib: [
