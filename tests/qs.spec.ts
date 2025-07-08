@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { buildQueryString } from '../src/geocode';
+import { buildQueryString } from '../src/helpers/geocodeHelpers';
 
 describe('buildQueryString', () => {
   it('function exists', () => {

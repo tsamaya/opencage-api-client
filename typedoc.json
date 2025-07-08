@@ -1,3 +1,7 @@
 {
-  "entryPoints": ["./src/geocode.ts"]
+  "entryPoints": [
+    "./src/geocode.ts",
+    "./src/types/GeocodeRequest.ts",
+    "./src/types/GeocodeResponse.ts"
+  ]
 }

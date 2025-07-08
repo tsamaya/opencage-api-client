@@ -4,6 +4,8 @@ const opencage = {
   geocode,
 };
 
-export type { GeocodeRequest, GeocodeError } from './geocode';
+export type { GeocodeRequest } from './types/GeocodeRequest';
+export type { GeocodeResponse } from './types/GeocodeResponse';
+
 export { geocode };
 export default opencage;
