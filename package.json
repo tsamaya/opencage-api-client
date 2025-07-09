@@ -40,6 +40,7 @@
     "lint:fix": "eslint --fix .",
     "release:check-changelog": "tsx ./scripts/check-changelog.ts",
     "release:update-version": "tsx ./scripts/update-version.ts",
+    "release:update-response": "tsx ./scripts/openapi-response-generator.ts",
     "release:build": "pnpm run clean && pnpm run build && pnpm run build:docs",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -61,6 +62,7 @@
     "eslint-config-prettier": "10.1.5",
     "eslint-plugin-prettier": "5.5.1",
     "globals": "16.3.0",
+    "js-yaml": "4.1.0",
     "prettier": "3.6.2",
     "tsx": "4.20.3",
     "typedoc": "0.28.7",
@@ -68,7 +70,6 @@
     "vite": "7.0.2",
     "vitest": "3.2.4"
   },
-  "dependencies": {},
   "lint-staged": {
     "*.{json,md,yml,yaml}": [
       "prettier --write"

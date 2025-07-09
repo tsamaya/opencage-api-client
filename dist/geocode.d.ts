@@ -1,5 +1,5 @@
-import type { GeocodeRequest } from './types/GeocodeRequest';
-import type { GeocodeResponse } from './types/GeocodeResponse';
+import { GeocodingRequest } from './types/GeocodingRequest';
+import { GeocodingResponse } from './types/GeocodingResponse';
 /**
  * geocode address and reverse geocode coordinates using
  * [OpenCage API](https://opencagedata.com/api) requesting the json format.
@@ -13,4 +13,4 @@ import type { GeocodeResponse } from './types/GeocodeResponse';
  *
  * @return {Promise} a promise resolved by the json format API payload
  */
-export declare function geocode(input: GeocodeRequest): Promise<GeocodeResponse>;
+export declare function geocode(input: GeocodingRequest): Promise<GeocodingResponse>;

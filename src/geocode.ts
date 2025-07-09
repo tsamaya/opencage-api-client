@@ -1,5 +1,5 @@
-import type { GeocodeRequest } from './types/GeocodeRequest';
-import type { GeocodeResponse } from './types/GeocodeResponse';
+import { GeocodingRequest } from './types/GeocodingRequest';
+import { GeocodingResponse } from './types/GeocodingResponse';
 import { fetchUrl } from './fetch';
 import {
   buildValidationError,
@@ -24,7 +24,9 @@ const MISSING_API_KEY = 'missing API key';
  *
  * @return {Promise} a promise resolved by the json format API payload
  */
-export async function geocode(input: GeocodeRequest): Promise<GeocodeResponse> {
+export async function geocode(
+  input: GeocodingRequest
+): Promise<GeocodingResponse> {
   return new Promise((resolve, reject) => {
     if (isUndefinedOrNull(input)) {
       const error = buildValidationError(400, MISSING_OR_BAD_QUERY);
