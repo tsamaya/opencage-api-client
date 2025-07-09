@@ -9,7 +9,12 @@ const USER_AGENT = `OpenCageData Geocoding NodeJS API Client/${version}`;
  * @param  {Function} resolve the resolve function
  * @param  {Function} reject  the reject function
  */
-export async function fetchUrl(url: string, resolve: any, reject: any) {
+export async function fetchUrl(
+  url: string,
+  resolve: any,
+  reject: any,
+  signal?: AbortSignal
+) {
   fetch(url, {
     method: 'GET',
     headers: {
@@ -17,6 +22,7 @@ export async function fetchUrl(url: string, resolve: any, reject: any) {
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },
+    signal,
   })
     .then(checkFetchStatus)
     .then(parseJSON)

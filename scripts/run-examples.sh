@@ -42,3 +42,8 @@ echo "-- Running Typescript example (with tsx)"
 npx tsx examples/typescript.ts
 echo ""
 echo ""
+
+echo "-- Running AbortController example (with tsx)"
+npx tsx examples/abort.ts
+echo ""
+echo ""
