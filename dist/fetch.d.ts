@@ -4,4 +4,4 @@
  * @param  {Function} resolve the resolve function
  * @param  {Function} reject  the reject function
  */
-export declare function fetchUrl(url: string, resolve: any, reject: any): Promise<void>;
+export declare function fetchUrl(url: string, resolve: any, reject: any, signal?: AbortSignal): Promise<void>;

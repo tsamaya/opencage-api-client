@@ -13,4 +13,6 @@ import { GeocodingResponse } from './types/GeocodingResponse';
  *
  * @return {Promise} a promise resolved by the json format API payload
  */
-export declare function geocode(input: GeocodingRequest): Promise<GeocodingResponse>;
+export declare function geocode(input: GeocodingRequest, options?: {
+    signal?: AbortSignal;
+}): Promise<GeocodingResponse>;

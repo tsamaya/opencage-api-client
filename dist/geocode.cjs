@@ -30,7 +30,7 @@ const external_fetch_cjs_namespaceObject = require("./fetch.cjs");
 const geocodeHelpers_cjs_namespaceObject = require("./helpers/geocodeHelpers.cjs");
 const MISSING_OR_BAD_QUERY = 'missing or bad query';
 const MISSING_API_KEY = 'missing API key';
-async function geocode(input) {
+async function geocode(input, options) {
     return new Promise((resolve, reject)=>{
         if ((0, geocodeHelpers_cjs_namespaceObject.isUndefinedOrNull)(input)) {
             const error = (0, geocodeHelpers_cjs_namespaceObject.buildValidationError)(400, MISSING_OR_BAD_QUERY);
@@ -46,7 +46,7 @@ async function geocode(input) {
         const { query, endpoint } = params;
         const qs = (0, geocodeHelpers_cjs_namespaceObject.buildQueryString)(query);
         const url = `${endpoint}?${qs}`;
-        (0, external_fetch_cjs_namespaceObject.fetchUrl)(url, resolve, reject);
+        (0, external_fetch_cjs_namespaceObject.fetchUrl)(url, resolve, reject, options?.signal);
     });
 }
 exports.geocode = __webpack_exports__.geocode;

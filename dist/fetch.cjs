@@ -29,14 +29,15 @@ __webpack_require__.d(__webpack_exports__, {
 const external_version_cjs_namespaceObject = require("./version.cjs");
 const geocodeHelpers_cjs_namespaceObject = require("./helpers/geocodeHelpers.cjs");
 const USER_AGENT = `OpenCageData Geocoding NodeJS API Client/${external_version_cjs_namespaceObject.version}`;
-async function fetchUrl(url, resolve, reject) {
+async function fetchUrl(url, resolve, reject, signal) {
     fetch(url, {
         method: 'GET',
         headers: {
             'User-Agent': USER_AGENT,
             'Content-Type': 'application/json',
             Accept: 'application/json'
-        }
+        },
+        signal
     }).then(geocodeHelpers_cjs_namespaceObject.checkFetchStatus).then(geocodeHelpers_cjs_namespaceObject.parseJSON).then((data)=>{
         resolve(data);
     }).catch((error)=>{

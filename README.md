@@ -98,10 +98,10 @@ This example does not use `dotenv` and specify the API `key` as input parameter
 
 ```javascript
 import { geocode } from 'opencage-api-client';
-import type { GeocodeRequest } from 'opencage-api-client';
+import type { GeocodingRequest } from 'opencage-api-client';
 
 async function geocode() {
-  const input: GeocodeRequest = {
+  const input: GeocodingRequest = {
     q: '51.952659,7.632473',
     // The API Key value from process.env.OPENCAGE_API_KEY is overridden by the one provided below
     key: '6d0e711d72d74daeb2b0bfd2a5cdfdba', // https://opencagedata.com/api#testingkeys

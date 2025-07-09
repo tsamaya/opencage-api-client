@@ -63,7 +63,7 @@ Following a github issue (question) here are some more examples of reverse geoco
 
 ### Typescript
 
-This example shos how to use the library with TypeScript
+This example shows how to use the library with TypeScript
 
 [typescript.ts](./typescript.ts)
 
@@ -72,3 +72,13 @@ npx tsx typescript.ts
 ```
 
 The complete example can be found here : [opencage-api-client-typescript-test](https://github.com/tsamaya/opencage-api-client-typescript-test)
+
+### AbortController
+
+This example shows how to cancel a request using the [AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)
+
+[abort.ts](./abort.ts)
+
+```bash
+npx tsx abort.ts
+```
