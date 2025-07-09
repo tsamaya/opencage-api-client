@@ -24,7 +24,10 @@ const MISSING_API_KEY = 'missing API key';
  *
  * @return {Promise} a promise resolved by the json format API payload
  */
-export async function geocode(input: GeocodeRequest): Promise<GeocodeResponse> {
+export async function geocode(
+  input: GeocodeRequest,
+  options?: { signal?: AbortSignal }
+): Promise<GeocodeResponse> {
   return new Promise((resolve, reject) => {
     if (isUndefinedOrNull(input)) {
       const error = buildValidationError(400, MISSING_OR_BAD_QUERY);
@@ -41,6 +44,6 @@ export async function geocode(input: GeocodeRequest): Promise<GeocodeResponse> {
     const qs = buildQueryString(query);
     const url = `${endpoint}?${qs}`;
     // console.debug(url);
-    fetchUrl(url, resolve, reject);
+    fetchUrl(url, resolve, reject, options?.signal);
   });
 }
