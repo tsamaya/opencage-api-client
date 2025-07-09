@@ -149,13 +149,22 @@ You can find some examples in the [examples](https://github.com/tsamaya/opencage
 
 # ✨ API
 
-## geocode
+## geocode(input, options?)
 
-| Parameter | Type   | Optional? | Description                                                                                                                  |
-| --------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| q         | String | mandatory | the query string to be geocoded: a place name, address or coordinates as lat,long                                            |
-| key       | String | optional  | the `key` can be omitted when using a `proxyURL` or when using node with a dedicated environment variable `OPENCAGE_API_KEY` |
-| proxyURL  | String | optional  | The proxy URL parameter (useful to hide your API key)                                                                        |
+input: GeocodingRequest
+
+| Parameter | Type   | Optional? | Description                                                                                                                                                   |
+| --------- | ------ | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| q         | String | mandatory | the query string to be geocoded: a place name, address or coordinates as lat,long                                                                             |
+| key       | String | optional  | the `key` can be omitted when using a `proxyURL` or when using node with a dedicated environment variable `OPENCAGE_API_KEY`                                  |
+| proxyURL  | String | optional  | The proxy URL parameter (useful to hide your API key)                                                                                                         |
+| ...       | ...    | optional  | Check the [type definition](./src/types/GeocodingRequest.ts) and the [API documentation](https://opencagedata.com/api#request) for the other input parameters |
+
+options?:
+
+| Parameter | Type        | Optional? | Description                                                                                                 |
+| --------- | ----------- | --------- | ----------------------------------------------------------------------------------------------------------- |
+| signal    | AbortSignal | optional  | The [AbortSignal](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) allow to cancel the request |
 
 ## Error handling
 
@@ -219,3 +228,5 @@ Find a bug or want to request a new feature? Please let me know by submitting an
 Licensed under the MIT License
 
 A copy of the license is available in the repository's [LICENSE](LICENSE.md) file.
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client?ref=badge_large)
