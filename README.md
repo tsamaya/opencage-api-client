@@ -149,9 +149,9 @@ You can find some examples in the [examples](https://github.com/tsamaya/opencage
 
 # ✨ API
 
-## geocode(input, options?)
+### geocode(input, options?)
 
-input: GeocodingRequest
+input: [GeocodingRequest](./src/types/GeocodingRequest.ts)
 
 | Parameter | Type   | Optional? | Description                                                                                                                                                   |
 | --------- | ------ | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -160,15 +160,15 @@ input: GeocodingRequest
 | proxyURL  | String | optional  | The proxy URL parameter (useful to hide your API key)                                                                                                         |
 | ...       | ...    | optional  | Check the [type definition](./src/types/GeocodingRequest.ts) and the [API documentation](https://opencagedata.com/api#request) for the other input parameters |
 
-options?:
+options?: _additional optional options_
 
 | Parameter | Type        | Optional? | Description                                                                                                 |
 | --------- | ----------- | --------- | ----------------------------------------------------------------------------------------------------------- |
 | signal    | AbortSignal | optional  | The [AbortSignal](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) allow to cancel the request |
 
-## Error handling
+### Error handling
 
-API can return errors like invalid key, to many requests, daily quota exceeded, etc. Those errors are thrown as Javascript [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) by the `geocode` function. The error object contains the same status object as the [OpenCage API](https://opencagedata.com/api#response).
+API can return errors like invalid key, too many requests, daily quota exceeded, etc. Those errors are thrown as Javascript [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) by the `geocode` function. The error object contains the same status object as the [OpenCage API](https://opencagedata.com/api#response).
 
 Assuming the catch statement uses `error` as variable name:
 
