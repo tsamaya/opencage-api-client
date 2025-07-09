@@ -1,4 +1,4 @@
-import { GeocodeRequest } from '../types/GeocodeRequest';
+import { GeocodingRequest } from '../types/GeocodingRequest';
 import { GeocodeError, GeocodeErrorStatus } from '../errors/GeocodeError';
 
 const OPENCAGEDATA_JSON_URL = 'https://api.opencagedata.com/geocode/v1/json';
@@ -62,7 +62,7 @@ export function isUndefinedOrEmpty(param: string | null | undefined): boolean {
  * @return {Boolean}       returns value
  */
 export function isUndefinedOrNull(
-  param: GeocodeRequest | null | undefined
+  param: GeocodingRequest | null | undefined
 ): boolean {
   return typeof param === 'undefined' || param === null;
 }
@@ -91,7 +91,7 @@ export function buildQueryString(input: any): string {
  *
  * @param {*} input
  */
-export function buildQuery(input: GeocodeRequest) {
+export function buildQuery(input: GeocodingRequest) {
   const query = { ...input };
   let endpoint = OPENCAGEDATA_JSON_URL;
   let missingKey = false;

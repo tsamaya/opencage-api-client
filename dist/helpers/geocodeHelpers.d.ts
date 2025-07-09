@@ -1,4 +1,4 @@
-import { GeocodeRequest } from '../types/GeocodeRequest';
+import { GeocodingRequest } from '../types/GeocodingRequest';
 import { GeocodeError } from '../errors/GeocodeError';
 /**
  * @private
@@ -31,7 +31,7 @@ export declare function isUndefinedOrEmpty(param: string | null | undefined): bo
  * @param  {String}  param object property as a string
  * @return {Boolean}       returns value
  */
-export declare function isUndefinedOrNull(param: GeocodeRequest | null | undefined): boolean;
+export declare function isUndefinedOrNull(param: GeocodingRequest | null | undefined): boolean;
 /**
  * @private
  *
@@ -45,7 +45,7 @@ export declare function buildQueryString(input: any): string;
  *
  * @param {*} input
  */
-export declare function buildQuery(input: GeocodeRequest): {
+export declare function buildQuery(input: GeocodingRequest): {
     missingKey: boolean;
     endpoint: string;
     query: {

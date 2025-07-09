@@ -5,6 +5,8 @@
 1. bump package.json version
 1. check the change log and append if needed
 1. Is the license up to date?
+1. Is the open API yml file up to date?
+1. if not generate new Response interface: `pnpm run release:update-response`
 1. run `pnpm run release:update-version`
 1. run linter `pnpm run lint`
 1. run test `pnpm run test`
