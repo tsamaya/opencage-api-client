@@ -12,19 +12,6 @@ function buildValidationError(code, message) {
     };
     return error;
 }
-function checkFetchStatus(response) {
-    if (response.status >= 200 && response.status < 300) return response;
-    const error = new GeocodeError(response.statusText);
-    error.status = {
-        code: response.status,
-        message: response.statusText
-    };
-    error.response = response;
-    throw error;
-}
-function parseJSON(response) {
-    return response.json();
-}
 function isUndefinedOrEmpty(param) {
     return void 0 === param || '' === param;
 }
@@ -35,17 +22,18 @@ function buildQueryString(input) {
     if (isUndefinedOrNull(input)) return '';
     return Object.keys(input).map((key)=>`${encodeURIComponent(key)}=${encodeURIComponent(input[key] || '')}`).join('&');
 }
-function buildQuery(input) {
+function buildQuery(input, options) {
     const query = {
         ...input
     };
     let endpoint = OPENCAGEDATA_JSON_URL;
     let missingKey = false;
-    if (isUndefinedOrEmpty(input.proxyURL)) {
+    if (isUndefinedOrEmpty(input.proxyURL) && isUndefinedOrEmpty(options?.proxyURL)) {
         if (isUndefinedOrEmpty(input.key) && 'undefined' != typeof process) query.key = process.env.OPENCAGE_API_KEY;
         if (isUndefinedOrEmpty(query.key)) missingKey = true;
     } else {
-        endpoint = input.proxyURL;
+        endpoint = options?.proxyURL;
+        if (isUndefinedOrEmpty(endpoint)) endpoint = input.proxyURL;
         delete query.proxyURL;
     }
     return {
@@ -54,6 +42,6 @@ function buildQuery(input) {
         query
     };
 }
-export { buildQuery, buildQueryString, buildValidationError, checkFetchStatus, isUndefinedOrEmpty, isUndefinedOrNull, parseJSON };
+export { buildQuery, buildQueryString, buildValidationError, isUndefinedOrEmpty, isUndefinedOrNull };
 
 //# sourceMappingURL=geocodeHelpers.js.map

@@ -1,5 +1,5 @@
 /**
- * GeocodeRequest and related request parameters for the OpenCage API.
+ * GeocodingRequest and related request parameters for the OpenCage API.
  */
 export type GeocodingRequest = {
     /**
@@ -10,10 +10,6 @@ export type GeocodingRequest = {
      * the query string to be geocoded: a latitude, longitude or a place name/address.
      */
     q: string;
-    /**
-     * The URL of a proxy server to use for the request. This is useful if you want to hide your API Key.
-     */
-    proxyURL?: string;
     /**
      * When set to 1 we attempt to abbreviate and shorten the formatted string we return. Learn more about formatted placename.
      */
@@ -111,6 +107,11 @@ export type GeocodingRequest = {
      * As an example, by default a reverse geocoding request for the coordinates 50.976004, 11.336753 returns a formatted value of Goethes Gartenhaus, Corona-Schröter-Weg 1, 99425 Weimar, Germany, but if address_only=1 is specified the value would be simply Corona-Schröter-Weg 1, 99425 Weimar, Germany. This can be particularly useful when there are many stores/restaurants/whatever at a single location (for example a multi-story building).
      */
     address_only?: number;
+    /**
+     * @deprecated Use `GeocodingOptions.proxyURL` instead.
+     * The URL of a proxy server to use for the request. This is useful if you want to hide your API Key.
+     */
+    proxyURL?: string;
 };
 /**
  * GeocodeRequest type is an alias for GeocodingRequest.

@@ -37,7 +37,7 @@ async function geocode(input, options) {
             reject(error);
             return;
         }
-        const params = (0, geocodeHelpers_cjs_namespaceObject.buildQuery)(input);
+        const params = (0, geocodeHelpers_cjs_namespaceObject.buildQuery)(input, options);
         if (params.missingKey) {
             const error = (0, geocodeHelpers_cjs_namespaceObject.buildValidationError)(401, MISSING_API_KEY);
             reject(error);

@@ -24,11 +24,27 @@ var __webpack_require__ = {};
 var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
-    fetchUrl: ()=>fetchUrl
+    fetchUrl: ()=>fetchUrl,
+    parseJSON: ()=>parseJSON,
+    checkFetchStatus: ()=>checkFetchStatus
 });
+const GeocodeError_cjs_namespaceObject = require("./errors/GeocodeError.cjs");
 const external_version_cjs_namespaceObject = require("./version.cjs");
-const geocodeHelpers_cjs_namespaceObject = require("./helpers/geocodeHelpers.cjs");
 const USER_AGENT = `OpenCageData Geocoding NodeJS API Client/${external_version_cjs_namespaceObject.version}`;
+function checkFetchStatus(response) {
+    if (response.status >= 200 && response.status < 300) return response;
+    const message = response.statusText || `HTTP error ${response.status}`;
+    const error = new GeocodeError_cjs_namespaceObject.GeocodeError(message);
+    error.status = {
+        code: response.status,
+        message
+    };
+    error.response = response;
+    throw error;
+}
+function parseJSON(response) {
+    return response.json();
+}
 async function fetchUrl(url, resolve, reject, signal) {
     fetch(url, {
         method: 'GET',
@@ -38,15 +54,19 @@ async function fetchUrl(url, resolve, reject, signal) {
             Accept: 'application/json'
         },
         signal
-    }).then(geocodeHelpers_cjs_namespaceObject.checkFetchStatus).then(geocodeHelpers_cjs_namespaceObject.parseJSON).then((data)=>{
+    }).then(checkFetchStatus).then(parseJSON).then((data)=>{
         resolve(data);
     }).catch((error)=>{
         reject(error);
     });
 }
+exports.checkFetchStatus = __webpack_exports__.checkFetchStatus;
 exports.fetchUrl = __webpack_exports__.fetchUrl;
+exports.parseJSON = __webpack_exports__.parseJSON;
 for(var __webpack_i__ in __webpack_exports__)if (-1 === [
-    "fetchUrl"
+    "checkFetchStatus",
+    "fetchUrl",
+    "parseJSON"
 ].indexOf(__webpack_i__)) exports[__webpack_i__] = __webpack_exports__[__webpack_i__];
 Object.defineProperty(exports, '__esModule', {
     value: true

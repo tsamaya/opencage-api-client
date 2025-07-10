@@ -27,9 +27,7 @@ __webpack_require__.d(__webpack_exports__, {
     buildQuery: ()=>buildQuery,
     isUndefinedOrEmpty: ()=>isUndefinedOrEmpty,
     buildQueryString: ()=>buildQueryString,
-    checkFetchStatus: ()=>checkFetchStatus,
     isUndefinedOrNull: ()=>isUndefinedOrNull,
-    parseJSON: ()=>parseJSON,
     buildValidationError: ()=>buildValidationError
 });
 const GeocodeError_cjs_namespaceObject = require("../errors/GeocodeError.cjs");
@@ -46,19 +44,6 @@ function buildValidationError(code, message) {
     };
     return error;
 }
-function checkFetchStatus(response) {
-    if (response.status >= 200 && response.status < 300) return response;
-    const error = new GeocodeError_cjs_namespaceObject.GeocodeError(response.statusText);
-    error.status = {
-        code: response.status,
-        message: response.statusText
-    };
-    error.response = response;
-    throw error;
-}
-function parseJSON(response) {
-    return response.json();
-}
 function isUndefinedOrEmpty(param) {
     return void 0 === param || '' === param;
 }
@@ -69,17 +54,18 @@ function buildQueryString(input) {
     if (isUndefinedOrNull(input)) return '';
     return Object.keys(input).map((key)=>`${encodeURIComponent(key)}=${encodeURIComponent(input[key] || '')}`).join('&');
 }
-function buildQuery(input) {
+function buildQuery(input, options) {
     const query = {
         ...input
     };
     let endpoint = OPENCAGEDATA_JSON_URL;
     let missingKey = false;
-    if (isUndefinedOrEmpty(input.proxyURL)) {
+    if (isUndefinedOrEmpty(input.proxyURL) && isUndefinedOrEmpty(options?.proxyURL)) {
         if (isUndefinedOrEmpty(input.key) && 'undefined' != typeof process) query.key = process.env.OPENCAGE_API_KEY;
         if (isUndefinedOrEmpty(query.key)) missingKey = true;
     } else {
-        endpoint = input.proxyURL;
+        endpoint = options?.proxyURL;
+        if (isUndefinedOrEmpty(endpoint)) endpoint = input.proxyURL;
         delete query.proxyURL;
     }
     return {
@@ -91,18 +77,14 @@ function buildQuery(input) {
 exports.buildQuery = __webpack_exports__.buildQuery;
 exports.buildQueryString = __webpack_exports__.buildQueryString;
 exports.buildValidationError = __webpack_exports__.buildValidationError;
-exports.checkFetchStatus = __webpack_exports__.checkFetchStatus;
 exports.isUndefinedOrEmpty = __webpack_exports__.isUndefinedOrEmpty;
 exports.isUndefinedOrNull = __webpack_exports__.isUndefinedOrNull;
-exports.parseJSON = __webpack_exports__.parseJSON;
 for(var __webpack_i__ in __webpack_exports__)if (-1 === [
     "buildQuery",
     "buildQueryString",
     "buildValidationError",
-    "checkFetchStatus",
     "isUndefinedOrEmpty",
-    "isUndefinedOrNull",
-    "parseJSON"
+    "isUndefinedOrNull"
 ].indexOf(__webpack_i__)) exports[__webpack_i__] = __webpack_exports__[__webpack_i__];
 Object.defineProperty(exports, '__esModule', {
     value: true

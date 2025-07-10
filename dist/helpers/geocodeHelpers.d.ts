@@ -1,5 +1,6 @@
 import { GeocodingRequest } from '../types/GeocodingRequest';
 import { GeocodeError } from '../errors/GeocodeError';
+import { GeocodingOptions } from '../types/GeocodingOptions';
 /**
  * @private
  * @description Returns a {GeocodeError} object with status (validation error)
@@ -9,15 +10,6 @@ import { GeocodeError } from '../errors/GeocodeError';
  *
  */
 export declare function buildValidationError(code: number, message: string): GeocodeError;
-/**
- * @private
- * @description checks the response status and throws an error if the status is not ok
- * @param response {Response} the response object
- * @returns {Response} the response object
- * @throws {GeocodeError} the error object
- */
-export declare function checkFetchStatus(response: Response): Response;
-export declare function parseJSON(response: Response): Promise<unknown>;
 /**
  * @private
  * returns true is `param` is not defined or empty
@@ -43,15 +35,20 @@ export declare function buildQueryString(input: any): string;
  * @private
  * Builds the query params including key and proxy URL
  *
- * @param {*} input
+ * @param {GeocodingRequest} input
+ * @param {GeocodingOptions} options
+ * @returns {Object}  {
+ *   missingKey: boolean,
+ *   endpoint: string,
+ *   query: GeocodingRequest copy of the input object with the proxyURL removed
+ * }
  */
-export declare function buildQuery(input: GeocodingRequest): {
+export declare function buildQuery(input: GeocodingRequest, options?: GeocodingOptions): {
     missingKey: boolean;
     endpoint: string;
     query: {
         key?: string;
         q: string;
-        proxyURL?: string;
         abbrv?: number;
         add_request?: number;
         bounds?: string;
@@ -67,5 +64,6 @@ export declare function buildQuery(input: GeocodingRequest): {
         proximity?: string;
         roadinfo?: number;
         address_only?: number;
+        proxyURL?: string;
     };
 };

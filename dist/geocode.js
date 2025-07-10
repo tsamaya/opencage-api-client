@@ -9,7 +9,7 @@ async function geocode(input, options) {
             reject(error);
             return;
         }
-        const params = buildQuery(input);
+        const params = buildQuery(input, options);
         if (params.missingKey) {
             const error = buildValidationError(401, MISSING_API_KEY);
             reject(error);
