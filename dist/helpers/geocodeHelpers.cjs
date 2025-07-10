@@ -76,7 +76,7 @@ function buildQuery(input) {
     let endpoint = OPENCAGEDATA_JSON_URL;
     let missingKey = false;
     if (isUndefinedOrEmpty(input.proxyURL)) {
-        if (isUndefinedOrEmpty(input.key)) query.key = process.env.OPENCAGE_API_KEY;
+        if (isUndefinedOrEmpty(input.key) && 'undefined' != typeof process) query.key = process.env.OPENCAGE_API_KEY;
         if (isUndefinedOrEmpty(query.key)) missingKey = true;
     } else {
         endpoint = input.proxyURL;
