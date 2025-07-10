@@ -1,7 +1,34 @@
+import { GeocodeError } from './errors/GeocodeError';
 import { version } from './version';
-import { checkFetchStatus, parseJSON } from './helpers/geocodeHelpers';
 
 const USER_AGENT = `OpenCageData Geocoding NodeJS API Client/${version}`;
+
+/**
+ * @private
+ * @description checks the response status and throws an error if the status is not ok
+ * @param response {Response} the response object
+ * @returns {Response} the response object
+ * @throws {GeocodeError} the error object
+ */
+export function checkFetchStatus(response: Response) {
+  if (response.status >= 200 && response.status < 300) {
+    return response;
+  }
+  // console.debug('request failed with status', response.status);
+  // console.debug('request failed with status text', response.statusText);
+  const message = response.statusText || `HTTP error ${response.status}`;
+  const error = new GeocodeError(message);
+  error.status = {
+    code: response.status,
+    message,
+  };
+  error.response = response;
+  throw error;
+}
+
+export function parseJSON(response: Response) {
+  return response.json();
+}
 
 /**
  * fetches the url and returns a promise

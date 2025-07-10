@@ -1,5 +1,6 @@
 import { GeocodingRequest } from '../types/GeocodingRequest';
 import { GeocodeError, GeocodeErrorStatus } from '../errors/GeocodeError';
+import { GeocodingOptions } from '../types/GeocodingOptions';
 
 const OPENCAGEDATA_JSON_URL = 'https://api.opencagedata.com/geocode/v1/json';
 
@@ -22,31 +23,6 @@ export function buildValidationError(code: number, message: string) {
   return error;
 }
 
-/**
- * @private
- * @description checks the response status and throws an error if the status is not ok
- * @param response {Response} the response object
- * @returns {Response} the response object
- * @throws {GeocodeError} the error object
- */
-export function checkFetchStatus(response: Response) {
-  if (response.status >= 200 && response.status < 300) {
-    return response;
-  }
-  // console.debug('request failed with status', response.status);
-  // console.debug('request failed with status text', response.statusText);
-  const error = new GeocodeError(response.statusText);
-  error.status = {
-    code: response.status,
-    message: response.statusText,
-  };
-  error.response = response;
-  throw error;
-}
-
-export function parseJSON(response: Response) {
-  return response.json();
-}
 /**
  * @private
  * returns true is `param` is not defined or empty
@@ -91,14 +67,29 @@ export function buildQueryString(input: any): string {
  * @private
  * Builds the query params including key and proxy URL
  *
- * @param {*} input
+ * @param {GeocodingRequest} input
+ * @param {GeocodingOptions} options
+ * @returns {Object}  {
+ *   missingKey: boolean,
+ *   endpoint: string,
+ *   query: GeocodingRequest copy of the input object with the proxyURL removed
+ * }
  */
-export function buildQuery(input: GeocodingRequest) {
+export function buildQuery(
+  input: GeocodingRequest,
+  options?: GeocodingOptions
+) {
   const query = { ...input };
   let endpoint = OPENCAGEDATA_JSON_URL;
   let missingKey = false;
-  if (!isUndefinedOrEmpty(input.proxyURL)) {
-    endpoint = input.proxyURL as string;
+  if (
+    !isUndefinedOrEmpty(input.proxyURL) ||
+    !isUndefinedOrEmpty(options?.proxyURL)
+  ) {
+    endpoint = options?.proxyURL as string;
+    if (isUndefinedOrEmpty(endpoint)) {
+      endpoint = input.proxyURL as string;
+    }
     delete query.proxyURL;
   } else {
     if (isUndefinedOrEmpty(input.key) && typeof process !== 'undefined') {

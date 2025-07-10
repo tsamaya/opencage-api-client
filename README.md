@@ -28,7 +28,7 @@ You can find a comprehensive tutorial for using this module [on the OpenCage sit
 
 Sign up for a [free-trial API Key](https://opencagedata.com/users/sign_up).
 
-## node
+## NodeJS
 
 First install the library with `npm` or `yarn`:
 
@@ -156,8 +156,7 @@ input: [GeocodingRequest](./src/types/GeocodingRequest.ts)
 | Parameter | Type   | Optional? | Description                                                                                                                                                   |
 | --------- | ------ | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | q         | String | mandatory | the query string to be geocoded: a place name, address or coordinates as lat,long                                                                             |
-| key       | String | optional  | the `key` can be omitted when using a `proxyURL` or when using node with a dedicated environment variable `OPENCAGE_API_KEY`                                  |
-| proxyURL  | String | optional  | The proxy URL parameter (useful to hide your API key)                                                                                                         |
+| key       | String | optional  | the `key` can be omitted when using an `options.proxyURL` or when using a node runtime with a dedicated environment variable `OPENCAGE_API_KEY`               |
 | ...       | ...    | optional  | Check the [type definition](./src/types/GeocodingRequest.ts) and the [API documentation](https://opencagedata.com/api#request) for the other input parameters |
 
 options?: _additional optional options_
@@ -165,6 +164,7 @@ options?: _additional optional options_
 | Parameter | Type        | Optional? | Description                                                                                                 |
 | --------- | ----------- | --------- | ----------------------------------------------------------------------------------------------------------- |
 | signal    | AbortSignal | optional  | The [AbortSignal](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) allow to cancel the request |
+| proxyURL  | String      | optional  | The proxy URL parameter (useful to hide your API key)                                                       |
 
 ### Error handling
 

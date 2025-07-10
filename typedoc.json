@@ -2,6 +2,7 @@
   "entryPoints": [
     "./src/geocode.ts",
     "./src/types/GeocodingRequest.ts",
-    "./src/types/GeocodingResponse.ts"
+    "./src/types/GeocodingResponse.ts",
+    "./src/types/GeocodingOptions.ts"
   ]
 }
