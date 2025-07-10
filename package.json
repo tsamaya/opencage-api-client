@@ -1,7 +1,7 @@
 {
   "name": "opencage-api-client",
-  "version": "2.0.0-beta.2",
-  "description": "An OpenCageData Geocoder API client library for node and browsers (UMD)",
+  "version": "2.0.0-beta.3",
+  "description": "An OpenCageData Geocoder API client library for node (ESM, CJS) and browsers (UMD)",
   "keywords": [
     "geocoder",
     "api",

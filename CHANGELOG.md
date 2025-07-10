@@ -7,9 +7,19 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ## [unreleased]
 
+## [2.0.0-beta.3] (2025-07-10)
+
+### Changed
+
+- Backward compatibility exporting the type `GeocodeRequest`
+
+### Fixed
+
+- Fixes browser issue with `process undefined` error when the API is not provided [#124](https://github.com/tsamaya/opencage-api-client/issues/124)
+
 ## [2.0.0-beta.2] (2025-07-09)
 
-### Features
+### Added
 
 - Allow to cancel a request using the the [AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)
 - The GeocodingResponse contains the latest changes on the [Open API specification for the OpenCage Geocoding API](https://opencagedata.com/api#openapi).
@@ -26,7 +36,7 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ## [2.0.0-alpha.5] (2025-07-07)
 
-### Features
+### Added
 
 - Adds HTTP Header 'User-Agent'
 
@@ -71,7 +81,7 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 - Drop support for Node 16
 
-### Features
+### Added
 
 - Refactor using typescript, microbundle for packaging
 
@@ -249,7 +259,8 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 - First release
 
-[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-beta.2...HEAD
+[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-beta.3...HEAD
+[2.0.0-beta.3]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-beta.2...v2.0.0-beta.3
 [2.0.0-beta.2]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-beta.1...v2.0.0-beta.2
 [2.0.0-beta.1]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.5...v2.0.0-beta.1
 [2.0.0-alpha.5]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.4...v2.0.0-apha.5
