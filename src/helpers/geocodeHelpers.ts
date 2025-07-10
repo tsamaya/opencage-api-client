@@ -33,6 +33,8 @@ export function checkFetchStatus(response: Response) {
   if (response.status >= 200 && response.status < 300) {
     return response;
   }
+  // console.debug('request failed with status', response.status);
+  // console.debug('request failed with status text', response.statusText);
   const error = new GeocodeError(response.statusText);
   error.status = {
     code: response.status,
@@ -99,7 +101,7 @@ export function buildQuery(input: GeocodingRequest) {
     endpoint = input.proxyURL as string;
     delete query.proxyURL;
   } else {
-    if (isUndefinedOrEmpty(input.key)) {
+    if (isUndefinedOrEmpty(input.key) && typeof process !== 'undefined') {
       query.key = process.env.OPENCAGE_API_KEY;
     }
     if (isUndefinedOrEmpty(query.key)) {

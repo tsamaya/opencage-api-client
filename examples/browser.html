@@ -79,9 +79,10 @@
       }
 
       function check() {
-        if ($('input[name="key"]').val() === '') {
-          return false;
-        }
+        // allow empty key to check error: "GeocodeError: missing API key"
+        // if ($('input[name="key"]').val() === '') {
+        //   return false;
+        // }
         if ($('input[name="q"]').val() === '') {
           return false;
         }
@@ -105,16 +106,18 @@
           pretty: 1,
         };
         query.key = $('input[name="key"]').val();
-        console.log('Query with api key', query.key);
+        console.log('Query with api key [', query.key, ']');
         query.q = $('input[name="q"]').val();
-        console.log('Query is', query.q);
+        console.log('Query is [', query.q, ']');
         opencage
           .geocode(query)
           .then((data) => {
             $('.textarea').val(JSON.stringify(data, null, 2));
           })
           .catch((err) => {
-            $('.textarea').val(err);
+            $('.textarea').val(
+              `${err}\n\nStatusCode ${err.status.code} - "${err.status.message}"\n\n${err.message}`
+            );
           });
       });
     </script>
