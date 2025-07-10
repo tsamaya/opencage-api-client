@@ -114,9 +114,9 @@
           .then((data) => {
             $('.textarea').val(JSON.stringify(data, null, 2));
           })
-          .catch((err) => {
+          .catch((error) => {
             $('.textarea').val(
-              `${err}\n\nStatusCode ${err.status.code} - "${err.status.message}"\n\n${err.message}`
+              `Error caught: ${error.message}\n\nStatus:\n${JSON.stringify(error.status, null, 2)}`
             );
           });
       });

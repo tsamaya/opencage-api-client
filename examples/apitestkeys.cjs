@@ -11,9 +11,9 @@ opencage
     console.log(JSON.stringify(data));
   })
   .catch((error) => {
-    console.log('geocode - 402 Payment Required ------------');
+    console.log('geocode - 402 - Quota exceeded ------------');
     console.log('Error caught:', error.message, { status: error.status });
-    console.log(error);
+    // console.log(error);
   });
 
 opencage
@@ -26,8 +26,8 @@ opencage
     console.log(JSON.stringify(data));
   })
   .catch((error) => {
-    console.log('geocode - 429 Too Many Requests ------------');
+    console.log('geocode - 429 - Requesting too quickly ------------');
     console.log('Error caught:', error.message, { status: error.status });
-    console.log(error);
-    console.log(JSON.stringify(error, null, 2));
+    // console.log(error);
+    // console.log(JSON.stringify(error, null, 2));
   });
