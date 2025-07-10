@@ -8,11 +8,6 @@ node examples/apitestkeys.cjs
 echo ""
 echo ""
 
-echo "-- Open Browser example"
-open examples/browser.html
-echo ""
-echo ""
-
 echo "-- Running ESM examples"
 node examples/esm.js
 echo ""
@@ -33,11 +28,6 @@ node examples/more-reverse-geocoding.js
 echo ""
 echo ""
 
-# echo "-- Running Node.js with Proxy URL example"
-# node examples/node-with-proxy-url.js
-# echo ""
-# echo ""
-
 echo "-- Running Typescript example (with tsx)"
 npx tsx examples/typescript.ts
 echo ""
@@ -45,5 +35,15 @@ echo ""
 
 echo "-- Running AbortController example (with tsx)"
 npx tsx examples/abort.ts
+echo ""
+echo ""
+
+# echo "-- Running Node.js with Proxy URL example"
+# node examples/node-with-proxy-url.js
+# echo ""
+# echo ""
+
+echo "-- Open Browser example"
+open examples/browser.html
 echo ""
 echo ""
