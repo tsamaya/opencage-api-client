@@ -18,7 +18,7 @@ describe('geocode tests', () => {
     it('tests no input parameters [browser]', async () => {
       const input = undefined;
       try {
-        // @ts-expect-error Argument of type 'undefined' is not assignable to parameter of type 'GeocodeRequest'.ts(2345)
+        // @ts-expect-error Argument of type 'undefined' is not assignable to parameter of type 'GeocodingRequest'.ts(2345)
         await opencage.geocode(input);
       } catch (error) {
         // console.log(error);
@@ -28,7 +28,7 @@ describe('geocode tests', () => {
     it('tests a null input parameter [browser]', async () => {
       const input = null;
       try {
-        // @ts-expect-error Argument of type 'null' is not assignable to parameter of type 'GeocodeRequest'.ts(2345)
+        // @ts-expect-error Argument of type 'null' is not assignable to parameter of type 'GeocodingRequest'.ts(2345)
         await opencage.geocode(input);
       } catch (error) {
         // console.log(error);
@@ -43,6 +43,23 @@ describe('geocode tests', () => {
         // console.log(error);
         expect(error.response.status.code).toEqual(401);
       }
+    });
+  });
+  describe('abort tests', () => {
+    it('aborts the geocode request when signal is aborted', async () => {
+      // Provide a dummy API key to avoid the missing key error
+      const input = { q: 'lyon', key: 'test' };
+      const controller = new AbortController();
+
+      // Start the geocode request
+      const promise = opencage.geocode(input, { signal: controller.signal });
+
+      // Abort the request almost immediately
+      controller.abort();
+
+      await expect(promise).rejects.toMatchObject({
+        name: 'AbortError',
+      });
     });
   });
 });

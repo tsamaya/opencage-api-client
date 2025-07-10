@@ -11,6 +11,7 @@ export type {
   GeocodingRequest,
   GeocodeRequest,
 } from './types/GeocodingRequest';
+export type { GeocodingOptions } from './types/GeocodingOptions';
 export type { GeocodingResponse } from './types/GeocodingResponse';
 
 /**

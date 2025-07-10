@@ -28,6 +28,11 @@ export class GeocodeError extends Error {
    * The status error object
    */
   status?: GeocodeErrorStatus;
+  /**
+   * Constructor for the GeocodeError class
+   *
+   * @param message the error message
+   */
   constructor(message: string) {
     super(message);
     this.name = 'GeocodeError';

@@ -31,49 +31,40 @@ describe('integration tests', () => {
     const input = {
       q: 'Brandenburg Gate',
     };
-    // try {
     const data = await opencage.geocode(input);
     expect(data).toBeTruthy();
-    // } catch (error) {
-    //   console.log(error);
-    // }
   });
   it('reverse geocodes Brandenburg Gate with space', async () => {
-    // expect.assertions(1);
     const input = {
       q: '52.5162767 13.3777025',
     };
-    // try {
     const data = await opencage.geocode(input);
     expect(data).toBeTruthy();
-    // } catch (error) {
-    //   console.log(error);
-    // }
   });
   it('reverse geocodes Brandenburg Gate with comma', async () => {
-    // expect.assertions(1);
     const input = {
       q: '52.5162767,13.3777025',
     };
-    // try {
     const data = await opencage.geocode(input);
     expect(data).toBeTruthy();
-    // } catch (error) {
-    //   console.log(error);
-    // }
   });
   it('reverse geocodes Brandenburg Gate with space and comma', async () => {
-    // expect.assertions(1);
     const input = {
       q: '52.5162767, 13.3777025',
     };
-    // try {
     const data = await opencage.geocode(input);
     expect(data).toBeTruthy();
-    // } catch (error) {
-    //   console.log(error);
-    // }
   });
+
+  /**
+   * Proxy tests
+   *
+   * These tests are only run if the PROXY_URL environment variable is set.
+   *
+   * The PROXY_URL environment variable is used to proxy the request to a different URL.
+   *
+   * The PROXY_URL environment variable is used to proxy the request to a different URL.
+   */
   describe('proxy tests', () => {
     if (!process.env.PROXY_URL) {
       it('No Proxy set', () => {
@@ -100,18 +91,24 @@ describe('integration tests', () => {
         // Everything else is truthy.
         expect(proxyURL).toBeTruthy();
       });
-      it('geocodes Brandenburg Gate via proxy', async () => {
-        // expect.assertions(1);
+
+      it('geocodes Brandenburg Gate via proxy in GeocodingRequest', async () => {
         const input = {
           q: 'Brandenburg Gate',
           proxyURL,
         };
-        // try {
         const data = await opencage.geocode(input);
         expect(data).toBeTruthy();
-        // } catch (error) {
-        //   console.log(error);
-        // }
+      });
+      it('geocodes Brandenburg Gate via proxy in GeocodingOptions', async () => {
+        const input = {
+          q: 'Brandenburg Gate',
+        };
+        const options = {
+          proxyURL,
+        };
+        const data = await opencage.geocode(input, options);
+        expect(data).toBeTruthy();
       });
     }
   });

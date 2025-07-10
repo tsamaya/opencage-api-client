@@ -84,4 +84,22 @@ describe('fetchUrl', () => {
       })
     ).rejects.toMatchObject({ status: { code: 404, message: 'Not Found' } });
   });
+
+  it('rejects with fallback error message if response statusText is empty (browser CORS simulation)', async () => {
+    const url = 'https://api.opencagedata.com/';
+    const mockResponse = {
+      status: 403,
+      statusText: '', // Simulate CORS: statusText is empty
+      json: () => Promise.resolve({}),
+    };
+    global.fetch = vi.fn().mockResolvedValue(mockResponse);
+
+    await expect(
+      new Promise((resolve, reject) => {
+        fetchUrl(url, resolve, reject);
+      })
+    ).rejects.toMatchObject({
+      status: { code: 403, message: 'HTTP error 403' },
+    });
+  });
 });

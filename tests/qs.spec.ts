@@ -18,6 +18,10 @@ describe('buildQueryString', () => {
     const result = buildQueryString({});
     expect(result).toBe('');
   });
+  it('call with an object and null value', () => {
+    const result = buildQueryString({ q: null });
+    expect(result).toBe('q=');
+  });
   it('call with a string value', () => {
     const result = buildQueryString({ q: 'value' });
     expect(result).toBe('q=value');
