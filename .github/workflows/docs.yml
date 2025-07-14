@@ -2,23 +2,31 @@ name: "Publish documentation"
 on:
   push:
     branches:
-      - "master"
+      - master
 
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 jobs:
   publish-documentation:
     permissions:
-      id-token: write
+      contents: read
       pages: write
+      id-token: write
 
     environment:
       name: github-pages
       url: "${{ steps.deployment.outputs.page_url }}"
 
-    runs-on: "ubuntu-latest"
+    runs-on: ubuntu-latest
     steps:
       - name: "Check out repository"
         uses: actions/checkout@v4
 
+      - name: "Setup Pages"
+        uses: actions/configure-pages@v5
       - uses: pnpm/action-setup@v4
         with:
           version: latest # https://pnpm.io/installation#compatibility
@@ -27,7 +35,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
-          cache: "pnpm"
+          cache: pnpm
 
       - run: pnpm install
 
@@ -38,8 +46,9 @@ jobs:
       - name: "Upload Pages artifacts"
         uses: actions/upload-artifact@v4
         with:
-          name: "github-pages"
-          path: "docs/"
+          name: github-pages
+          path: docs/
 
       - name: "Deploy documentation to GitHub Pages"
+        id: deployment
         uses: actions/deploy-pages@v4
