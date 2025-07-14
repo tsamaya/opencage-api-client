@@ -42,16 +42,17 @@ jobs:
       - name: "Build documentation"
         run: pnpm run build:docs
 
-
-      - name: "Upload Pages artifacts"
-        uses: actions/upload-artifact@v4
+      # - name: "Upload Pages artifacts"
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: github-pages
+      #     path: docs/
+      
+      - name: "Upload artifact"
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
           path: docs/
 
-      # - name: "Deploy documentation to GitHub Pages"
-      #   id: deployment
-      #   uses: actions/deploy-pages@v4
       - name: "Deploy documentation to GitHub Pages"
         id: deployment
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/deploy-pages@v4
