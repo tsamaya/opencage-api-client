@@ -1,5 +1,7 @@
-/* eslint-disable no-console */
-const opencage = require('..');
+import 'dotenv/config';
+// - or add `key` as an input parameter of the function geocode
+
+import opencage from '../dist/index.js';
 
 opencage
   .geocode({ q: '37.4396, -122.1864', language: 'fr' })
