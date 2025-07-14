@@ -2,29 +2,41 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), Types of changes:
+
+- `Added` for new features.
+- `Changed` for changes in existing functionality.
+- `Deprecated` for soon-to-be removed features.
+- `Removed` for now removed features.
+- `Fixed` for any bug fixes.
+- `Security` in case of vulnerabilities.
+
 And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [unreleased]
 
 ## [2.0.0] (2025-07-14)
 
-### Features
+### Added
 
 - 🎸 Implement AbortController/AbortSignal pattern ([c105ef0](https://github.com/tsamaya/opencage-api-client/commit/c105ef06b49c3817e8e540103ad558fc6e7a88c4)), closes [#253](https://github.com/tsamaya/opencage-api-client/issues/253)
 - 🎸 User-Agent ([b45f984](https://github.com/tsamaya/opencage-api-client/commit/b45f98401a86824aaa57aad3959736ac351359f6)), closes [#223](https://github.com/tsamaya/opencage-api-client/issues/223)
 - 🎸 Packaging with Rsbuild ([07b6bd0](https://github.com/tsamaya/opencage-api-client/commit/07b6bd03b3f0f9f484c7b0a60dac7a28fbdabbf6))
+- 🎸 Documentation with [typedoc](https://typedoc.org/)
 
 ### Changed
 
 - 💡 proxyURL in `GeocodingOptions` with backward compatibility
 - 💡 Geocoding Request/Response with backward compatibility with the type `GeocodeRequest`
-- 💡 removes dotenv from dependencies
-- Drop support for Node 18
 
-### Bug Fixes
+### Fixed
 
 - 🐛 Prevent undefined process with UMD version in Browser ([87ff870](https://github.com/tsamaya/opencage-api-client/commit/87ff87094dfe9a3c05dfd5fbad186364c0fc8500)), closes [#124](https://github.com/tsamaya/opencage-api-client/issues/124)
+
+### Removed
+
+- 💡 removes dotenv from dependencies
+- Drop support for Node 18
 
 ## [2.0.0-beta.3] (2025-07-10)
 
@@ -49,7 +61,7 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ## [2.0.0-beta.1] (2025-07-08)
 
-### Changed
+### Removed
 
 - removes dotenv
 
@@ -61,18 +73,18 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ### Changed
 
-- Drop support for Node 18
 - Use Rsbuild for packaging
-
-### Chore
-
 - Upgrade dependencies
-- Removes HoundCI
 - Port changes from Version 1.2.0
+
+### Removed
+
+- Drop support for Node 18
+- Removes HoundCI
 
 ## [2.0.0-alpha.4] (2025-04-24)
 
-### Chore
+### Changed
 
 - Upgrade dependencies
 - Port changes from Version 1.1.0
@@ -83,34 +95,31 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 - GeocodeResponse type
 
-### Chore
+### Changed
 
 - Upgrade dependencies
 - Eslint v9
 
 ## [2.0.0-alpha.2] (2024-06-03)
 
-### Chore
+### Changed
 
 - Wrong tag publishing v2.0.0-alpha.1, publishing a new alpha version as next
 
 ## [2.0.0-alpha.1] (2024-06-03)
 
-### Changed
-
-- Drop support for Node 16
-
 ### Added
 
 - Refactor using typescript, microbundle for packaging
 
-### Chore
+### Changed
 
 - Script to validate CHANGELOG file
-
-### Documentation
-
 - Uses [typedoc](https://typedoc.org/)
+
+### Removed
+
+- Drop support for Node 16
 
 ## [1.2.0] - 2025-07-07
 
@@ -123,38 +132,41 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 ### Changed
 
 - upgrade dependencies
-- removes node 16 from the tested platforms
-
-### Chore
-
-- removes Meterian badges and GHActions on Meterian
 - update maintenance badge for 2025
+
+### Removed
+
+- removes node 16 from the tested platforms
+- removes Meterian badges and GHActions on Meterian
 
 ## [1.0.7] (2024-06-03)
 
-### Chore
+### Changed
 
 - Wrong tag publishing v2.0.0-alpha.1, publishing a new stable version as latest
 
-### Chore
+## [1.0.6] (2024-06-03)
+
+### Changed
 
 - Uses pnpm as package manager
 - Upgrade dependencies
-- Drop CircleCI
 - GHActions codecov and Meterian runs only on branch master
 
-## [1.0.6] (2024-06-03)
+### Removed
+
+- Drop CircleCI
 
 ## [1.0.5] (2024-04-27)
 
-### Chore
+### Changed
 
 - Adds CI using GitHub actions
 - upgrade dependencies
 
 ## [1.0.4] (2024-02-03)
 
-### Chore
+### Changed
 
 - upgrade dependencies
 
@@ -166,13 +178,13 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ## [1.0.2] (2023-07-16)
 
-### Chore
+### Changed
 
 - upgrade dependencies
 
 ## [1.0.1] (2023-02-08)
 
-### Chore
+### Changed
 
 - Adds opencage documentation tutorial as examples
 - upgrade dependencies
