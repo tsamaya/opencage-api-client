@@ -79,7 +79,9 @@ describe('Helpers library', () => {
 
     it('returns correct endpoint and query when no proxyURL and key provided', () => {
       const result = buildQuery(defaultInput);
-      expect(result.endpoint).toBe('https://api.opencagedata.com/geocode/v1/json');
+      expect(result.endpoint).toBe(
+        'https://api.opencagedata.com/geocode/v1/json'
+      );
       expect(result.missingKey).toBe(false);
       expect(result.query).toEqual(defaultInput);
     });
@@ -139,7 +141,9 @@ describe('Helpers library', () => {
     it('handles empty input object', () => {
       // GeocodingRequest requires at least 'q' (query string)
       const result = buildQuery({ q: '' });
-      expect(result.endpoint).toBe('https://api.opencagedata.com/geocode/v1/json');
+      expect(result.endpoint).toBe(
+        'https://api.opencagedata.com/geocode/v1/json'
+      );
       // missingKey should be true if no key and no env
       expect(typeof result.missingKey).toBe('boolean');
       expect(typeof result.query).toBe('object');
@@ -147,7 +151,9 @@ describe('Helpers library', () => {
 
     it('handles undefined options', () => {
       const result = buildQuery(defaultInput, undefined);
-      expect(result.endpoint).toBe('https://api.opencagedata.com/geocode/v1/json');
+      expect(result.endpoint).toBe(
+        'https://api.opencagedata.com/geocode/v1/json'
+      );
       expect(result.missingKey).toBe(false);
       expect(result.query).toEqual(defaultInput);
     });

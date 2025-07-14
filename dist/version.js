@@ -1,4 +1,4 @@
-const version = '2.0.0-beta.3';
+const version = '2.0.0';
 export { version };
 
 //# sourceMappingURL=version.js.map
