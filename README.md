@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/npm/v/opencage-api-client.svg)](https://www.npmjs.com/package/opencage-api-client)
 ![Downloads](https://img.shields.io/npm/dw/opencage-api-client)
-[![GitHub license](https://img.shields.io/github/license/tsamaya/opencage-api-client)](https://github.com/tsamaya/opencage-api-client/blob/master/LICENSE.md)
+[![GitHub license](https://img.shields.io/github/license/tsamaya/opencage-api-client)](https://github.com/tsamaya/opencage-api-client/blob/main/LICENSE.md)
 ![Maintained](https://img.shields.io/maintenance/yes/2025.svg)
 
 This repository is an [OpenCage Geocoding API](https://opencagedata.com/api) client for Node Typescript and JavaScript.
@@ -10,7 +10,7 @@ This repository is an [OpenCage Geocoding API](https://opencagedata.com/api) cli
 ## Continuous integration
 
 [![CircleCI (all branches)](https://img.shields.io/circleci/project/github/tsamaya/opencage-api-client.svg)](https://circleci.com/gh/tsamaya/opencage-api-client)
-[![codecov](https://codecov.io/gh/tsamaya/opencage-api-client/branch/master/graph/badge.svg)](https://codecov.io/gh/tsamaya/opencage-api-client)
+[![codecov](https://codecov.io/gh/tsamaya/opencage-api-client/branch/main/graph/badge.svg)](https://codecov.io/gh/tsamaya/opencage-api-client)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8f0f9ba00ade907ef576/maintainability)](https://codeclimate.com/github/tsamaya/opencage-api-client/maintainability)
 
 ## Security
