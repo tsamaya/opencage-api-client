@@ -36,8 +36,8 @@ importers:
         specifier: 3.2.4
         version: 3.2.4(vitest@3.2.4)
       dotenv:
-        specifier: 17.1.0
-        version: 17.1.0
+        specifier: 17.2.0
+        version: 17.2.0
       eslint:
         specifier: 9.30.1
         version: 9.30.1(jiti@2.4.2)
@@ -932,8 +932,8 @@ packages:
   deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
 
-  dotenv@17.1.0:
-    resolution: {integrity: sha512-tG9VUTJTuju6GcXgbdsOuRhupE8cb4mRgY5JLRCh4MtGoVo3/gfGUtOMwmProM6d0ba2mCFvv+WrpYJV6qgJXQ==}
+  dotenv@17.2.0:
+    resolution: {integrity: sha512-Q4sgBT60gzd0BB0lSyYD3xM4YxrXA9y4uBDof1JNYGzOXrQdQ6yX+7XIAqoFOGQFOTK1D3Hts5OllpxMDZFONQ==}
     engines: {node: '>=12'}
 
   eastasianwidth@0.2.0:
@@ -2449,7 +2449,7 @@ snapshots:
 
   deep-is@0.1.4: {}
 
-  dotenv@17.1.0: {}
+  dotenv@17.2.0: {}
 
   eastasianwidth@0.2.0: {}
 
