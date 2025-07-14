@@ -15,6 +15,8 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 - 🎸 User-Agent ([b45f984](https://github.com/tsamaya/opencage-api-client/commit/b45f98401a86824aaa57aad3959736ac351359f6)), closes [#223](https://github.com/tsamaya/opencage-api-client/issues/223)
 - 🎸 Packaging with Rsbuild ([07b6bd0](https://github.com/tsamaya/opencage-api-client/commit/07b6bd03b3f0f9f484c7b0a60dac7a28fbdabbf6))
 
+## [1.2.0] - 2025-07-07
+
 ### Changed
 
 - 💡 proxyURL in `GeocodingOptions` with backward compatibility
