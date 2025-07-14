@@ -49,6 +49,9 @@ jobs:
           name: github-pages
           path: docs/
 
+      # - name: "Deploy documentation to GitHub Pages"
+      #   id: deployment
+      #   uses: actions/deploy-pages@v4
       - name: "Deploy documentation to GitHub Pages"
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/upload-pages-artifact@v3
