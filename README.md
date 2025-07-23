@@ -1,7 +1,7 @@
 # OpenCage API Client
 
 [![Version](https://img.shields.io/npm/v/opencage-api-client.svg)](https://www.npmjs.com/package/opencage-api-client)
-![Downloads](https://img.shields.io/npm/dw/opencage-api-client)
+[![Downloads](https://img.shields.io/npm/dw/opencage-api-client)](https://www.npmjs.com/package/opencage-api-client)
 [![GitHub license](https://img.shields.io/github/license/tsamaya/opencage-api-client)](https://github.com/tsamaya/opencage-api-client/blob/main/LICENSE.md)
 ![Maintained](https://img.shields.io/maintenance/yes/2025.svg)
 
@@ -20,6 +20,7 @@ This repository is an [OpenCage Geocoding API](https://opencagedata.com/api) cli
 | [FOSSA](https://fossa.com/) | [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftsamaya%2Fopencage-api-client?ref=badge_shield) |
 | [Snyk](https://snyk.io/)    | ![Known Vulnerabilities](https://snyk.io/test/github/tsamaya/opencage-api-client/badge.svg)                                                                                                                              |
 
+<br/>
 # 🎓 Tutorial
 
 You can find a comprehensive tutorial for using this module [on the OpenCage site](https://opencagedata.com/tutorials/geocode-in-nodejs).
