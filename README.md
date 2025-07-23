@@ -11,7 +11,6 @@ This repository is an [OpenCage Geocoding API](https://opencagedata.com/api) cli
 
 [![Node.js CI](https://github.com/tsamaya/opencage-api-client/actions/workflows/node.js.yml/badge.svg)](https://github.com/tsamaya/opencage-api-client/actions/workflows/node.js.yml)
 [![codecov](https://codecov.io/gh/tsamaya/opencage-api-client/branch/main/graph/badge.svg)](https://codecov.io/gh/tsamaya/opencage-api-client)
-[![Maintainability](https://api.codeclimate.com/v1/badges/8f0f9ba00ade907ef576/maintainability)](https://codeclimate.com/github/tsamaya/opencage-api-client/maintainability)
 
 ## Security
 
