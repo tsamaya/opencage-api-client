@@ -59,7 +59,7 @@
     "@vitest/ui": "3.2.4",
     "dotenv": "17.2.0",
     "eslint": "9.31.0",
-    "eslint-config-prettier": "10.1.5",
+    "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.3",
     "globals": "16.3.0",
     "js-yaml": "4.1.0",
