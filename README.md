@@ -20,6 +20,7 @@ This repository is an [OpenCage Geocoding API](https://opencagedata.com/api) cli
 | [Snyk](https://snyk.io/)    | ![Known Vulnerabilities](https://snyk.io/test/github/tsamaya/opencage-api-client/badge.svg)                                                                                                                              |
 
 <br/>
+
 # 🎓 Tutorial
 
 You can find a comprehensive tutorial for using this module [on the OpenCage site](https://opencagedata.com/tutorials/geocode-in-nodejs).

@@ -15,6 +15,18 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ## [unreleased]
 
+### Added
+
+- 🎸 Documentation with [typedoc](https://typedoc.org/) publish on GH pages
+
+### Changed
+
+- Default branch is now `main`
+
+### Removed
+
+- Codeclimate badge and its app integration
+
 ## [2.0.0] (2025-07-14)
 
 ### Added
