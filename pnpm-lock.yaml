@@ -22,10 +22,10 @@ importers:
         version: 9.32.0
       '@rsbuild/plugin-umd':
         specifier: 1.0.4
-        version: 1.0.4(@rsbuild/core@1.4.12)
+        version: 1.0.4(@rsbuild/core@1.4.15)
       '@rslib/core':
-        specifier: 0.11.1
-        version: 0.11.1(typescript@5.9.2)
+        specifier: 0.11.2
+        version: 0.11.2(typescript@5.9.2)
       '@types/node':
         specifier: 24.1.0
         version: 24.1.0
@@ -559,8 +559,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rsbuild/core@1.4.12':
-    resolution: {integrity: sha512-9IDAwZH8OVdq3ZUbh8IyOpwWxOU/67gD+UbSlvGschjhjMqhlLZ7hvsEqi8xfuPvgV0AhKXBZ4Ui1CN9pp1Hqg==}
+  '@rsbuild/core@1.4.15':
+    resolution: {integrity: sha512-KoSTtKjzQUQwamcbeCp63Ne9kL7io1WI4+skTJe2chfLz6wsp/Gfg8aKkfs1DuyG1p+zxFDcYpwTWMsNtxqqiw==}
     engines: {node: '>=16.10.0'}
     hasBin: true
 
@@ -572,8 +572,8 @@ packages:
       '@rsbuild/core':
         optional: true
 
-  '@rslib/core@0.11.1':
-    resolution: {integrity: sha512-ETu44Vr/W6SAeoUIITLp56mocNkjgns88naURWQRB6fN8BOC0b48gbvEH1CLyqplhrhh3vG59uJu20dYaLDnRw==}
+  '@rslib/core@0.11.2':
+    resolution: {integrity: sha512-NubpSx2DF5sSBpzJRQTsS2xFPdC2nCTBTRbQVXUNBYJikmJY6XgI1MU2jPzrecjX7QZOaH8APt2AEiWl0YNlrg==}
     engines: {node: '>=16.7.0'}
     hasBin: true
     peerDependencies:
@@ -883,8 +883,8 @@ packages:
   commander@2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
 
-  core-js@3.44.0:
-    resolution: {integrity: sha512-aFCtd4l6GvAXwVEh3XbbVqJGHDJt0OZRa+5ePGx3LLwi12WfexqQxcsohb2wgsa/92xtl19Hd66G/L+TaAxDMw==}
+  core-js@3.45.0:
+    resolution: {integrity: sha512-c2KZL9lP4DjkN3hk/an4pWn5b5ZefhRJnAc42n6LJ19kSnbeRbdQZE5dSeE2LBol1OwJD3X1BQvFTAsa8ReeDA==}
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -1375,8 +1375,8 @@ packages:
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
-  rsbuild-plugin-dts@0.11.1:
-    resolution: {integrity: sha512-fWilGgsnlaCeenL0zQ+V8VslfK0WjLxlNzCdUYj7EjrxH/7nFmPAu7xip6BVDrFuv9Fup6L3V1/cZruwx5HLPA==}
+  rsbuild-plugin-dts@0.11.2:
+    resolution: {integrity: sha512-D3sSqcrxRnuIbGaXZgmV8K/WLaJ6lBe0mD3SemWAexBXYezu4rj1ndqQeRwkDBji+XU6wLUA+w43GyWtY4E79g==}
     engines: {node: '>=16.7.0'}
     peerDependencies:
       '@microsoft/api-extractor': ^7
@@ -2020,22 +2020,22 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.40.0':
     optional: true
 
-  '@rsbuild/core@1.4.12':
+  '@rsbuild/core@1.4.15':
     dependencies:
       '@rspack/core': 1.4.11(@swc/helpers@0.5.17)
       '@rspack/lite-tapable': 1.0.1
       '@swc/helpers': 0.5.17
-      core-js: 3.44.0
+      core-js: 3.45.0
       jiti: 2.5.1
 
-  '@rsbuild/plugin-umd@1.0.4(@rsbuild/core@1.4.12)':
+  '@rsbuild/plugin-umd@1.0.4(@rsbuild/core@1.4.15)':
     optionalDependencies:
-      '@rsbuild/core': 1.4.12
+      '@rsbuild/core': 1.4.15
 
-  '@rslib/core@0.11.1(typescript@5.9.2)':
+  '@rslib/core@0.11.2(typescript@5.9.2)':
     dependencies:
-      '@rsbuild/core': 1.4.12
-      rsbuild-plugin-dts: 0.11.1(@rsbuild/core@1.4.12)(typescript@5.9.2)
+      '@rsbuild/core': 1.4.15
+      rsbuild-plugin-dts: 0.11.2(@rsbuild/core@1.4.15)(typescript@5.9.2)
       tinyglobby: 0.2.14
     optionalDependencies:
       typescript: 5.9.2
@@ -2389,7 +2389,7 @@ snapshots:
   commander@2.20.3:
     optional: true
 
-  core-js@3.44.0: {}
+  core-js@3.45.0: {}
 
   cross-spawn@7.0.6:
     dependencies:
@@ -2877,10 +2877,10 @@ snapshots:
       '@rollup/rollup-win32-x64-msvc': 4.40.0
       fsevents: 2.3.3
 
-  rsbuild-plugin-dts@0.11.1(@rsbuild/core@1.4.12)(typescript@5.9.2):
+  rsbuild-plugin-dts@0.11.2(@rsbuild/core@1.4.15)(typescript@5.9.2):
     dependencies:
       '@ast-grep/napi': 0.37.0
-      '@rsbuild/core': 1.4.12
+      '@rsbuild/core': 1.4.15
       magic-string: 0.30.17
       picocolors: 1.1.1
       tinyglobby: 0.2.14
