@@ -22,7 +22,8 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ### Changed
 
-- Default branch is now `main`
+- 💡 Default branch is now `main`
+- 💡 renames source files to improve documentation readability
 
 ### Removed
 
