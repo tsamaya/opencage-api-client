@@ -71,7 +71,7 @@
     "js-yaml": "4.1.0",
     "prettier": "3.6.2",
     "tsx": "4.20.5",
-    "typedoc": "0.28.10",
+    "typedoc": "0.28.13",
     "typescript": "5.9.2",
     "vite": "7.1.5",
     "vitest": "3.2.4"
