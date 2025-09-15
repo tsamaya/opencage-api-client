@@ -57,4 +57,4 @@ Object.defineProperty(exports, '__esModule', {
     value: true
 });
 
-//# sourceMappingURL=geocode.cjs.map
+//# sourceMappingURL=opencage.cjs.map

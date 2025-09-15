@@ -25,11 +25,11 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
     default: ()=>src,
-    geocode: ()=>external_geocode_cjs_namespaceObject.geocode
+    geocode: ()=>external_opencage_cjs_namespaceObject.geocode
 });
-const external_geocode_cjs_namespaceObject = require("./geocode.cjs");
+const external_opencage_cjs_namespaceObject = require("./opencage.cjs");
 const opencage = {
-    geocode: external_geocode_cjs_namespaceObject.geocode
+    geocode: external_opencage_cjs_namespaceObject.geocode
 };
 const src = opencage;
 exports["default"] = __webpack_exports__["default"];

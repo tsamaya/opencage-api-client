@@ -1,5 +1,8 @@
-import { geocode } from './geocode';
+import { geocode } from './opencage';
 
+/**
+ * OpenCage Module
+ */
 const opencage = {
   geocode,
 };
@@ -7,10 +10,8 @@ const opencage = {
 /**
  * OpenCage Geocoding API Client types
  */
-export type {
-  GeocodingRequest,
-  GeocodeRequest,
-} from './types/GeocodingRequest';
+export type { GeocodingRequest } from './types/GeocodingRequest';
+export type { GeocodeRequest } from './types/GeocodeRequest';
 export type { GeocodingOptions } from './types/GeocodingOptions';
 export type { GeocodingResponse } from './types/GeocodingResponse';
 
