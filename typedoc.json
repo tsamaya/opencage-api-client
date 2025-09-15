@@ -1,7 +1,8 @@
 {
   "entryPoints": [
-    "./src/geocode.ts",
+    "./src/opencage.ts",
     "./src/types/GeocodingRequest.ts",
+    "./src/types/GeocodeRequest.ts",
     "./src/types/GeocodingResponse.ts",
     "./src/types/GeocodingOptions.ts"
   ]

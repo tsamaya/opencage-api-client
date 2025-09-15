@@ -1,4 +1,4 @@
-import { geocode } from "./geocode.js";
+import { geocode } from "./opencage.js";
 const opencage = {
     geocode: geocode
 };

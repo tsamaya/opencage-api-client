@@ -23,4 +23,4 @@ async function geocode(input, options) {
 }
 export { geocode };
 
-//# sourceMappingURL=geocode.js.map
+//# sourceMappingURL=opencage.js.map

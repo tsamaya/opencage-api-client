@@ -13,7 +13,8 @@
 1. run test `pnpm run test`
 1. run build release `pnpm run release:build`
 1. run examples `./scripts/run-examples.sh`
-1. semantic-release
+1. export GITHUB_TOKEN=
+1. run `npx semantic-release --dry-run` first
 1. run `pnpm run release:check-changelog`
 1. All good?
 1. `npm publish` or `npm publish --tag next` or whatever tag is relevant
