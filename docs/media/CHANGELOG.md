@@ -18,12 +18,13 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 ### Added
 
 - 🎸 Documentation with [typedoc](https://typedoc.org/) publish on GH pages
-- 🎸 exports in package.json ([1d2246a](https://github.com/tsamaya/opencage-api-client/commit/1d2246a3bc27f502eec6c674bc5ae9845a3bfdaf)), closes [#396](https://github.com/tsamaya/opencage-api-client/issues/396)
+- 🎸 `exports` attribute in package.json ([1d2246a](https://github.com/tsamaya/opencage-api-client/commit/1d2246a3bc27f502eec6c674bc5ae9845a3bfdaf)), closes [#396](https://github.com/tsamaya/opencage-api-client/issues/396)
 
 ### Changed
 
 - 💡 Default branch is now `main`
 - 💡 renames source files to improve documentation readability
+- upgrade dependencies
 
 ### Removed
 
