@@ -15,9 +15,11 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ## [unreleased]
 
+## [2.0.1] (2025-09-20)
+
 ### Added
 
-- 🎸 Documentation with [typedoc](https://typedoc.org/) publish on GH pages
+- 🎸 Documentation with [typedoc](https://typedoc.org/) published on [GH pages](https://tsamaya.github.io/opencage-api-client/)
 - 🎸 `exports` attribute in package.json ([1d2246a](https://github.com/tsamaya/opencage-api-client/commit/1d2246a3bc27f502eec6c674bc5ae9845a3bfdaf)), closes [#396](https://github.com/tsamaya/opencage-api-client/issues/396)
 
 ### Changed
@@ -307,17 +309,9 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 - First release
 
-[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0...HEAD
+[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.1...HEAD
+[2.0.0]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/tsamaya/opencage-api-client/compare/v1.2.0...v2.0.0
-[2.0.0-beta.3]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-beta.2...v2.0.0-beta.3
-[2.0.0-beta.3]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-beta.2...v2.0.0-beta.3
-[2.0.0-beta.2]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-beta.1...v2.0.0-beta.2
-[2.0.0-beta.1]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.5...v2.0.0-beta.1
-[2.0.0-alpha.5]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.4...v2.0.0-apha.5
-[2.0.0-alpha.4]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.3...v2.0.0-apha.4
-[2.0.0-alpha.3]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.2...v2.0.0-apha.3
-[2.0.0-alpha.2]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0-alpha.1...v2.0.0-alpha.2
-[2.0.0-alpha.1]: https://github.com/tsamaya/opencage-api-client/releases/tag/v2.0.0-alpha.1
 [1.2.0]: https://github.com/tsamaya/opencage-api-client/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.7...v1.1.0
 [1.0.7]: https://github.com/tsamaya/opencage-api-client/compare/v1.0.6...v1.0.7
