@@ -20,6 +20,10 @@
 1. `npm publish` or `npm publish --tag next` or whatever tag is relevant
 1. git tag and git push --follow-tags
 
+## clean up npmjs tags
+
+`npm dist-tag rm opencage-api-client next`
+
 ## docs on gh-pages
 
-Check [.github/workflows/docs.yml](.github/workflows/docs.yml)
+Deployed by GHActions. Check [.github/workflows/docs.yml](.github/workflows/docs.yml)
