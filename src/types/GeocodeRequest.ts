@@ -1,7 +1,7 @@
 // Exporting GeocodeRequest type as an alias for GeocodingRequest
 // This allows backward compatibility with existing code that uses GeocodeRequest
 
-import { GeocodingRequest } from './GeocodingRequest';
+import type { GeocodingRequest } from './GeocodingRequest';
 
 /**
  * GeocodeRequest type is an alias for GeocodingRequest.
