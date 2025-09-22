@@ -1,5 +1,5 @@
 import { geocode } from '../src';
-import type { GeocodingRequest } from '../src/';
+import type { GeocodingRequest, Result } from '../src/';
 
 export const doGeocode = async () => {
   const input: GeocodingRequest = {
@@ -12,4 +12,11 @@ export const doGeocode = async () => {
   return result;
 };
 
-doGeocode();
+const run = async () => {
+  const response = await doGeocode();
+  response.results.forEach((r: Result) => {
+    console.log(r.formatted);
+  });
+};
+
+run();
