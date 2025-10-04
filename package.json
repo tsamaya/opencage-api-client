@@ -73,7 +73,7 @@
     "tsx": "4.20.6",
     "typedoc": "0.28.13",
     "typescript": "5.9.3",
-    "vite": "7.1.7",
+    "vite": "7.1.9",
     "vitest": "3.2.4"
   },
   "lint-staged": {
