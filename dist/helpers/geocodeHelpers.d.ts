@@ -47,8 +47,6 @@ export declare function buildQuery(input: GeocodingRequest, options?: GeocodingO
     missingKey: boolean;
     endpoint: string;
     query: {
-        key?: string;
-        q: string;
         abbrv?: number;
         add_request?: number;
         bounds?: string;
@@ -64,6 +62,8 @@ export declare function buildQuery(input: GeocodingRequest, options?: GeocodingO
         proximity?: string;
         roadinfo?: number;
         address_only?: number;
+        key?: string;
+        q: string;
         proxyURL?: string;
     };
 };
