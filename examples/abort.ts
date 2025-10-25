@@ -10,9 +10,9 @@ geocode(
   })
   .catch((err) => {
     if (err.name === 'AbortError') {
-      console.log('Aborted as expected');
+      console.log('aborted as expected');
     } else {
-      console.log('Unexpected error', err);
+      console.log('unexpected error', err);
     }
   });
 // To abort:
