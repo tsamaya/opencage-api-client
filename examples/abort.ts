@@ -6,7 +6,7 @@ geocode(
   { signal: controller.signal }
 )
   .then((response) => {
-    console.log('unexpected success', response);
+    console.log('Unexpected success', response);
   })
   .catch((err) => {
     if (err.name === 'AbortError') {

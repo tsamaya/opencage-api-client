@@ -11,7 +11,7 @@ declare const opencage: {
 export type { GeocodingRequest } from './types/GeocodingRequest';
 export type { GeocodeRequest } from './types/GeocodeRequest';
 export type { GeocodingOptions } from './types/GeocodingOptions';
-export type { GeocodingResponse } from './types/GeocodingResponse';
+export type * from './types/GeocodingResponse';
 /**
  * OpenCage Geocoding API Client function
  */

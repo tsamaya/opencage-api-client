@@ -313,7 +313,7 @@ export interface DistanceFromQuery {
     meters: number;
 }
 /** Individual geocoding result */
-export interface Result {
+export interface GeocodingResult {
     /** Additional data about the location */
     annotations?: Annotations;
     /** Bounding box containing the location */
@@ -329,6 +329,8 @@ export interface Result {
     /** Geographic coordinates */
     geometry: LatLng;
 }
+/** For backward compatibility */
+export type Result = GeocodingResult;
 /** Main OpenCage Geocoder API Response */
 export type GeocodingResponse = {
     /** URL to the API documentation */
@@ -338,7 +340,7 @@ export type GeocodingResponse = {
     /** License information for data sources used in the response */
     licenses: License[];
     /** Array of geocoding results */
-    results: Result[];
+    results: GeocodingResult[];
     /** Status information about the request */
     status: Status;
     /** Links to follow OpenCage for updates */

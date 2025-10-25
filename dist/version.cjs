@@ -26,7 +26,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
     version: ()=>version
 });
-const version = '2.0.1';
+const version = '2.1.0-alpha.1';
 exports.version = __webpack_exports__.version;
 for(var __webpack_i__ in __webpack_exports__)if (-1 === [
     "version"
