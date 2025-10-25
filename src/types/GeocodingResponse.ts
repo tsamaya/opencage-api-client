@@ -348,6 +348,9 @@ export interface GeocodingResult {
   geometry: LatLng;
 }
 
+/** For backward compatibility */
+export type Result = GeocodingResult;
+
 /** Main OpenCage Geocoder API Response */
 export type GeocodingResponse = {
   /** URL to the API documentation */
