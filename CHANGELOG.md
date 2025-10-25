@@ -15,6 +15,16 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ## [unreleased]
 
+## [2.1.0] (2025-10-25)
+
+### Added
+
+- 🎸 Export all GeocodingResult types ([a6a15af](https://github.com/tsamaya/opencage-api-client/commit/a6a15afc726b6dd9bb8029d6416797d446d6e1bf))
+
+### Fixed
+
+- 🐛 Links in Changelog ([26fd31f](https://github.com/tsamaya/opencage-api-client/commit/26fd31f841c062a87939601d5cc928a170f7b797))
+
 ## [2.0.1] (2025-09-20)
 
 ### Added
@@ -309,7 +319,8 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 - First release
 
-[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.1...HEAD
+[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.1...v2.1.0
 [2.0.1]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/tsamaya/opencage-api-client/compare/v1.2.0...v2.0.0
 [1.2.0]: https://github.com/tsamaya/opencage-api-client/compare/v1.1.0...v1.2.0
