@@ -61,8 +61,8 @@
     "@types/node": "24.10.1",
     "@typescript-eslint/eslint-plugin": "8.46.4",
     "@typescript-eslint/parser": "8.46.4",
-    "@vitest/coverage-v8": "4.0.9",
-    "@vitest/ui": "4.0.9",
+    "@vitest/coverage-v8": "4.0.13",
+    "@vitest/ui": "4.0.13",
     "dotenv": "17.2.3",
     "eslint": "9.39.1",
     "eslint-config-prettier": "10.1.8",
@@ -74,7 +74,7 @@
     "typedoc": "0.28.14",
     "typescript": "5.9.3",
     "vite": "7.2.2",
-    "vitest": "4.0.9"
+    "vitest": "4.0.13"
   },
   "lint-staged": {
     "*.{json,md,yml,yaml}": [
