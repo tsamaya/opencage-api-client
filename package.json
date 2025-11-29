@@ -69,7 +69,7 @@
     "eslint-plugin-prettier": "5.5.4",
     "globals": "16.5.0",
     "js-yaml": "4.1.1",
-    "prettier": "3.6.2",
+    "prettier": "3.7.2",
     "tsx": "4.20.6",
     "typedoc": "0.28.14",
     "typescript": "5.9.3",
