@@ -25,6 +25,11 @@ This repository is an [OpenCage Geocoding API](https://opencagedata.com/api) cli
 
 You can find a comprehensive tutorial for using this module [on the OpenCage site](https://opencagedata.com/tutorials/geocode-in-nodejs).
 
+# Working with AI / Agent Skill
+
+There is an [Agent Skill for working with the OpenCage Geocoding API](https://github.com/OpenCageData/opencage-skills/blob/master/opencage-geocoding-api/SKILL.md) which includes a reference file for developing in Node using this library.
+
+
 # 🔧 Getting started
 
 Sign up for a [free-trial API Key](https://opencagedata.com/users/sign_up).
