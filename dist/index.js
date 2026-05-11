@@ -3,6 +3,7 @@ const opencage = {
     geocode: geocode
 };
 const src = opencage;
-export { src as default, geocode };
+export default src;
+export { geocode };
 
 //# sourceMappingURL=index.js.map

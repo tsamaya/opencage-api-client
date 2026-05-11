@@ -13,7 +13,7 @@ var __webpack_require__ = {};
 })();
 (()=>{
     __webpack_require__.r = (exports1)=>{
-        if ('undefined' != typeof Symbol && Symbol.toStringTag) Object.defineProperty(exports1, Symbol.toStringTag, {
+        if ("u" > typeof Symbol && Symbol.toStringTag) Object.defineProperty(exports1, Symbol.toStringTag, {
             value: 'Module'
         });
         Object.defineProperty(exports1, '__esModule', {
@@ -25,10 +25,10 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
     buildQuery: ()=>buildQuery,
-    isUndefinedOrEmpty: ()=>isUndefinedOrEmpty,
     buildQueryString: ()=>buildQueryString,
-    isUndefinedOrNull: ()=>isUndefinedOrNull,
-    buildValidationError: ()=>buildValidationError
+    buildValidationError: ()=>buildValidationError,
+    isUndefinedOrEmpty: ()=>isUndefinedOrEmpty,
+    isUndefinedOrNull: ()=>isUndefinedOrNull
 });
 const GeocodeError_cjs_namespaceObject = require("../errors/GeocodeError.cjs");
 const OPENCAGEDATA_JSON_URL = 'https://api.opencagedata.com/geocode/v1/json';
@@ -61,7 +61,7 @@ function buildQuery(input, options) {
     let endpoint = OPENCAGEDATA_JSON_URL;
     let missingKey = false;
     if (isUndefinedOrEmpty(input.proxyURL) && isUndefinedOrEmpty(options?.proxyURL)) {
-        if (isUndefinedOrEmpty(input.key) && 'undefined' != typeof process) query.key = process.env.OPENCAGE_API_KEY;
+        if (isUndefinedOrEmpty(input.key) && "u" > typeof process) query.key = process.env.OPENCAGE_API_KEY;
         if (isUndefinedOrEmpty(query.key)) missingKey = true;
     } else {
         endpoint = options?.proxyURL;
@@ -79,13 +79,13 @@ exports.buildQueryString = __webpack_exports__.buildQueryString;
 exports.buildValidationError = __webpack_exports__.buildValidationError;
 exports.isUndefinedOrEmpty = __webpack_exports__.isUndefinedOrEmpty;
 exports.isUndefinedOrNull = __webpack_exports__.isUndefinedOrNull;
-for(var __webpack_i__ in __webpack_exports__)if (-1 === [
+for(var __rspack_i in __webpack_exports__)if (-1 === [
     "buildQuery",
     "buildQueryString",
     "buildValidationError",
     "isUndefinedOrEmpty",
     "isUndefinedOrNull"
-].indexOf(__webpack_i__)) exports[__webpack_i__] = __webpack_exports__[__webpack_i__];
+].indexOf(__rspack_i)) exports[__rspack_i] = __webpack_exports__[__rspack_i];
 Object.defineProperty(exports, '__esModule', {
     value: true
 });
