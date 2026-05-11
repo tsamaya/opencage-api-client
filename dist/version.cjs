@@ -13,7 +13,7 @@ var __webpack_require__ = {};
 })();
 (()=>{
     __webpack_require__.r = (exports1)=>{
-        if ('undefined' != typeof Symbol && Symbol.toStringTag) Object.defineProperty(exports1, Symbol.toStringTag, {
+        if ("u" > typeof Symbol && Symbol.toStringTag) Object.defineProperty(exports1, Symbol.toStringTag, {
             value: 'Module'
         });
         Object.defineProperty(exports1, '__esModule', {
@@ -28,9 +28,9 @@ __webpack_require__.d(__webpack_exports__, {
 });
 const version = '2.1.0';
 exports.version = __webpack_exports__.version;
-for(var __webpack_i__ in __webpack_exports__)if (-1 === [
+for(var __rspack_i in __webpack_exports__)if (-1 === [
     "version"
-].indexOf(__webpack_i__)) exports[__webpack_i__] = __webpack_exports__[__webpack_i__];
+].indexOf(__rspack_i)) exports[__rspack_i] = __webpack_exports__[__rspack_i];
 Object.defineProperty(exports, '__esModule', {
     value: true
 });
