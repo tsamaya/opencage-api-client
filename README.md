@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/npm/v/opencage-api-client.svg)](https://www.npmjs.com/package/opencage-api-client)
 [![Downloads](https://img.shields.io/npm/dw/opencage-api-client)](https://www.npmjs.com/package/opencage-api-client)
 [![GitHub license](https://img.shields.io/github/license/tsamaya/opencage-api-client)](https://github.com/tsamaya/opencage-api-client/blob/main/LICENSE.md)
-![Maintained](https://img.shields.io/maintenance/yes/2025.svg)
+![Maintained](https://img.shields.io/maintenance/yes/2026.svg)
 
 This repository is an [OpenCage Geocoding API](https://opencagedata.com/api) client for Node Typescript and JavaScript.
 
@@ -28,7 +28,6 @@ You can find a comprehensive tutorial for using this module [on the OpenCage sit
 # Working with AI / Agent Skill
 
 There is an [Agent Skill for working with the OpenCage Geocoding API](https://github.com/OpenCageData/opencage-skills/) which includes a reference file for developing in Node using this library.
-
 
 # 🔧 Getting started
 
