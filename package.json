@@ -58,7 +58,7 @@
     "@eslint/eslintrc": "3.3.5",
     "@eslint/js": "10.0.1",
     "@rsbuild/plugin-umd": "1.0.7",
-    "@rslib/core": "0.21.5",
+    "@rslib/core": "0.22.0",
     "@types/node": "24.12.4",
     "@typescript-eslint/eslint-plugin": "8.60.1",
     "@typescript-eslint/parser": "8.60.1",
