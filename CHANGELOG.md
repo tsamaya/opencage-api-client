@@ -15,6 +15,11 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ## [unreleased]
 
+### Changed
+
+- upgrade dependencies
+- CI runs lint, unit test and build on node runtime LTS, then runs e2e tests with the built library on a matrix of node runtimes.
+
 ## [2.1.2] (2026-05-11)
 
 ### Changed
