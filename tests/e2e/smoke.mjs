@@ -43,35 +43,48 @@ await check('invalid key returns 401', async () => {
     await opencage.geocode({ q: 'Brandenburg Gate', key: 'not.a.key' });
     throw new Error('Expected error but request succeeded');
   } catch (err) {
-    if (err?.status?.code !== 401) throw new Error(`Expected 401 got ${err?.status?.code}`, { cause: err });
+    if (err?.status?.code !== 401)
+      throw new Error(`Expected 401 got ${err?.status?.code}`, { cause: err });
   }
 });
 
 // OpenCage test keys — documented at https://opencagedata.com/api#testingkeys
 await check('test key triggers 402 (quota exceeded)', async () => {
   try {
-    await opencage.geocode({ q: '51.952659,7.632473', key: '4372eff77b8343cebfc843eb4da4ddc4' });
+    await opencage.geocode({
+      q: '51.952659,7.632473',
+      key: '4372eff77b8343cebfc843eb4da4ddc4',
+    });
     throw new Error('Expected error but request succeeded');
   } catch (err) {
-    if (err?.status?.code !== 402) throw new Error(`Expected 402 got ${err?.status?.code}`, { cause: err });
+    if (err?.status?.code !== 402)
+      throw new Error(`Expected 402 got ${err?.status?.code}`, { cause: err });
   }
 });
 
 await check('test key triggers 403 (suspended)', async () => {
   try {
-    await opencage.geocode({ q: '51.952659,7.632473', key: '2e10e5e828262eb243ec0b54681d699a' });
+    await opencage.geocode({
+      q: '51.952659,7.632473',
+      key: '2e10e5e828262eb243ec0b54681d699a',
+    });
     throw new Error('Expected error but request succeeded');
   } catch (err) {
-    if (err?.status?.code !== 403) throw new Error(`Expected 403 got ${err?.status?.code}`, { cause: err });
+    if (err?.status?.code !== 403)
+      throw new Error(`Expected 403 got ${err?.status?.code}`, { cause: err });
   }
 });
 
 await check('test key triggers 429 (too many requests)', async () => {
   try {
-    await opencage.geocode({ q: '51.952659,7.632473', key: 'd6d0f0065f4348a4bdfe4587ba02714b' });
+    await opencage.geocode({
+      q: '51.952659,7.632473',
+      key: 'd6d0f0065f4348a4bdfe4587ba02714b',
+    });
     throw new Error('Expected error but request succeeded');
   } catch (err) {
-    if (err?.status?.code !== 429) throw new Error(`Expected 429 got ${err?.status?.code}`, { cause: err });
+    if (err?.status?.code !== 429)
+      throw new Error(`Expected 429 got ${err?.status?.code}`, { cause: err });
   }
 });
 

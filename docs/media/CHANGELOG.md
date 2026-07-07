@@ -15,6 +15,20 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 ## [unreleased]
 
+## [2.2.0] (2026-06-15)
+
+### Changed
+
+- Bumps JS version to ES2020
+- upgrade dependencies
+- CI runs lint, unit test and build on node runtime LTS, then runs e2e tests with the built library on a matrix of node runtimes.
+
+## [2.1.2] (2026-05-11)
+
+### Changed
+
+- update LICENSE file for 2026
+
 ## [2.1.1] (2026-05-11)
 
 ### Changed
@@ -326,7 +340,9 @@ And, this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.
 
 - First release
 
-[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v2.1.1...HEAD
+[unreleased]: https://github.com/tsamaya/opencage-api-client/compare/v2.2.0...HEAD
+[2.2.0]: https://github.com/tsamaya/opencage-api-client/compare/v2.1.2...v2.2.0
+[2.1.2]: https://github.com/tsamaya/opencage-api-client/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/tsamaya/opencage-api-client/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.1...v2.1.0
 [2.0.1]: https://github.com/tsamaya/opencage-api-client/compare/v2.0.0...v2.0.1
