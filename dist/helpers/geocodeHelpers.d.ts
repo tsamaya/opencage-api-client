@@ -1,6 +1,6 @@
-import { GeocodingRequest } from '../types/GeocodingRequest';
-import { GeocodeError } from '../errors/GeocodeError';
-import { GeocodingOptions } from '../types/GeocodingOptions';
+import { GeocodingRequest } from '../types/GeocodingRequest.js';
+import { GeocodeError } from '../errors/GeocodeError.js';
+import { GeocodingOptions } from '../types/GeocodingOptions.js';
 /**
  * @private
  * @description Returns a {GeocodeError} object with status (validation error)

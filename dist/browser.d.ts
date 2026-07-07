@@ -1,1 +1,1 @@
-export { geocode } from './opencage';
+export { geocode } from './opencage.js';
