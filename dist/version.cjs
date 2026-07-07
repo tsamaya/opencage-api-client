@@ -27,7 +27,7 @@ var __webpack_require__ = {};
 })();
 var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
-const version = '2.2.0-beta.2';
+const version = '2.2.0';
 __webpack_require__.d(__webpack_exports__, {}, {
     version: version
 });
