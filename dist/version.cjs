@@ -1,11 +1,15 @@
 "use strict";
 var __webpack_require__ = {};
 (()=>{
-    __webpack_require__.d = (exports1, definition)=>{
-        for(var key in definition)if (__webpack_require__.o(definition, key) && !__webpack_require__.o(exports1, key)) Object.defineProperty(exports1, key, {
-            enumerable: true,
-            get: definition[key]
-        });
+    __webpack_require__.d = (exports1, getters, values)=>{
+        var define = (defs, kind)=>{
+            for(var key in defs)if (__webpack_require__.o(defs, key) && !__webpack_require__.o(exports1, key)) Object.defineProperty(exports1, key, {
+                enumerable: true,
+                [kind]: defs[key]
+            });
+        };
+        define(getters, "get");
+        define(values, "value");
     };
 })();
 (()=>{
@@ -23,10 +27,10 @@ var __webpack_require__ = {};
 })();
 var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
-__webpack_require__.d(__webpack_exports__, {
-    version: ()=>version
+const version = '2.2.0-beta.2';
+__webpack_require__.d(__webpack_exports__, {}, {
+    version: version
 });
-const version = '2.1.2';
 exports.version = __webpack_exports__.version;
 for(var __rspack_i in __webpack_exports__)if (-1 === [
     "version"

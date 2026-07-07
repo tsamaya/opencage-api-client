@@ -1,6 +1,6 @@
-import { GeocodingRequest } from '../types/GeocodingRequest';
-import { GeocodeError, GeocodeErrorStatus } from '../errors/GeocodeError';
-import { GeocodingOptions } from '../types/GeocodingOptions';
+import { GeocodingRequest } from '../types/GeocodingRequest.js';
+import { GeocodeError, GeocodeErrorStatus } from '../errors/GeocodeError.js';
+import { GeocodingOptions } from '../types/GeocodingOptions.js';
 
 const OPENCAGEDATA_JSON_URL = 'https://api.opencagedata.com/geocode/v1/json';
 

@@ -1,6 +1,6 @@
-import type { GeocodingRequest } from './types/GeocodingRequest';
-import type { GeocodingResponse } from './types/GeocodingResponse';
-import type { GeocodingOptions } from './types/GeocodingOptions';
+import type { GeocodingRequest } from './types/GeocodingRequest.js';
+import type { GeocodingResponse } from './types/GeocodingResponse.js';
+import type { GeocodingOptions } from './types/GeocodingOptions.js';
 /**
  * geocode address and reverse geocode coordinates using
  * [OpenCage API](https://opencagedata.com/api) requesting the json format.

@@ -1,13 +1,13 @@
-import type { GeocodingRequest } from './types/GeocodingRequest';
-import type { GeocodingResponse } from './types/GeocodingResponse';
-import type { GeocodingOptions } from './types/GeocodingOptions';
-import { fetchUrl } from './fetch';
+import type { GeocodingRequest } from './types/GeocodingRequest.js';
+import type { GeocodingResponse } from './types/GeocodingResponse.js';
+import type { GeocodingOptions } from './types/GeocodingOptions.js';
+import { fetchUrl } from './fetch.js';
 import {
   buildValidationError,
   isUndefinedOrNull,
   buildQueryString,
   buildQuery,
-} from './helpers/geocodeHelpers';
+} from './helpers/geocodeHelpers.js';
 
 const MISSING_OR_BAD_QUERY = 'missing or bad query';
 const MISSING_API_KEY = 'missing API key';

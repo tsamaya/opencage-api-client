@@ -1,4 +1,4 @@
-import type { GeocodingRequest } from './GeocodingRequest';
+import type { GeocodingRequest } from './GeocodingRequest.js';
 /**
  * GeocodeRequest type is an alias for GeocodingRequest.
  * @deprecated Use GeocodingRequest instead.

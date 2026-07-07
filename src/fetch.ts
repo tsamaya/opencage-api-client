@@ -1,5 +1,5 @@
-import { GeocodeError } from './errors/GeocodeError';
-import { version } from './version';
+import { GeocodeError } from './errors/GeocodeError.js';
+import { version } from './version.js';
 
 const USER_AGENT = `OpenCageData Geocoding NodeJS API Client/${version}`;
 
