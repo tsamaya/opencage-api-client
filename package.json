@@ -73,7 +73,7 @@
     "prettier": "3.9.5",
     "tsx": "4.23.0",
     "typedoc": "0.28.20",
-    "typescript": "5.9.3",
+    "typescript": "7.0.2",
     "vite": "8.1.4",
     "vitest": "4.1.10"
   },
