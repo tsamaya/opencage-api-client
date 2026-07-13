@@ -59,7 +59,7 @@
     "@eslint/js": "10.0.1",
     "@rsbuild/plugin-umd": "1.0.7",
     "@rslib/core": "0.23.2",
-    "@types/node": "26.1.0",
+    "@types/node": "26.1.1",
     "@typescript-eslint/eslint-plugin": "8.62.1",
     "@typescript-eslint/parser": "8.62.1",
     "@vitest/coverage-v8": "4.1.10",
