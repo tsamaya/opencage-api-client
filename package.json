@@ -55,7 +55,7 @@
     "test:e2e": "node tests/e2e/smoke.mjs"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "3.3.5",
+    "@eslint/eslintrc": "3.3.6",
     "@eslint/js": "10.0.1",
     "@rsbuild/plugin-umd": "1.0.7",
     "@rslib/core": "0.23.2",
