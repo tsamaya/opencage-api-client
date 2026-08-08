@@ -71,7 +71,7 @@
     "globals": "17.8.0",
     "js-yaml": "5.2.3",
     "prettier": "3.9.6",
-    "tsx": "4.23.8",
+    "tsx": "4.23.9",
     "typedoc": "0.28.20",
     "typescript": "5.9.3",
     "vite": "8.2.0",
