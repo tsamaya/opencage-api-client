@@ -200,8 +200,8 @@ importers:
         specifier: 5.0.3
         version: 5.0.3(vitest@5.0.3)
       dotenv:
-        specifier: 18.0.6
-        version: 18.0.6
+        specifier: 18.0.8
+        version: 18.0.8
       eslint:
         specifier: 10.12.0
         version: 10.12.0(supports-color@7.2.0)
@@ -1031,8 +1031,8 @@ packages:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
 
-  dotenv@18.0.6:
-    resolution: {integrity: sha512-ZMVmohV6CvAJtj++pZNyggluUt6hbRdQAxc2+Z635RL6/AG/ruXv5lHnybUFoxMPL/yrTL/tsF4paZu2l7RA6Q==}
+  dotenv@18.0.8:
+    resolution: {integrity: sha512-2KDeoFoK/zRtcnbunCDlLG5VWVMcyqeQc6iK65o231nfNAcuGrKoqUQfJFUtBI+QlShk5HKIHxwebBtUl3rEfA==}
     engines: {node: '>=12'}
     hasBin: true
 
@@ -2317,7 +2317,7 @@ snapshots:
 
   detect-libc@2.1.2: {}
 
-  dotenv@18.0.6: {}
+  dotenv@18.0.8: {}
 
   entities@4.5.0: {}
 
