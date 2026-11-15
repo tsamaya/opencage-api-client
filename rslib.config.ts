@@ -17,7 +17,7 @@ export default defineConfig({
       format: 'cjs',
       // syntax: 'es2022', tsconfig will handle the syntax
       bundle: false,
-      dts: false, // ESM and CJS will share the same dts file
+      dts: { autoExtension: true }, // Automatically add .d.cts for commonjs modules
     },
   ],
   output: {

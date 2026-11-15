@@ -35,8 +35,8 @@ class GeocodeError extends Error {
         this.name = 'GeocodeError';
     }
 }
-__webpack_require__.d(__webpack_exports__, {
-    GeocodeError: ()=>GeocodeError
+__webpack_require__.d(__webpack_exports__, {}, {
+    GeocodeError: GeocodeError
 });
 exports.GeocodeError = __webpack_exports__.GeocodeError;
 for(var __rspack_i in __webpack_exports__)if (-1 === [
