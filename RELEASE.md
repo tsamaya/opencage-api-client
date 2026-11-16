@@ -13,6 +13,7 @@
 1. run linter `pnpm run check-types `
 1. run test `pnpm run test:coverage`
 1. run build release `pnpm run release:build`
+1. run compatibility tests `pnpm test:compat 5` and `pnpm test:compat 7`
 1. run examples `./scripts/run-examples.sh`
 1. export GITHUB_TOKEN=
 1. run `npx semantic-release --dry-run` first

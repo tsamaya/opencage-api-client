@@ -52,7 +52,8 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui --coverage.enabled=true",
-    "test:e2e": "node tests/e2e/smoke.mjs"
+    "test:e2e": "node tests/e2e/smoke.mjs",
+    "test:compat": "tests/compat/run.sh"
   },
   "devDependencies": {
     "@eslint/eslintrc": "3.3.7",
