@@ -1,0 +1,5 @@
+{
+  "name": "opencage-api-client-compat",
+  "private": true,
+  "description": "Consumer fixture: installs the packed opencage-api-client tarball and checks it can be required, imported and type-checked."
+}

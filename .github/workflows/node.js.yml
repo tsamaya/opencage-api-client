@@ -68,3 +68,30 @@ jobs:
         run: node tests/e2e/smoke.mjs
         env:
           OPENCAGE_API_KEY: ${{ secrets.OPENCAGE_API_KEY }}
+
+  compat:
+    name: Compat Node ${{ matrix.node-version }} / TS ${{ matrix.typescript }}
+    needs: build
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # Current and previous LTS: plain CJS `require` + ESM `import` checks
+        node-version: [lts/*, lts/-1]
+        # TypeScript consumers (.cts/.mts, moduleResolution nodenext) — see #761
+        typescript: ['5', '7']
+
+    steps:
+      - uses: actions/checkout@v7
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Download dist artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: dist
+          path: dist/
+      - name: Run consumer compatibility checks
+        run: tests/compat/run.sh ${{ matrix.typescript }}

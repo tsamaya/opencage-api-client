@@ -40,4 +40,11 @@ export default [
       '@typescript-eslint/no-explicit-any': 'warn',
     },
   },
+  {
+    // CommonJS consumer fixtures must use require() on purpose
+    files: ['tests/compat/**'],
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off',
+    },
+  },
 ];
