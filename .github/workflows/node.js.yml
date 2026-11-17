@@ -31,7 +31,8 @@ jobs:
       - run: pnpm lint
       - run: pnpm check-types
       - run: pnpm test:coverage
-      - run: pnpm run build
+      - run: pnpm build
+      - run: pnpm build:doc
       - uses: codecov/codecov-action@v7
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
@@ -80,7 +81,7 @@ jobs:
         # Current and previous LTS: plain CJS `require` + ESM `import` checks
         node-version: [lts/*, lts/-1]
         # TypeScript consumers (.cts/.mts, moduleResolution nodenext) — see #761
-        typescript: ['5', '7']
+        typescript: ["5", "7"]
 
     steps:
       - uses: actions/checkout@v7
